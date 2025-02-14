@@ -40,7 +40,11 @@ const ScrambledText = ({ texts, duration = 3 }) => {
     return () => clearInterval(scrambleInterval);
   }, [index, texts, duration]);
 
-  return <span className="text-6xl mt-3">{displayText}</span>;
+  return (
+    <span className="text-6xl mt-3 text-secondary dark:text-accent">
+      {displayText}
+    </span>
+  );
 };
 
 export default ScrambledText;

@@ -187,7 +187,7 @@ export default function LiveServiceModal({
                       {timeOfDay} Amazing Heir!
                     </p>
                     <br />
-                    <h2 className="text-4xl font-bold text-primary dark:text-secondary">
+                    <h2 className="text-4xl font-bold text-primary dark:text-muted">
                       {nextService.title}
                     </h2>
                   </>
@@ -257,14 +257,14 @@ export default function LiveServiceModal({
                     </div>
                   ) : (
                     <div className="border-spacing-6 border border-primary dark:border-muted rounded-xl p-6  h-[450px] grid place-items-center">
-                      <h1 className="text-3xl font-bold text-primary flex space-x-16 items-center">
+                      <h1 className="text-3xl font-bold text-primary dark:text-muted flex space-x-16 items-center">
                         <span>
-                          <FaCircleNotch className="animate-spin size-10 color-primary" />
+                          <FaCircleNotch className="animate-spin size-10 color-primary dark:color-muted" />
                         </span>
                         <span>Waiting for broadcast...</span>
                       </h1>
 
-                      <p className="text-primary text-lg">
+                      <p className="text-primary dark:text-muted text-lg">
                         The program should be live now, but we are waiting for
                         the broadcast to start. <br /> If the stream does not
                         begin shortly, please refresh the page or check back
@@ -273,7 +273,7 @@ export default function LiveServiceModal({
 
                       <button
                         onClick={() => window.location.reload()}
-                        className="px-4 py-2 mt-4 bg-accent dark:bg-secondary text-white rounded-lg hover:bg-secondary dark:hover:bg-accent"
+                        className="py-3 px-14 mt-10 rounded-full text-base font-normal bg-secondary dark:bg-accent hover:bg-accent dark:hover:bg-secondary transition duration-500 ease-in-out text-white cursor-pointer"
                       >
                         Refresh
                       </button>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LiveServiceModal from "@/components/LiveServiceModal";
-import { CgMediaLive } from "react-icons/cg";
+import { HiOutlineStatusOnline } from "react-icons/hi";
 import axios from "axios";
 
 const MIXLR_USERNAME = "amazing-grace-heirs";
@@ -39,7 +39,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`flex justify-between container mx-auto bg-dark text-light mt-5 pt-3 px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
+        className={`flex justify-between container mx-auto border border-dark dark:border-muted bg-dark dark:bg-muted text-light mt-5 pt-2.5 px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
           isMenuOpen ? "h-[90vh]" : "h-20 "
         }`}
       >
@@ -72,7 +72,7 @@ export default function Navbar() {
                   }}
                 >
                   <span className="flex items-center space-x-2">
-                    <CgMediaLive />
+                    <HiOutlineStatusOnline />
                     <span>LIVE NOW</span>
                   </span>
                 </motion.div>
@@ -82,7 +82,7 @@ export default function Navbar() {
             <div className="relative group text-xs">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="py-3 px-14 rounded-full text bg-primary text-white cursor-pointer"
+                className="py-3 px-14 rounded-full text bg-secondary dark:bg-accent hover:bg-accent dark:hover:bg-secondary text-white cursor-pointer"
               >
                 See Upcoming Program
               </button>
@@ -174,61 +174,6 @@ export default function Navbar() {
         username={MIXLR_USERNAME}
         isLive={isLive}
       />
-
-      {/* Fixed Navbar */}
-      {/* <AnimatePresence>
-        {showFixedNavbar && (
-          <motion.nav
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -20, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed top-0 left-0 w-full bg-white shadow-md p-4 z-50"
-          >
-            <div className="container mx-auto flex justify-between items-center">
-              <div>
-                <Image
-                  src="/logo.png"
-                  alt="logo"
-                  width={60}
-                  height={60}
-                  loading="eager"
-                  title="Amazing Grace Covenant Prayer Assembly"
-                />
-              </div>
-
-              <ul className="flex space-x-4">
-                <li>
-                  <Link href="/">
-                    <a className={`text-gray-700 ${isActive("/")}`}>Home</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about">
-                    <a className={`text-gray-700 ${isActive("/about")}`}>
-                      About
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services">
-                    <a className={`text-gray-700 ${isActive("/services")}`}>
-                      Services
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact">
-                    <a className={`text-gray-700 ${isActive("/contact")}`}>
-                      Contact
-                    </a>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </motion.nav>
-        )}
-      </AnimatePresence> */}
     </>
   );
 }
