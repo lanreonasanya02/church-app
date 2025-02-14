@@ -195,7 +195,7 @@ export default function Navbar() {
       />
 
       {/* Fixed Navbar */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {showFixedNavbar && (
           <motion.nav
             initial={{ y: -50, opacity: 0 }}
@@ -205,7 +205,17 @@ export default function Navbar() {
             className="fixed top-0 left-0 w-full bg-white shadow-md p-4 z-50"
           >
             <div className="container mx-auto flex justify-between items-center">
-              <img src="/logo.png" alt="logo" width="5%" />
+              <div>
+                <Image
+                  src="/logo.png"
+                  alt="logo"
+                  width={60}
+                  height={60}
+                  loading="eager"
+                  title="Amazing Grace Covenant Prayer Assembly"
+                />
+              </div>
+
               <ul className="flex space-x-4">
                 <li>
                   <Link href="/">
@@ -237,7 +247,7 @@ export default function Navbar() {
             </div>
           </motion.nav>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </>
   );
 }

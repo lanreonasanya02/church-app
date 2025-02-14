@@ -9,7 +9,8 @@ export default function Hero() {
           Shalom in Christ
         </span>
         <h1 className="text-6xl font-bold">
-          We Are A Community of Devoted Puritans Committed to God's Word through
+          We Are A Community of Devoted Puritans Committed to God&apos;s Word
+          through
           <br />
           <ScrambleText
             texts={[
