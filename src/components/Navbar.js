@@ -1,0 +1,243 @@
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
+import LiveServiceModal from "@/components/LiveServiceModal";
+import { CgMediaLive } from "react-icons/cg";
+import axios from "axios";
+
+const MIXLR_USERNAME = "amazing-grace-heirs";
+
+export default function Navbar() {
+  const pathname = usePathname();
+  const [showFixedNavbar, setShowFixedNavbar] = useState(false);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [isLive, setIsLive] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const isActive = (path) => (pathname === path ? "text-accent text-bold" : "");
+
+  useEffect(() => {
+    const checkLiveStatus = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.mixlr.com/users/${MIXLR_USERNAME}`
+        );
+        setIsLive(response.data.is_live);
+      } catch (error) {
+        console.error("Error fetching Mixlr status:", error);
+      }
+    };
+
+    checkLiveStatus();
+    const interval = setInterval(checkLiveStatus, 20000); // Check every 20 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+
+      if (scrollTop > 500) {
+        setShowFixedNavbar(true);
+      } else if (scrollTop < lastScrollTop && scrollTop < 500) {
+        setShowFixedNavbar(false);
+      }
+
+      setLastScrollTop(scrollTop);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollTop]);
+
+  return (
+    <>
+      <nav
+        className={`flex justify-between container mx-auto bg-dark text-light mt-5 pt-3 px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
+          isMenuOpen ? "h-[90vh]" : "h-20 "
+        }`}
+      >
+        <div>
+          <Image
+            src="/logo.png"
+            alt="logo"
+            width={60}
+            height={60}
+            loading="eager"
+            title="Amazing Grace Covenant Prayer Assembly"
+          />
+        </div>
+
+        <div className="flex justify-center items-center space-x-8 h-16">
+          {isLive ? (
+            <div className=" space-x-8 text-xs">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="py-3 px-14 rounded-full text bg-secondary text-white"
+              >
+                <motion.div
+                  animate={{
+                    scale: [1, 1.2, 0.9, 1.1, 1],
+                    transition: {
+                      duration: 1.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    },
+                  }}
+                >
+                  <span className="flex items-center space-x-2">
+                    <CgMediaLive />
+                    <span>LIVE NOW</span>
+                  </span>
+                </motion.div>
+              </button>
+            </div>
+          ) : (
+            <div className="relative group text-xs">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="py-3 px-14 rounded-full text bg-primary text-white cursor-pointer"
+              >
+                See Upcoming Program
+              </button>
+            </div>
+          )}
+
+          <div
+            onMouseOver={() => setIsMenuOpen(true)}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <button className="text-xs transform  hover:text-secondary p-2 rounded-lg">
+              {isMenuOpen ? "Close" : "Menu"}
+            </button>
+          </div>
+
+          {/* Collapsible Menu */}
+          <div
+            className={`absolute top-20 right-0 bg-dark text-light rounded-lg shadow-lg transition-all duration-500 ease-in-out w-full flex flex-col justify-center ${
+              isMenuOpen ? "h-[80vh] overflow-y-auto" : "h-0"
+            }`}
+          >
+            {isMenuOpen && (
+              <div className="flex flex-col space-y-14 items-center text-6xl justify-center flex-grow">
+                <Link
+                  href="/"
+                  className={` ${isActive(
+                    "/"
+                  )} hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out`}
+                >
+                  Home
+                </Link>
+
+                <Link
+                  href="/about"
+                  className={` ${isActive(
+                    "/about"
+                  )} hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out`}
+                >
+                  About
+                </Link>
+
+                <Link
+                  href="/schedule"
+                  className={` ${isActive(
+                    "/schedule"
+                  )} hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out`}
+                >
+                  Schedule
+                </Link>
+
+                <Link
+                  href="/sermons"
+                  className={` ${isActive(
+                    "/sermons"
+                  )} hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out`}
+                >
+                  Sermons
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className={` ${isActive(
+                    "/contact"
+                  )} hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out`}
+                >
+                  Contact
+                </Link>
+              </div>
+            )}
+
+            {/* Footer with Copyright Info */}
+            {isMenuOpen && (
+              <div className="flex justify-between items-center px-10 text-sm text-muted">
+                <span className="">
+                  © 2025 Amazing Grace Covenant Prayer Assembly
+                </span>
+                <span>All rights reserved</span>
+              </div>
+            )}
+          </div>
+
+          <ThemeSwitcher />
+        </div>
+      </nav>
+
+      <LiveServiceModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        username={MIXLR_USERNAME}
+        isLive={isLive}
+      />
+
+      {/* Fixed Navbar */}
+      <AnimatePresence>
+        {showFixedNavbar && (
+          <motion.nav
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 left-0 w-full bg-white shadow-md p-4 z-50"
+          >
+            <div className="container mx-auto flex justify-between items-center">
+              <img src="/logo.png" alt="logo" width="5%" />
+              <ul className="flex space-x-4">
+                <li>
+                  <Link href="/">
+                    <a className={`text-gray-700 ${isActive("/")}`}>Home</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about">
+                    <a className={`text-gray-700 ${isActive("/about")}`}>
+                      About
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services">
+                    <a className={`text-gray-700 ${isActive("/services")}`}>
+                      Services
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact">
+                    <a className={`text-gray-700 ${isActive("/contact")}`}>
+                      Contact
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
