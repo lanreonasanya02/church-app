@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,8 +12,6 @@ const MIXLR_USERNAME = "amazing-grace-heirs";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [showFixedNavbar, setShowFixedNavbar] = useState(false);
-  const [lastScrollTop, setLastScrollTop] = useState(0);
   const [isLive, setIsLive] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,23 +35,6 @@ export default function Navbar() {
 
     return () => clearInterval(interval);
   }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-
-      if (scrollTop > 500) {
-        setShowFixedNavbar(true);
-      } else if (scrollTop < lastScrollTop && scrollTop < 500) {
-        setShowFixedNavbar(false);
-      }
-
-      setLastScrollTop(scrollTop);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollTop]);
 
   return (
     <>
