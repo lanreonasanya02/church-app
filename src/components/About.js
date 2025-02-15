@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const images = [
   "/img1.jpg",
@@ -49,9 +50,9 @@ export default function About() {
 
         <p>
           Amazing Grace Covenant Prayer Assembly is a vibrant community
-          dedicated to studying God's Word and living in submission to Jesus
-          Christ. Our mission is to raise disciples who glorify God through
-          faith, hope, and sound doctrine.
+          dedicated to studying God&apos;s Word and living in submission to
+          Jesus Christ. Our mission is to raise disciples who glorify God
+          through faith, hope, and sound doctrine.
         </p>
         <br />
         <p>
@@ -98,10 +99,12 @@ export default function About() {
                   }`}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <img
+                  <Image
                     src={img}
                     alt={`Gallery Image ${i + 1}`}
                     className="w-full h-full object-cover object-top rounded-xl"
+                    width={100}
+                    height={100}
                   />
                 </motion.div>
               ))}
