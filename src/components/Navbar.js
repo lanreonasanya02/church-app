@@ -39,7 +39,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`flex justify-between container mx-auto border border-dark dark:border-muted bg-dark dark:bg-muted text-light mt-5 pt-2.5 px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
+        className={`flex justify-between container mx-auto border border-dark dark:border-muted bg-dark dark:bg-muted text-light dark:text-primary mt-5 pt-2.5 px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
           isMenuOpen ? "h-[90vh]" : "h-20 "
         }`}
       >
@@ -100,7 +100,7 @@ export default function Navbar() {
 
           {/* Collapsible Menu */}
           <div
-            className={`absolute top-20 right-0 bg-dark text-light rounded-lg shadow-lg transition-all duration-500 ease-in-out w-full flex flex-col justify-center ${
+            className={`absolute top-20 right-0 bg-dark dark:bg-muted text-light rounded-lg shadow-lg transition-all duration-500 ease-in-out w-full flex flex-col justify-center ${
               isMenuOpen ? "h-[80vh] overflow-y-auto" : "h-0"
             }`}
           >
@@ -155,7 +155,7 @@ export default function Navbar() {
 
             {/* Footer with Copyright Info */}
             {isMenuOpen && (
-              <div className="flex justify-between items-center px-10 text-sm text-muted">
+              <div className="flex justify-between items-center px-10 text-sm text-muted dark:text-primary">
                 <span className="">
                   © 2025 Amazing Grace Covenant Prayer Assembly
                 </span>
