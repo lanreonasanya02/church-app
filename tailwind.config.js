@@ -23,6 +23,7 @@ module.exports = {
       backgroundImage: {
         hero: "url('/christian-dark.jpg')",
         "church-banner-dark": "url('/praying.jpg')",
+        logo: "url('/logo.png')",
       },
     },
   },

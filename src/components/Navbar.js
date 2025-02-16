@@ -31,7 +31,7 @@ export default function Navbar() {
     };
 
     checkLiveStatus();
-    const interval = setInterval(checkLiveStatus, 20000); // Check every 20 seconds
+    const interval = setInterval(checkLiveStatus, 15000); // Check every 15 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -118,28 +118,28 @@ export default function Navbar() {
                 <Link
                   href="/about"
                   className={` ${isActive(
-                    "/about"
+                    "/#about"
                   )} hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out`}
                 >
                   About
                 </Link>
 
                 <Link
-                  href="/schedule"
-                  className={` ${isActive(
-                    "/schedule"
-                  )} hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out`}
-                >
-                  Schedule
-                </Link>
-
-                <Link
                   href="/sermons"
                   className={` ${isActive(
-                    "/sermons"
+                    "/#sermons"
                   )} hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out`}
                 >
                   Sermons
+                </Link>
+
+                <Link
+                  href="/schedule"
+                  className={` ${isActive(
+                    "/#schedule"
+                  )} hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out`}
+                >
+                  Connect With Us
                 </Link>
 
                 <Link
