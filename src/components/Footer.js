@@ -1,10 +1,13 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { GiRotaryPhone } from "react-icons/gi";
 import { HiClock, HiHeart } from "react-icons/hi";
 import { IoMdPin } from "react-icons/io";
 
 export default function Footer() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   return (
     <footer id="contact" className="bg-church-hero bg-cover relative">
       <div className="container mx-auto py-20 text-light">
@@ -49,7 +52,10 @@ export default function Footer() {
 
           <div className="py-14 px-8 border border-light bg-white dark:bg-muted rounded-lg text-primary">
             <span>Fields marked with an asterisk (*) are mandatory.</span>
-            <form action="">
+            <form
+              action="https://formsubmit.co/73741a0f52e7d6a8ca836c9de874ffbd"
+              method="POST"
+            >
               <div>
                 <div className="flex items-center gap-2 mt-5">
                   <input
@@ -89,10 +95,18 @@ export default function Footer() {
 
                 <button
                   type="submit"
-                  className="w-full bg-secondary dark:bg-accent text-white p-3 my-2 rounded-lg"
+                  className="w-full bg-secondary dark:bg-accent text-white p-3 my-2 rounded-full text-base"
+                  onClick={() => setIsSubmitted(true)}
                 >
-                  Submit
+                  {isSubmitted ? "Submitting..." : "Submit"}
                 </button>
+
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://church-app-blond.vercel.app/thank-you"
+                  //   value="https://localhost:3000/thank-you"
+                />
               </div>
             </form>
           </div>

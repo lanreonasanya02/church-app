@@ -40,7 +40,10 @@ export default function About() {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 container mx-auto place-items-center h-[900px] text-primary dark:text-muted">
+    <div
+      id="about"
+      className="grid grid-cols-2 container mx-auto place-items-center h-[900px] text-primary dark:text-muted"
+    >
       <div className="px-16 text-primary dark:text-muted">
         <h4 className="text-sm tracking-widest uppercase text-accent">
           About Us

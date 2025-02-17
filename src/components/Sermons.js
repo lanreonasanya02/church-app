@@ -9,7 +9,7 @@ export default function Sermons() {
       <div className="container mx-auto">
         <h2 className="text-5xl text-center">Latest Messages</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 px-20">
           {sermonsData.map((sermon) => (
             <div
               key={sermon.id}

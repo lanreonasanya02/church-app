@@ -6,7 +6,7 @@ export default function Schedule() {
 
   return (
     <>
-      <div className="container mx-auto w-[70%] text-center p-20">
+      <div id="connect" className="container mx-auto w-[70%] text-center p-20">
         <h4 className="text-sm tracking-widest uppercase text-accent">
           Guidance That Matters, Right When You Need It
         </h4>
@@ -16,7 +16,7 @@ export default function Schedule() {
 
         <button
           onClick={() => setIsBookingModalOpen(true)}
-          className="py-3 px-14 rounded-full text-base font-normal bg-secondary dark:bg-accent hover:bg-accent dark:hover:bg-secondary transition duration-500 ease-in-out text-white cursor-pointer"
+          className="py-3 px-14 rounded-full text-base bg-secondary dark:bg-accent hover:bg-accent dark:hover:bg-secondary transition duration-500 ease-in-out text-white cursor-pointer"
         >
           Talk To Us
         </button>

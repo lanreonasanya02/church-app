@@ -25,6 +25,8 @@ module.exports = {
         "church-banner-dark": "url('/praying.jpg')",
         logo: "url('/logo.png')",
         "church-hero": `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/hands3.jpg')`,
+        "thank-you": "url('/thank-you.jpg')",
+        "thank-you-dark": `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/thanks-dark.jpg')`,
       },
     },
   },

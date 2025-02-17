@@ -7,7 +7,10 @@ export default function Hero() {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
 
   return (
-    <div className="h-screen container grid grid-cols-2 mx-auto place-content-center">
+    <div
+      id="home"
+      className="h-screen container grid grid-cols-2 mx-auto place-content-center"
+    >
       <div className="px-16">
         <p className="text-xl text-primary dark:text-muted mb-6 font-semibold italic">
           Shalom in Christ,

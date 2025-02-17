@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 import Image from "next/image";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LiveServiceModal from "@/components/LiveServiceModal";
@@ -11,12 +12,9 @@ import axios from "axios";
 const MIXLR_USERNAME = "amazing-grace-heirs";
 
 export default function Navbar() {
-  const pathname = usePathname();
   const [isLive, setIsLive] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const isActive = (path) => (pathname === path ? "text-accent text-bold" : "");
 
   useEffect(() => {
     const checkLiveStatus = async () => {
@@ -106,50 +104,65 @@ export default function Navbar() {
           >
             {isMenuOpen && (
               <div className="flex flex-col space-y-14 items-center text-6xl justify-center flex-grow">
-                <Link
-                  href="/"
-                  className={` ${isActive(
-                    "/"
-                  )} hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out`}
+                <ScrollLink
+                  to="home"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  activeClass="text-secondary dark:text-primary"
+                  className="hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Home
-                </Link>
+                </ScrollLink>
 
-                <Link
-                  href="/about"
-                  className={` ${isActive(
-                    "/#about"
-                  )} hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out`}
+                <ScrollLink
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  activeClass="text-secondary dark:text-primary"
+                  className="hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   About
-                </Link>
+                </ScrollLink>
 
-                <Link
-                  href="/sermons"
-                  className={` ${isActive(
-                    "/#sermons"
-                  )} hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out`}
+                <ScrollLink
+                  to="sermons"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  activeClass="text-secondary dark:text-primary"
+                  className="hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Sermons
-                </Link>
+                </ScrollLink>
 
-                <Link
-                  href="/schedule"
-                  className={` ${isActive(
-                    "/#schedule"
-                  )} hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out`}
+                <ScrollLink
+                  to="connect"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  activeClass="text-secondary dark:text-primary"
+                  className="hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
+                  onClick={() => setIsMenuOpen(false)}
                 >
-                  Connect With Us
-                </Link>
+                  Connect
+                </ScrollLink>
 
-                <Link
-                  href="/contact"
-                  className={` ${isActive(
-                    "/contact"
-                  )} hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out`}
+                <ScrollLink
+                  to="contact"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  activeClass="text-secondary dark:text-primary"
+                  className="hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Contact
-                </Link>
+                </ScrollLink>
               </div>
             )}
 
