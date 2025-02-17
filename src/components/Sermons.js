@@ -7,7 +7,7 @@ export default function Sermons() {
   return (
     <div id="sermons" className="bg-primary text-white py-20">
       <div className="container mx-auto">
-        <h2 className="text-5xl  text-center">Latest Messages</h2>
+        <h2 className="text-5xl text-center">Latest Messages</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {sermonsData.map((sermon) => (

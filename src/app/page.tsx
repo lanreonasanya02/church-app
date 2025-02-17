@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Sermons from "@/components/Sermons";
 import Schedule from "@/components/Schedule";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <About />
       <Sermons />
       <Schedule />
+      <Footer />
     </>
   );
 }
