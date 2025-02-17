@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import React from "react";
-import { FaRegThumbsUp } from "react-icons/fa";
 
 export default function ThankYouPage() {
   return (
@@ -13,13 +12,12 @@ export default function ThankYouPage() {
         <div></div>
 
         <div className="text-primary dark:text-light grid place-content-center px-36">
-          {/* <FaRegThumbsUp size={100} className="" /> */}
           <h1 className="text-8xl font-bold my-5">
             Thank You For Reaching Out!
           </h1>
           <p className="">
-            We can't express our gratitude enough for reaching out to us. We
-            would be in touch with you shortly. Have a great day!
+            We can&apos;t express our gratitude enough for reaching out to us.
+            We would be in touch with you shortly. Have a great day!
           </p>
 
           <div className="mt-10">

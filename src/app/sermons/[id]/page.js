@@ -5,7 +5,6 @@ import TextFormatter from "@/utils/TextFormatter";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import { BiMessageRoundedError } from "react-icons/bi";
-import Image from "next/image";
 import { GrReturn } from "react-icons/gr";
 
 export default function SermonPage({ params }) {

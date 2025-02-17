@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-// import { usePathname } from "next/navigation";
-import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import Image from "next/image";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
