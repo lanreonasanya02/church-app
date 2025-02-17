@@ -6,6 +6,7 @@ import About from "@/components/About";
 import Sermons from "@/components/Sermons";
 import Schedule from "@/components/Schedule";
 import Footer from "@/components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Sermons />
       <Schedule />
       <Footer />
+      <SpeedInsights />
     </>
   );
 }
