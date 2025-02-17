@@ -42,17 +42,19 @@ export default function About() {
   return (
     <div className="grid grid-cols-2 container mx-auto place-items-center h-[900px] text-primary dark:text-muted">
       <div className="px-16 text-primary dark:text-muted">
-        <h4 className="text-base tracking-widest">ABOUT US</h4>
+        <h4 className="text-sm tracking-widest uppercase text-accent">
+          About Us
+        </h4>
         <h2 className="text-5xl my-3">A Family in Christ</h2>
 
         <p className=" mt-10 italic">Calvary Greetings,</p>
         <br />
 
         <p>
-          Amazing Grace Covenant Prayer Assembly is a vibrant community
-          dedicated to studying God&apos;s Word and living in submission to
-          Jesus Christ. Our mission is to raise disciples who glorify God
-          through faith, hope, and sound doctrine.
+          We are a vibrant community dedicated to studying God&apos;s Word and
+          living daily in submission to Jesus Christ, our Lord and Savior. Our
+          mission is to raise disciples who glorify God through faith, hope, and
+          sound doctrine.
         </p>
         <br />
         <p>

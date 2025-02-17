@@ -70,9 +70,8 @@ function ScheduleModal({ isOpen, onClose }) {
             </div>
 
             <table className="min-w-full border-collapse border border-gray-300">
-              {/* <caption>Programs</caption> */}
               <thead>
-                <tr className="text-primary dark:text-muted">
+                <tr className="text-light bg-secondary">
                   <th className="border border-gray-300 px-4 py-2">Day</th>
                   <th className="border border-gray-300 px-4 py-2">Program</th>
                   <th className="border border-gray-300 px-4 py-2">Mode</th>

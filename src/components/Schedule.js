@@ -7,9 +7,9 @@ export default function Schedule() {
   return (
     <>
       <div className="container mx-auto w-[70%] text-center p-20">
-        <h3 className="text-lg text-primary dark:text-muted">
+        <h4 className="text-sm tracking-widest uppercase text-accent">
           Guidance That Matters, Right When You Need It
-        </h3>
+        </h4>
         <h2 className=" text-7xl text-semibold mt-5 mb-16 text-primary dark:text-muted">
           Need Prayers, Counseling, or Listening Ear?
         </h2>
