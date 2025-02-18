@@ -69,9 +69,9 @@ export default function LiveServiceModal({
       const currentTime = now.getTime();
 
       const serviceTimes = [
-        { day: 2, hour: 9, minute: 0, endHour: 10, endMinute: 15 }, // Tuesday 9 AM - 10:10 AM
-        { day: 3, hour: 18, minute: 0, endHour: 19, endMinute: 15 }, // Wednesday 6 PM - 7:10 PM
-        { day: 5, hour: 18, minute: 0, endHour: 19, endMinute: 15 }, // Friday 6 PM - 7:10 PM
+        { day: 2, hour: 9, minute: 0, endHour: 10, endMinute: 15 }, // Tuesday 9 AM - 10:15 AM
+        { day: 3, hour: 18, minute: 0, endHour: 19, endMinute: 15 }, // Wednesday 6 PM - 7:15 PM
+        { day: 5, hour: 18, minute: 0, endHour: 19, endMinute: 15 }, // Friday 6 PM - 7:15 PM
       ];
 
       let nextProgram = null;
@@ -219,7 +219,11 @@ export default function LiveServiceModal({
                       <p className="text-primary dark:text-muted text-lg">
                         The next service, {nextService?.title}, will be live{" "}
                         {nextService?.weekDay === new Date().getDay()
-                          ? "this evening"
+                          ? `this ${
+                              nextService?.weekDay > 2 ? "evening" : "morning"
+                            }`
+                          : nextService?.weekDay === new Date().getDay() + 1
+                          ? "tomorrow"
                           : "on " + nextService?.day}{" "}
                         at {nextService?.time}. Please check back at the
                         scheduled time to join us. Program would be live in...

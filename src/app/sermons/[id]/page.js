@@ -34,7 +34,6 @@ export default function SermonPage({ params }) {
 
               <div className="flex justify-between items-center text-lg">
                 <p>Minister: {sermon.preacher}</p>
-
                 <p>{sermon.date}</p>
               </div>
 
@@ -47,16 +46,23 @@ export default function SermonPage({ params }) {
                 ></iframe>
               </div>
 
-              <TextFormatter text={sermon.message} />
+              <div className="mt-16 mb-10">
+                <p className="text-xl mb-5 italic">
+                  Study Text: {sermon.studyText}
+                </p>
+                <TextFormatter text={sermon.message} />
+              </div>
 
               <div className="text-lg text-light bg-primary border-2 border-primary dark:border-muted rounded-xl p-5">
                 <p>Prayer points:</p>
-                <ol className="list-decimal list-inside">
-                  {sermon.prayers
-                    .split(/\d+\.\s+/)
-                    .map((prayer, index) =>
-                      prayer.trim() ? <li key={index}>{prayer}</li> : null
-                    )}
+                <ol className="list-decimal list-outside">
+                  {sermon.prayers.split(/;\s*/).map((prayer, index) =>
+                    prayer.trim() ? (
+                      <li key={index} className="ml-10 pl-4 leading-relaxed">
+                        {prayer}
+                      </li>
+                    ) : null
+                  )}
                 </ol>
               </div>
             </div>
