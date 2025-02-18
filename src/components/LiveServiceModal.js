@@ -132,8 +132,6 @@ export default function LiveServiceModal({
         setCountdown(null);
         setNextService(serviceSchedule[nextProgram.day]);
       }
-
-      console.log("Next Program:", nextProgram);
     };
 
     calculateCountdown();
