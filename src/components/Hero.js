@@ -34,7 +34,7 @@ export default function Hero() {
 
         <button
           onClick={() => setIsScheduleModalOpen(true)}
-          className="py-3 px-14 mt-10 rounded-full text-base font-normal bg-secondary dark:bg-accent hover:bg-accent dark:hover:bg-secondary transition duration-500 ease-in-out text-white cursor-pointer"
+          className="py-3 px-14 mt-10 rounded-full text-base font-normal bg-secondary dark:bg-accent hover:bg-accent dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
         >
           Explore Programs
         </button>

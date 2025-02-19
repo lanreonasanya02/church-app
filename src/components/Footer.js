@@ -95,7 +95,7 @@ export default function Footer() {
 
                 <button
                   type="submit"
-                  className="w-full bg-secondary dark:bg-accent text-white p-3 my-2 rounded-full text-base"
+                  className="w-full bg-secondary dark:bg-accent hover:bg-accent p-3 my-2 rounded-full text-base dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
                   onClick={() => setIsSubmitted(true)}
                 >
                   {isSubmitted ? "Submitting..." : "Submit"}
@@ -105,7 +105,6 @@ export default function Footer() {
                   type="hidden"
                   name="_next"
                   value="https://church-app-blond.vercel.app/thank-you"
-                  //   value="https://localhost:3000/thank-you"
                 />
               </div>
             </form>

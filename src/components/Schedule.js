@@ -16,7 +16,7 @@ export default function Schedule() {
 
         <button
           onClick={() => setIsBookingModalOpen(true)}
-          className="py-3 px-14 rounded-full text-base bg-secondary dark:bg-accent hover:bg-accent dark:hover:bg-secondary transition duration-500 ease-in-out text-white cursor-pointer"
+          className="py-3 px-14 rounded-full text-base bg-secondary dark:bg-accent hover:bg-accent dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
         >
           Talk To Us
         </button>
