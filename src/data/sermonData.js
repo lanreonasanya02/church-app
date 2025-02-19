@@ -26,7 +26,7 @@ export const sermonsData = [
       "Christians possess a priceless treasure—eternal life—which is worth more than all the riches of this world. Because of this, they become targets of various enemies, some of which are unseen. Unseen enemies are the most dangerous because they strike without warning. For Christians, these enemies exist in different forms, yet many remain unaware of them. It is crucial for a believer to have knowledge and discernment to identify these threats. A lack of understanding about unseen enemies has caused many Christians to compromise their faith and struggle to do God's will (Psalm 22:12-13). However, awareness of unseen enemies should not lead to fear or paranoia. God is on our side, and He knows all things. A Christian must simply remain devoted to God and walk in obedience to His Word. Those who stay in God's presence daily are already on the path to overcoming every tactic and attack of unseen enemies. In His perfect timing, the Lord will reveal the necessary battles to fight (Deuteronomy 20:1-4, Psalm 118:11-14).",
     studyText: "1 Timothy 6:12-14",
     prayers:
-      "LORD, reveal to me the evil plots of unseen enemies so that I do not fall into their hands; LORD, help me remain in You so that I may overcome every attack of unseen enemies; LORD, strengthen my faith so that I will not live in fear of unseen enemies but trust in You for deliverance.",
+      "LORD, reveal to me the evil plots of unseen enemies so that I do not fall into their hands; LORD, help me remain in You so that I may overcome every attack of unseen enemies; LORD, help me not to live in the fear of unseen enemies but trust in you to deliver me.",
   },
 
   {
