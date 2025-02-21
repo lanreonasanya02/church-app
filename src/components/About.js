@@ -42,15 +42,15 @@ export default function About() {
   return (
     <div
       id="about"
-      className="grid grid-cols-2 container mx-auto place-items-center h-[900px] text-primary dark:text-muted"
+      className="md:grid grid-cols-2 flex flex-col-reverse container mx-auto place-items-center md:h-[900px] text-primary dark:text-muted py-12 md:py-0"
     >
-      <div className="px-16 text-primary dark:text-muted">
-        <h4 className="text-sm tracking-widest uppercase text-accent">
+      <div className="px-8 md:px-16 text-primary dark:text-muted">
+        <h4 className="hidden md:block text-sm tracking-widest uppercase text-accent">
           About Us
         </h4>
-        <h2 className="text-5xl my-3">A Family in Christ</h2>
+        <h2 className="hidden md:block text-5xl my-3">A Family in Christ</h2>
 
-        <p className=" mt-10 italic">Calvary Greetings,</p>
+        <p className="mt-3 md:mt-10 italic">Calvary Greetings,</p>
         <br />
 
         <p>
@@ -85,37 +85,47 @@ export default function About() {
       </div>
 
       {/* Fixed height container to prevent layout shift */}
-      <div className="w-[65%] h-[700px] grid grid-cols-2 gap-4 relative">
-        <AnimatePresence mode="popLayout">
-          {currentImages.length > 0 && (
-            <motion.div
-              key={currentImages.join(",")} // Use key to trigger re-render smoothly
-              className="absolute inset-0 grid grid-cols-2 gap-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-            >
-              {currentImages.map((img, i) => (
-                <motion.div
-                  key={img}
-                  className={`relative rounded-xl overflow-hidden shadow-lg ${
-                    i === 0 ? "col-span-2 h-[250px]" : "h-[200px]"
-                  }`}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <Image
-                    src={img}
-                    alt={`Gallery Image ${i + 1}`}
-                    className="w-full h-full object-cover object-top rounded-xl"
-                    width={100}
-                    height={100}
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
+      <div className="w-[90%] md:w-[65%] h-[850px] md:h-[700px]">
+        {/* For Mobile display only */}
+        <div className="md:hidden">
+          <h4 className="text-sm tracking-widest uppercase text-accent">
+            About Us
+          </h4>
+          <h2 className="text-5xl my-3">A Family in Christ</h2>
+          <br />
+        </div>
+        <div className="grid grid-cols-2 gap-4 relative">
+          <AnimatePresence mode="popLayout">
+            {currentImages.length > 0 && (
+              <motion.div
+                key={currentImages.join(",")} // Use key to trigger re-render smoothly
+                className="absolute inset-0 grid grid-cols-2 gap-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+              >
+                {currentImages.map((img, i) => (
+                  <motion.div
+                    key={img}
+                    className={`relative rounded-xl overflow-hidden shadow-lg ${
+                      i === 0 ? "col-span-2 h-[250px]" : "h-[200px]"
+                    }`}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <Image
+                      src={img}
+                      alt={`Gallery Image ${i + 1}`}
+                      className="w-full h-full object-cover object-top rounded-xl"
+                      width={100}
+                      height={100}
+                    />
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );

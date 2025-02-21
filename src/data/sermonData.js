@@ -1,5 +1,20 @@
 export const sermonsData = [
   {
+    id: 2705471,
+    title: "Discernment",
+    preacher: "Pastor Isaiah Bello",
+    program: "Hour of Mercy",
+    imageUrl:
+      "https://imagecdn.mixlr.com/cdn-cgi/image/fit=cover,format=auto,width=1024,height=1024,quality=80,dpr=1,background=%23a48859/704c793abd71c04a8703d1567c25b34f.png",
+    date: "19 Feb 2025",
+    message:
+      "Discernment is a spiritual gift that is added to a believer as he grows in the love of God. The love of God produces empathy for His church enabling believers to love one another more effectively and one of the gifts that allows a believer to care for the household of God is discernment. Discernment is a gift of love, which allows a believer to be mindful of his brethren in Christ and care for them appropriately. It is a gift usually present in the life of shepherds of the church of God so that they can rightly monitor and care for the flock of God and keep them alert and free from the dangers and troubles that oppose their faith - Philippians 2:5-7.Discernment is not suspicion because suspicion has to do with experience which sometimes produces false imaginations but discernment is divine and produces accurate results every time. Discernment has to do with love while suspicion has to do with fear. Discernment is selfless while suspicion is selfish. A suspicious mind is untrusting whereas a discerning heart is always hopeful - Proverbs 17:24. A suspicious person sows discord among brethren and find faults in others to protect and justify his wicked imaginations but a discerning person is wise and does not work iniquity. Suspicion may sometimes be correct but it leaves torment in the mind of the suspicious person because he is unsure of his suspicion but the discerning heart has peace and assurance because his counsel comes from the LORD, who knows all men - Proverbs 6:12-14.Discernment is given to man to identify the spirit that is in man whether it is of God or not and to discern the will of God so that we may identify the intentions of God and carry out His will - 1 Corinthians 2:11-12, 15-16. Christ operated fully in the mind of God to discern the will of God that he may accurately carry out God’s will for his life on earth toward His church because he is the Son of God and we are like Christ if we also possess the same mind as Christ, doing the same things that he did.",
+    studyText: "Philippians 1:9-11",
+    prayers:
+      "⁠LORD, deliver me from wicked imaginations that produce suspicion; ⁠LORD, help me to grow in your love daily so that I will not work iniquity in the house of God; ⁠LORD, give me the gift of discernment so that I will care for your church properly.",
+  },
+
+  {
     id: 2704328,
     title: "Heaviness",
     preacher: "Pastor Isaiah Bello",
@@ -74,20 +89,20 @@ export const sermonsData = [
       "LORD, teach me your fear so that I will fear you from a place of understanding and reverence; LORD, help me come to the right balance of the knowledge of your fear and love; LORD, help me not to be afraid for my life but entrust it completely to you.",
   },
 
-  {
-    id: 2691701,
-    title: "Dream Interpretation",
-    preacher: "Pastor Isaiah Bello",
-    program: "Hour of Mercy",
-    imageUrl:
-      "https://imagecdn.mixlr.com/cdn-cgi/image/fit=cover,format=auto,quality=80,dpr=1,background=%23293533/de700cf04c381897f9f1531bb6a3ed25.png",
-    date: "05 Feb 2025",
-    message:
-      "One of the common errors of the present-day believer is the desire to gain spiritual approval without the necessary calling and training. Everyone dreams, but not everyone has the gift and understanding to interpret dreams, particularly those that pertain to the lives of others. Some believers unknowingly become obstacles and temptations to the faith of others by wrongfully interpreting dreams. Dreams are a personal revelation to the dreamer about their faith and conviction concerning their life. A dream could be inspired by the Spirit of God or from the devil. Any believer who lacks adequate understanding of the true knowledge of God will easily misinterpret their dreams if they attempt to provide meaning on their own – Genesis 40:1-23. No man has the sole ability to identify the meaning of all mysteries in this world, but there are ways a believer can identify and understand their dreams: 1.⁠⁠ Prayer for God to send understanding concerning a dream (Psalm 119:169). 2.⁠ ⁠Adequate knowledge of the word of God helps a believer determine whether a dream is from God or not, based on scriptural references (Psalm 19:7-8).  3.⁠ ⁠The gift of dream interpretation enables a believer to decipher and interpret dreams in plain words, but this relies on the first two points for the proper training of this gift – Daniel 1:17. As a bonus point, it is also beneficial for a believer to have higher spiritual authority to submit their dreams to for reproof. God will always bear witness to His word, so if a dream is from Him, both the dream and its interpretation will receive testimonies of approval from believers who possess the Spirit of God – 1 Corinthians 14:26-33. Arrogance and fear in this generation have led many unqualified individuals to assume the role of dream interpreters. A dream is better left uninterpreted than given a wrong interpretation that can lead a believer's faith astray – Jeremiah 23:32. Believers should be careful when interpreting dreams for themselves or others. Instead, they should submit to the right authorities in the church so that God's will can be done, and everyone can receive their due blessings and rewards for proper guidance and obedience to His word – Romans 13:1-2.",
-    studyText: "Acts 10:9-20",
-    prayers:
-      "⁠LORD, help me submit myself to the right authorities so that I may receive the blessings that come from Your every word; ⁠LORD, help me increase in the true knowledge of Your word so that I can distinguish dreams that come from Your Spirit from those that don't.",
-  },
+  // {
+  //   id: 2691701,
+  //   title: "Dream Interpretation",
+  //   preacher: "Pastor Isaiah Bello",
+  //   program: "Hour of Mercy",
+  //   imageUrl:
+  //     "https://imagecdn.mixlr.com/cdn-cgi/image/fit=cover,format=auto,quality=80,dpr=1,background=%23293533/de700cf04c381897f9f1531bb6a3ed25.png",
+  //   date: "05 Feb 2025",
+  //   message:
+  //     "One of the common errors of the present-day believer is the desire to gain spiritual approval without the necessary calling and training. Everyone dreams, but not everyone has the gift and understanding to interpret dreams, particularly those that pertain to the lives of others. Some believers unknowingly become obstacles and temptations to the faith of others by wrongfully interpreting dreams. Dreams are a personal revelation to the dreamer about their faith and conviction concerning their life. A dream could be inspired by the Spirit of God or from the devil. Any believer who lacks adequate understanding of the true knowledge of God will easily misinterpret their dreams if they attempt to provide meaning on their own – Genesis 40:1-23. No man has the sole ability to identify the meaning of all mysteries in this world, but there are ways a believer can identify and understand their dreams: 1.⁠⁠ Prayer for God to send understanding concerning a dream (Psalm 119:169). 2.⁠ ⁠Adequate knowledge of the word of God helps a believer determine whether a dream is from God or not, based on scriptural references (Psalm 19:7-8).  3.⁠ ⁠The gift of dream interpretation enables a believer to decipher and interpret dreams in plain words, but this relies on the first two points for the proper training of this gift – Daniel 1:17. As a bonus point, it is also beneficial for a believer to have higher spiritual authority to submit their dreams to for reproof. God will always bear witness to His word, so if a dream is from Him, both the dream and its interpretation will receive testimonies of approval from believers who possess the Spirit of God – 1 Corinthians 14:26-33. Arrogance and fear in this generation have led many unqualified individuals to assume the role of dream interpreters. A dream is better left uninterpreted than given a wrong interpretation that can lead a believer's faith astray – Jeremiah 23:32. Believers should be careful when interpreting dreams for themselves or others. Instead, they should submit to the right authorities in the church so that God's will can be done, and everyone can receive their due blessings and rewards for proper guidance and obedience to His word – Romans 13:1-2.",
+  //   studyText: "Acts 10:9-20",
+  //   prayers:
+  //     "⁠LORD, help me submit myself to the right authorities so that I may receive the blessings that come from Your every word; ⁠LORD, help me increase in the true knowledge of Your word so that I can distinguish dreams that come from Your Spirit from those that don't.",
+  // },
 
   //   {
   //     id: 2690513,

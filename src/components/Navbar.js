@@ -35,11 +35,11 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`flex justify-between container mx-auto border border-dark dark:border-muted bg-dark dark:bg-muted text-light dark:text-primary mt-5 pt-2.5 px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
-          isMenuOpen ? "h-[90vh]" : "h-20 "
+        className={`flex justify-between mx-5 md:container md:mx-auto border border-dark dark:border-muted bg-dark dark:bg-muted text-light dark:text-primary mt-2 md:mt-5 pt-2.5 px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
+          isMenuOpen ? "h-[65vh] md:h-[80vh]" : "h-20 md:h-20"
         }`}
       >
-        <div>
+        <div className="w-16 md:w-16">
           <Image
             src="/logo.png"
             alt="logo"
@@ -55,7 +55,7 @@ export default function Navbar() {
             <div className=" space-x-8 text-xs">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="py-3 px-14 rounded-full text bg-secondary text-white"
+                className="hidden md:block py-3 px-14 rounded-full text bg-secondary text-white"
               >
                 <motion.div
                   animate={{
@@ -78,7 +78,7 @@ export default function Navbar() {
             <div className="relative group text-xs">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="py-3 px-14 rounded-full text bg-secondary dark:bg-accent hover:bg-accent dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
+                className="hidden md:block py-3 px-14 rounded-full text bg-secondary dark:bg-accent hover:bg-accent dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
               >
                 See Upcoming Program
               </button>
@@ -97,11 +97,11 @@ export default function Navbar() {
           {/* Collapsible Menu */}
           <div
             className={`absolute top-20 right-0 bg-dark dark:bg-muted text-light rounded-lg shadow-lg transition-all duration-500 ease-in-out w-full flex flex-col justify-center ${
-              isMenuOpen ? "h-[80vh] overflow-y-auto" : "h-0"
+              isMenuOpen ? "h-[65vh] md:h-[80vh] overflow-y-auto" : "h-0"
             }`}
           >
             {isMenuOpen && (
-              <div className="flex flex-col space-y-14 items-center text-6xl justify-center flex-grow">
+              <div className="flex flex-col space-y-8 md:space-y-14 items-center text-5xl md:text-6xl justify-center flex-grow">
                 <ScrollLink
                   to="home"
                   smooth={true}

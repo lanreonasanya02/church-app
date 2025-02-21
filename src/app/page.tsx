@@ -11,7 +11,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 export default function Home() {
   return (
     <>
-      <div className="bg-hero dark:bg-church-banner-dark min-h-screen bg-cover bg-center pt-5">
+      <div className="bg-mobile-hero dark:bg-mobile-dark-hero md:bg-hero md:dark:bg-church-banner-dark min-h-screen bg-cover bg-center pt-5">
         <Navbar />
         <Hero />
       </div>
