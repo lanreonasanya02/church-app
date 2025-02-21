@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import ScrambleText from "@/components/ScrambledText";
 import ScheduleModal from "@/components/ScheduleModal";
 import LiveServiceModal from "@/components/LiveServiceModal";
+import { motion } from "framer-motion";
+import { HiOutlineStatusOnline } from "react-icons/hi";
 import axios from "axios";
 
 const MIXLR_USERNAME = "amazing-grace-heirs";
