@@ -34,14 +34,14 @@ export default function Sermons() {
         <div className="my-10  text-center">
           {/* Search Input */}
           <input
-            type="text"
+            type="search"
             placeholder="Looking for a sermon?"
             value={searchTerm}
             onChange={(e) => {
               setSearchTerm(e.target.value);
               setCurrentPage(0);
             }}
-            className="w-[500px] p-2 border rounded-md text-primary"
+            className="w-[500px] py-2 px-5 border rounded-md text-primary"
           />
         </div>
 
@@ -50,7 +50,7 @@ export default function Sermons() {
             paginatedSermons.map((sermon) => (
               <div
                 key={sermon.id}
-                className="relative group bg-white text-primary rounded-lg overflow-hidden"
+                className="relative group text-primary rounded-lg overflow-hidden"
               >
                 <Image
                   src={sermon.imageUrl}
@@ -59,14 +59,14 @@ export default function Sermons() {
                   width={100}
                   height={100}
                 />
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold truncate border-b-2 pb-3">
+                <div className="p-8 bg-light dark:bg-muted">
+                  <h3 className="text-2xl font-bold truncate border-b-2 pb-3 border-muted dark:border-primary">
                     {sermon.title}
                   </h3>
 
                   <p className="text-lg line-clamp-3 my-3">{sermon.message}</p>
 
-                  <div className="flex justify-between border-t-2 pt-3">
+                  <div className="flex justify-between border-t-2 border-muted dark:border-primary pt-3">
                     <p className="text-base">{sermon.preacher}</p>
                     <p className="text-base">Date: {sermon.date}</p>
                   </div>

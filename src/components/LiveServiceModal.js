@@ -69,6 +69,7 @@ export default function LiveServiceModal({
       const currentTime = now.getTime();
 
       const serviceTimes = [
+        { day: 0, hour: 11, minute: 0, endHour: 12, endMinute: 15 }, // Tuesday 11 AM - 12:15 PM
         { day: 2, hour: 9, minute: 0, endHour: 10, endMinute: 15 }, // Tuesday 9 AM - 10:15 AM
         { day: 3, hour: 18, minute: 0, endHour: 19, endMinute: 15 }, // Wednesday 6 PM - 7:15 PM
         { day: 5, hour: 18, minute: 0, endHour: 19, endMinute: 15 }, // Friday 6 PM - 7:15 PM
