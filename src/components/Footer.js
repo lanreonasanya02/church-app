@@ -10,7 +10,7 @@ export default function Footer() {
 
   return (
     <footer id="contact" className="bg-church-hero bg-cover relative">
-      <div className="container mx-auto py-20 text-light">
+      <div className="container mx-auto py-20 text-light dark:text-muted">
         <h2 className="text-5xl text-center">Get In Touch With Us</h2>
 
         <div className="w-[70%] h-[800px] grid grid-cols-2 gap-20 mx-auto place-items-center">
@@ -50,7 +50,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="py-14 px-8 border border-light bg-white dark:bg-muted rounded-lg text-primary">
+          <div className="py-14 px-8 border border-light bg-white dark:bg-accent rounded-lg text-primary">
             <span>Fields marked with an asterisk (*) are mandatory.</span>
             <form
               action="https://formsubmit.co/73741a0f52e7d6a8ca836c9de874ffbd"
@@ -60,42 +60,41 @@ export default function Footer() {
                 <div className="flex items-center gap-2 mt-5">
                   <input
                     type="text"
-                    placeholder="Name*"
-                    className="w-full p-3 border-2 border-muted focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-primary"
+                    placeholder="Name *"
+                    className="w-full p-3 bg-light dark:bg-primary border-2 border-muted dark:border-primary focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-light"
                     required
                   />
 
                   <input
                     type="text"
-                    placeholder="Surname*"
-                    className="w-full p-3 border-2 border-muted  focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-primary"
+                    placeholder="Surname *"
+                    className="w-full p-3 bg-light dark:bg-primary border-2 border-muted dark:border-primary  focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-light"
                     required
                   />
                 </div>
 
                 <input
                   type="email"
-                  placeholder="Email*"
-                  className="w-full p-3 my-5 border-2 border-muted focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-primary"
+                  placeholder="Email *"
+                  className="w-full p-3 my-5 bg-light dark:bg-primary border-2 border-muted dark:border-primary focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-light"
                   required
                 />
 
                 <input
                   type="tel"
-                  placeholder="Phone*"
-                  className="w-full p-3 my-2 border-2 border-muted  focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-primary"
+                  placeholder="Phone *"
+                  className="w-full p-3 my-2 bg-light dark:bg-primary border-2 border-muted dark:border-primary  focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-light"
                   required
                 />
 
                 <textarea
-                  placeholder="Message*"
-                  className="w-full p-3 my-2 border-2 border-muted focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-primary"
-                  required
+                  placeholder="Message"
+                  className="w-full p-3 my-2 bg-light dark:bg-primary border-2 border-muted dark:border-primary focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-light"
                 ></textarea>
 
                 <button
                   type="submit"
-                  className="w-full bg-secondary dark:bg-accent hover:bg-accent p-3 my-2 rounded-full text-base dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
+                  className="w-full bg-secondary dark:bg-primary hover:bg-primary p-3 my-2 rounded-full text-base dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
                   onClick={() => setIsSubmitted(true)}
                 >
                   {isSubmitted ? "Submitting..." : "Submit"}

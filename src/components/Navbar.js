@@ -6,6 +6,7 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LiveServiceModal from "@/components/LiveServiceModal";
 import { HiOutlineStatusOnline } from "react-icons/hi";
 import axios from "axios";
+import Link from "next/link";
 
 const MIXLR_USERNAME = "amazing-grace-heirs";
 
@@ -40,14 +41,17 @@ export default function Navbar() {
         }`}
       >
         <div className="w-16 md:w-16">
-          <Image
-            src="/logo.png"
-            alt="logo"
-            width={60}
-            height={60}
-            loading="eager"
-            title="Amazing Grace Covenant Prayer Assembly"
-          />
+          <Link href={"/"}>
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={60}
+              height={60}
+              loading="eager"
+              title="Amazing Grace Covenant Prayer Assembly"
+              className="cursor-pointer"
+            />
+          </Link>
         </div>
 
         <div className="flex justify-center items-center space-x-8 h-16">
