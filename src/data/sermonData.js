@@ -1,5 +1,20 @@
 export const sermonsData = [
   {
+    id: 2707361,
+    title: "Don't Be A Liar",
+    preacher: "Pastor Isaiah Bello",
+    program: "Hour of Warfare",
+    imageUrl:
+      "https://imagecdn.mixlr.com/cdn-cgi/image/fit=cover,format=auto,width=1024,height=1024,quality=80,dpr=1,background=%236e574c/5eb328ca68bbe3ff5ab3d9509b96d07f.jpg",
+    date: "21 Feb 2025",
+    message:
+      "All forms of lying are of the devil so anyone who continues to lie does not possess the Spirit of truth but a deceptive spirit. Lying is not a part of God nor was any lie found on the lips of Jesus and lying is not part of the fruit of the Holy Spirit - 1 Peter 2:22. In the case of the prostitute Rahab, who lied (when she was defending the Israelite scouts being at that time a person who had not yet known the ways of the LORD), she did what she thought best in her understanding. Her lie was not what protected the Israelite scouts but God, and neither did God use her lie to His advantage but He overlooked her sin seeing in her a sincere desire (faith) not to perish with the ungodly - Joshua 2:1-11. A Christian will never need to tell a lie if he lives daily according to the Spirit’s leadership and counsel. People lie when they take matters into their own hands and pursue selfish ambitions in the world. They lie to be accepted by there, to steal, to cheat, to kill. Above all, lying produces destruction and never the righteousness of God - Galatians 5:16. God is divine and His Spirit is the Spirit of Truth. If a Christian cannot speak or find the right words he is better off remaining silent because everyone will be accounted for every idle word which they speak - Matthew 12:36. Anyone who lies has an evil heart and hates the truth and will not be able to serve God because he is insincere with himself and with others - Proverbs 17:4. Christians ought not to lie because we are called to speak the truth (of God) and prove it by living righteously according to every word of God so whether we speak or act our lives must point to the truth (who is God) so that those who hear us and are willing to believe us can be saved - 1 Peter 2:11-12",
+    studyText: "1 John 4:13-17",
+    prayers:
+      "⁠LORD, help me not to live a deceitful life but to live according to your will; LORD, help me not to tell lies anymore but to live in the love of God toward all men",
+  },
+
+  {
     id: 2705471,
     title: "Discernment",
     preacher: "Pastor Isaiah Bello",
@@ -89,33 +104,78 @@ export const sermonsData = [
       "LORD, teach me your fear so that I will fear you from a place of understanding and reverence; LORD, help me come to the right balance of the knowledge of your fear and love; LORD, help me not to be afraid for my life but entrust it completely to you.",
   },
 
-  // {
-  //   id: 2691701,
-  //   title: "Dream Interpretation",
-  //   preacher: "Pastor Isaiah Bello",
-  //   program: "Hour of Mercy",
-  //   imageUrl:
-  //     "https://imagecdn.mixlr.com/cdn-cgi/image/fit=cover,format=auto,quality=80,dpr=1,background=%23293533/de700cf04c381897f9f1531bb6a3ed25.png",
-  //   date: "05 Feb 2025",
-  //   message:
-  //     "One of the common errors of the present-day believer is the desire to gain spiritual approval without the necessary calling and training. Everyone dreams, but not everyone has the gift and understanding to interpret dreams, particularly those that pertain to the lives of others. Some believers unknowingly become obstacles and temptations to the faith of others by wrongfully interpreting dreams. Dreams are a personal revelation to the dreamer about their faith and conviction concerning their life. A dream could be inspired by the Spirit of God or from the devil. Any believer who lacks adequate understanding of the true knowledge of God will easily misinterpret their dreams if they attempt to provide meaning on their own – Genesis 40:1-23. No man has the sole ability to identify the meaning of all mysteries in this world, but there are ways a believer can identify and understand their dreams: 1.⁠⁠ Prayer for God to send understanding concerning a dream (Psalm 119:169). 2.⁠ ⁠Adequate knowledge of the word of God helps a believer determine whether a dream is from God or not, based on scriptural references (Psalm 19:7-8).  3.⁠ ⁠The gift of dream interpretation enables a believer to decipher and interpret dreams in plain words, but this relies on the first two points for the proper training of this gift – Daniel 1:17. As a bonus point, it is also beneficial for a believer to have higher spiritual authority to submit their dreams to for reproof. God will always bear witness to His word, so if a dream is from Him, both the dream and its interpretation will receive testimonies of approval from believers who possess the Spirit of God – 1 Corinthians 14:26-33. Arrogance and fear in this generation have led many unqualified individuals to assume the role of dream interpreters. A dream is better left uninterpreted than given a wrong interpretation that can lead a believer's faith astray – Jeremiah 23:32. Believers should be careful when interpreting dreams for themselves or others. Instead, they should submit to the right authorities in the church so that God's will can be done, and everyone can receive their due blessings and rewards for proper guidance and obedience to His word – Romans 13:1-2.",
-  //   studyText: "Acts 10:9-20",
-  //   prayers:
-  //     "⁠LORD, help me submit myself to the right authorities so that I may receive the blessings that come from Your every word; ⁠LORD, help me increase in the true knowledge of Your word so that I can distinguish dreams that come from Your Spirit from those that don't.",
-  // },
+  {
+    id: 2691701,
+    title: "Dream Interpretation",
+    preacher: "Pastor Isaiah Bello",
+    program: "Hour of Mercy",
+    imageUrl:
+      "https://imagecdn.mixlr.com/cdn-cgi/image/fit=cover,format=auto,quality=80,dpr=1,background=%23293533/de700cf04c381897f9f1531bb6a3ed25.png",
+    date: "05 Feb 2025",
+    message:
+      "One of the common errors of the present-day believer is the desire to gain spiritual approval without the necessary calling and training. Everyone dreams, but not everyone has the gift and understanding to interpret dreams, particularly those that pertain to the lives of others. Some believers unknowingly become obstacles and temptations to the faith of others by wrongfully interpreting dreams. Dreams are a personal revelation to the dreamer about their faith and conviction concerning their life. A dream could be inspired by the Spirit of God or from the devil. Any believer who lacks adequate understanding of the true knowledge of God will easily misinterpret their dreams if they attempt to provide meaning on their own – Genesis 40:1-23. No man has the sole ability to identify the meaning of all mysteries in this world, but there are ways a believer can identify and understand their dreams: 1.⁠⁠ Prayer for God to send understanding concerning a dream (Psalm 119:169). 2.⁠ ⁠Adequate knowledge of the word of God helps a believer determine whether a dream is from God or not, based on scriptural references (Psalm 19:7-8).  3.⁠ ⁠The gift of dream interpretation enables a believer to decipher and interpret dreams in plain words, but this relies on the first two points for the proper training of this gift – Daniel 1:17. As a bonus point, it is also beneficial for a believer to have higher spiritual authority to submit their dreams to for reproof. God will always bear witness to His word, so if a dream is from Him, both the dream and its interpretation will receive testimonies of approval from believers who possess the Spirit of God – 1 Corinthians 14:26-33. Arrogance and fear in this generation have led many unqualified individuals to assume the role of dream interpreters. A dream is better left uninterpreted than given a wrong interpretation that can lead a believer's faith astray – Jeremiah 23:32. Believers should be careful when interpreting dreams for themselves or others. Instead, they should submit to the right authorities in the church so that God's will can be done, and everyone can receive their due blessings and rewards for proper guidance and obedience to His word – Romans 13:1-2.",
+    studyText: "Acts 10:9-20",
+    prayers:
+      "⁠LORD, help me submit myself to the right authorities so that I may receive the blessings that come from Your every word; ⁠LORD, help me increase in the true knowledge of Your word so that I can distinguish dreams that come from Your Spirit from those that don't.",
+  },
 
-  //   {
-  //     id: 2690513,
-  //     title: "Training In The Word",
-  //     preacher: "Pastor Isaiah Bello",
-  //     program: "Hour of Transformation",
-  //     imageUrl:
-  //       "https://imagecdn.mixlr.com/cdn-cgi/image/fit=cover,format=auto,quality=80,dpr=1,background=%2383542a/8c47d97a41501369d344653f2762b286.png",
-  //     date: "04 Feb 2025",
-  //     message:
-  //       "There was a time when the word of God was scarce and there was no open vision, and such a time will come again. Even now, there are moments in a Christian's life when the word of God may not come to them personally, and there are no visions for them to see. But one thing will remain—the written word of God — and the word of God that they have heard and seen will always stay with them to remind them of what God has said and what He will do. The word of God is like a roadmap for every Christian, and if we keep to it, we will not lose our way. Therefore, Christians must take care to write down the word of God that comes to them personally and also study the Bible, which is the general will of God for all who believe. On the day that the word of God becomes scarce, they can remind themselves of the word they have received—written, heard, and seen—to stay encouraged and steadfast in the way of God – Psalm 32:8, Psalm 119:91-93. Every Christian must grow in the Word so that they can grow in the right content and context. The absence of the word of God in a Christian's life is the reason why they fail to recognize how God speaks, what He can say, and who He is. The Bible contains the history and future of God so that a believer can understand His trajectory and purpose. It is the whole counsel of God – Psalm 119:11. No amount of visions or prophecies in this day and age can outdo the written word of God. It is 'the Word' that has been given by the inspiration of God, to which all prophecies and visions align. Some Christians do not keep a record of God's word by holding it dear to them and writing it down. Instead, they keep it loosely, so when they need the word, they cannot remember it. They begin to panic and fall into temptation, thinking that God has abandoned them. Some seek God for an answer He has already given – Deuteronomy 6:4-9, Isaiah 30:8. It is a matter of urgency and faith that those who have found the truth keep to the instructions and remain standing. Just as it was in the days when the word of God was scarce, so it will be again someday and even momentarily in our lives. But the word of God that you have discovered will remain with you. Therefore, seek the LORD while it is still early and while He is still near – 2 Timothy 3:14-17.",
-  // studyText: "1 Timothy 6:12-14",
-  //     prayers:
-  //       "⁠⁠LORD, help me to keep Your word dear to my heart; ⁠LORD, help me to remember Your word in the day of trouble; ⁠LORD, help me to grow in the right content and context of Your word so that I can apply it properly in my life.",
-  //   },
+  {
+    id: 2690513,
+    title: "Training In The Word",
+    preacher: "Pastor Isaiah Bello",
+    program: "Hour of Transformation",
+    imageUrl:
+      "https://imagecdn.mixlr.com/cdn-cgi/image/fit=cover,format=auto,quality=80,dpr=1,background=%2383542a/8c47d97a41501369d344653f2762b286.png",
+    date: "04 Feb 2025",
+    message:
+      "There was a time when the word of God was scarce and there was no open vision, and such a time will come again. Even now, there are moments in a Christian's life when the word of God may not come to them personally, and there are no visions for them to see. But one thing will remain—the written word of God — and the word of God that they have heard and seen will always stay with them to remind them of what God has said and what He will do. The word of God is like a roadmap for every Christian, and if we keep to it, we will not lose our way. Therefore, Christians must take care to write down the word of God that comes to them personally and also study the Bible, which is the general will of God for all who believe. On the day that the word of God becomes scarce, they can remind themselves of the word they have received—written, heard, and seen—to stay encouraged and steadfast in the way of God – Psalm 32:8, Psalm 119:91-93. Every Christian must grow in the Word so that they can grow in the right content and context. The absence of the word of God in a Christian's life is the reason why they fail to recognize how God speaks, what He can say, and who He is. The Bible contains the history and future of God so that a believer can understand His trajectory and purpose. It is the whole counsel of God – Psalm 119:11. No amount of visions or prophecies in this day and age can outdo the written word of God. It is 'the Word' that has been given by the inspiration of God, to which all prophecies and visions align. Some Christians do not keep a record of God's word by holding it dear to them and writing it down. Instead, they keep it loosely, so when they need the word, they cannot remember it. They begin to panic and fall into temptation, thinking that God has abandoned them. Some seek God for an answer He has already given – Deuteronomy 6:4-9, Isaiah 30:8. It is a matter of urgency and faith that those who have found the truth keep to the instructions and remain standing. Just as it was in the days when the word of God was scarce, so it will be again someday and even momentarily in our lives. But the word of God that you have discovered will remain with you. Therefore, seek the LORD while it is still early and while He is still near – 2 Timothy 3:14-17.",
+    studyText: "1 Timothy 6:12-14",
+    prayers:
+      "⁠LORD, help me to keep Your word dear to my heart; ⁠LORD, help me to remember Your word in the day of trouble; ⁠LORD, help me to grow in the right content and context of Your word so that I can apply it properly in my life.",
+  },
+
+  {
+    id: 2688602,
+    title: "Winning The Battle Of Life",
+    preacher: "Pastor Elijah Agbaje",
+    program: "Sunday sermon",
+    imageUrl:
+      "https://imagecdn.mixlr.com/cdn-cgi/image/fit=cover,format=auto,width=1024,height=1024,quality=80,dpr=1,background=%2347add8/ab1681aee2795b08d764793b155c2cb0.png",
+    date: "02 Feb 2025",
+    message:
+      "Every one born of a woman is born into a battlefield. There are both physical and spiritual battles that confront us. Sinners and saints will both fight different battles. While sinners contend with their sins, saints will contend against the world, the flesh and the devil. Oftentimes, when we hear the word of God, we come to a repentance in that moment because of a momentary conviction, but as soon as we leave the presence of God, we are confronted by the devil. He comes to prove our conviction/ resolve, that test is never easy because the devil never loses any battle that he wages expect against Christ. Regrettably, the mighty have truly fallen, many have been wounded by the fiery darts of the devil. The devil is a strong and experienced warrior, nevertheless his prowess is inferior to the power and authority of Jesus. The only problem today is that we are too distracted to seek the face of God. I need God way more than even the food I eatExamine your life before now and currently, see for yourself if you have grown. It is you who must confront the devil, but it is God who will give you victory. ‘Remember where you have fallen,’ you must defeat the devil. Revelation 2:5. Humble yourself today and allow God to use you for His wonders. Are you ready to be a servant firstly? You cannot afford to miss anything of God while you are in His house. When you come under the tutelage of God, you must commit to staying faithful and obedient to God. 2 Peter 2:22. A little diversion from the standard is enough to derail completely from God’s path, stay true to God’s standard, that’s the only acceptable way -Genesis 15:6. Where is your faith brethren? You must not allow fear/anxiety or delays to derail us from following God. I Timothy 1:18-20. Hebrews 12:2 - Don’t look to anyone else but Jesus and no matter how fierce the battle may be - with God’s promises in your heart and forgetting the failures of the past - victory is yours.",
+    studyText: "Revelation 2:5",
+    prayers:
+      "⁠Every ground that we have lost to the devil will be restored to us again in Jesus name; Father, I pray that every battle raging against my life, borne physically and spiritually must lose their hold over me today in Jesus name; ⁠Almighty God, arm me today with spiritual weapons so that I may defeat the enemies of my life in Jesus name",
+  },
+
+  {
+    id: 2686823,
+    title: "Train Your Ears",
+    preacher: "Pastor Isaiah Bello",
+    program: "Hour of Warfare",
+    imageUrl:
+      "https://imagecdn.mixlr.com/cdn-cgi/image/fit=cover,format=auto,width=1024,height=1024,quality=80,dpr=1,background=%23444440/aad9f26c6694a061ed1a07a1fa6694d4.png",
+    date: "31 Jan 2025",
+    message:
+      "It is important for a believer to train their hearing in the spirit so that they will be adept at hearing the word of the LORD when He speaks. Many believers are dull in hearing to the point that even when they hear the word physically they cannot discern the voice of the LORD. The hardness of heart is the reason why many cannot hear the voice of God because they are strongly convinced by their thoughts and the imagination of their heart seems right to them so even though they hear God physically, they will not hear him because their hearts reject the word which God speaks but the voice of God comes clearly to those who seek Him in sincere faith; who are bowed down to God in their heart - Exodus 16:15-27, Numbers 12:5-8. Some hear the word of the LORD but doubt the word of God so they hear amiss when He sends His word. They hear doom and are unable to identify God’s mercy and grace which speaks repentance and salvation to all men - Exodus 20:18-21. Some hear faintly in the spirit because they are not attentive and occasionally disobey so the voice of the LORD grows ever faint in their hearts and as an indication of their spiritual distance to God and some have gone deaf completely in spirit not knowing what the LORD’s will is both in spirit and physically because their hearts are hardened - Matthew 13:15. God will not be mocked, He will not continue to send His word to fools so those who increase in hearing God’s voice are those who continue to seek and obey Him whereas those who disobey God and pay no attention to Him will become completely deaf in the spirit not being able to hear nor discern the LORD’s voice but the voice of a stranger they will hear and they will accept as their LORD because the word of God has no place in their hearts - John 8:42-47. Every believer who will follow God till the end of their life must be conscious of training their ears to hear clearly in spirit so that they can know the LORD for themselves and hear from Him so that they will not give heed to another voice that is not of God being deceived that they are with the LORD - John 10:1-6.",
+    studyText: "James 1:19-21",
+    prayers:
+      "⁠LORD, make me quick to hear when you send your word; LORD, help me to detach myself from the worldly noise that blocks my spiritual ears; ⁠LORD, help me to hear you clearly when you speak; ⁠LORD, train my ears to grow more sharply so that my hearing will not grow faint",
+  },
+
+  {
+    id: 2684945,
+    title: "Train Your Eyes",
+    preacher: "Pastor Isaiah Bello",
+    program: "Hour of Mercy",
+    imageUrl:
+      "https://imagecdn.mixlr.com/cdn-cgi/image/fit=cover,format=auto,width=1024,height=1024,quality=80,dpr=1,background=%23a7876b/233e4a04c54e80962bcf0f557517b254.png",
+    date: "29 Jan 2025",
+    message:
+      "The eyes of a person’s spirit must be trained to see promptly and clearly in the spirit to discern the will of God and know where the LORD is taking him and what the LORD has set ahead of him. Visions are a necessity of the spirit, in that; they help a person add context to what the LORD is saying. Often the word of the LORD came to His prophets saying “See”, “Look”, and “Behold” because God wanted his servants to also grasp the picture of what he was saying as clearly as they were hearing Him - Jeremiah 1:11-12. God has handed the gift of visions and dreams to all men so that they can see in the spirit, the LORD, and turn to Him. The eyes of some believers (in spirit) have become so dim that they find it hard to discern the LORD, not being able to tell the difference between a vision, dream, or revelation or what it means and whether or not the LORD has spoken - Genesis 28:16. What you see and how well you see in the spirit however is determined by what spirit you are connected to and the faith that you carry towards it. The eyes of many have become blind in spirit because they have given up on their faith in God and they are constantly in need of being led - Isaiah 43:19. The eyes of the spirit are given to all men but they must be trained by continually seeking Him in faithful obedience if we seek Him we must also be ready to receive Him and obey Him - Mark 8:23-25.",
+    studyText: "Ephesians 1:15-19",
+    prayers:
+      "LORD, open the eyes of my heart to see clearly and promptly what you are showing me; ⁠LORD, help me to grasp the meaning of your word when you reveal it to me; ⁠LORD, help me to believe what you show me so that the eyes of my heart will not grow dim",
+  },
 ];
