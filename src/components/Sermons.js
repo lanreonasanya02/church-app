@@ -86,7 +86,7 @@ export default function Sermons() {
             ))
           ) : (
             <p className="text-center col-span-3 text-light dark:text-muted">
-              Oops...We couldn't find that sermon!
+              Oops...We couldn&apos;t find that sermon!
             </p>
           )}
         </div>
