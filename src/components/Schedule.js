@@ -6,11 +6,14 @@ export default function Schedule() {
 
   return (
     <>
-      <div id="connect" className="container mx-auto w-[70%] text-center p-20">
+      <div
+        id="connect"
+        className="container mx-auto w-[70%] text-center p-10 md:p-20"
+      >
         <h4 className="text-sm tracking-widest uppercase text-accent">
           Guidance That Matters, Right When You Need It
         </h4>
-        <h2 className=" text-7xl text-semibold mt-5 mb-16 text-primary dark:text-muted">
+        <h2 className="text-4xl md:text-7xl text-semibold mt-5 mb-16 text-primary dark:text-muted">
           Need Prayers, Counseling, or Listening Ear?
         </h2>
 

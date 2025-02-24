@@ -10,16 +10,19 @@ export default function Footer() {
 
   return (
     <footer id="contact" className="bg-church-hero bg-cover relative">
-      <div className="container mx-auto py-20 text-light dark:text-muted">
-        <h2 className="text-5xl text-center">Get In Touch With Us</h2>
+      <div className="container mx-auto px-10 md:px-0 py-20 text-light dark:text-muted">
+        <h2 className="text-4xl md:text-5xl text-center">
+          Get In Touch With Us
+        </h2>
 
-        <div className="w-[70%] h-[800px] grid grid-cols-2 gap-20 mx-auto place-items-center">
-          <div className="p-3">
-            <h3 className="text-2xl mb-5">
-              Let&apos;s Walk This Journey Together – Reach Out to Us Today!
+        <div className="w-100 md:w-[70%] md:h-[800px] grid md:grid-cols-2 gap-14 md:gap-20 mx-auto place-items-center">
+          <div className="md:p-3">
+            <h3 className="text-lg md:text-2xl mb-5 text-center md:text-start">
+              Let&apos;s Walk This Journey Together – <br />
+              Reach Out to Us Today!
             </h3>
 
-            <div className="flex items-center gap-8 text-lg">
+            <div className="flex items-center gap-3 md:gap-8 text-lg">
               <IoMdPin size={150} className="text-secondary dark:text-accent" />
               <div>
                 <p>
@@ -29,7 +32,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex items-center gap-8 border-y border-muted py-8 mb-5 text-lg">
+            <div className="flex items-center gap-5 md:gap-8 border-y border-muted py-8 mb-5 text-lg">
               <GiRotaryPhone
                 size={50}
                 className="text-secondary dark:text-accent"
@@ -40,7 +43,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex items-center gap-8 text-lg">
+            <div className="flex items-center gap-5 md:gap-8 text-lg">
               <HiClock size={50} className="text-secondary dark:text-accent" />
 
               <div>
@@ -50,8 +53,10 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="py-14 px-8 border border-light bg-white dark:bg-accent rounded-lg text-primary">
-            <span>Fields marked with an asterisk (*) are mandatory.</span>
+          <div className="py-14 px-8 border border-light bg-none dark:bg-accent rounded-xl text-primary">
+            <span className="text-light">
+              Fields marked with an asterisk (*) are mandatory.
+            </span>
             <form
               action="https://formsubmit.co/73741a0f52e7d6a8ca836c9de874ffbd"
               method="POST"
@@ -61,14 +66,14 @@ export default function Footer() {
                   <input
                     type="text"
                     placeholder="Name *"
-                    className="w-full p-3 bg-light dark:bg-primary border-2 border-muted dark:border-primary focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-light"
+                    className="w-full p-3 bg-light dark:bg-primary border-2 border-muted dark:border-primary focus:outline-none focus:ring-0 focus:border-primary rounded-lg dark:text-light"
                     required
                   />
 
                   <input
                     type="text"
                     placeholder="Surname *"
-                    className="w-full p-3 bg-light dark:bg-primary border-2 border-muted dark:border-primary  focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-light"
+                    className="w-full p-3 bg-light dark:bg-primary border-2 border-muted dark:border-primary  focus:outline-none focus:ring-0 focus:border-primary rounded-lg dark:text-light"
                     required
                   />
                 </div>
@@ -76,20 +81,20 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Email *"
-                  className="w-full p-3 my-5 bg-light dark:bg-primary border-2 border-muted dark:border-primary focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-light"
+                  className="w-full p-3 my-5 bg-light dark:bg-primary border-2 border-muted dark:border-primary focus:outline-none focus:ring-0 focus:border-primary rounded-lg dark:text-light"
                   required
                 />
 
                 <input
                   type="tel"
                   placeholder="Phone *"
-                  className="w-full p-3 my-2 bg-light dark:bg-primary border-2 border-muted dark:border-primary  focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-light"
+                  className="w-full p-3 my-2 bg-light dark:bg-primary border-2 border-muted dark:border-primary  focus:outline-none focus:ring-0 focus:border-primary rounded-lg dark:text-light"
                   required
                 />
 
                 <textarea
                   placeholder="Message"
-                  className="w-full p-3 my-2 bg-light dark:bg-primary border-2 border-muted dark:border-primary focus:outline-none focus:ring-0 focus:border-primary rounded-lg text-light"
+                  className="w-full p-3 my-2 bg-light dark:bg-primary border-2 border-muted dark:border-primary focus:outline-none focus:ring-0 focus:border-primary rounded-lg dark:text-light"
                 ></textarea>
 
                 <button
