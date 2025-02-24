@@ -36,10 +36,10 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`flex justify-between mx-5 md:container md:mx-auto border border-dark dark:border-muted bg-dark text-light dark:text-primary mt-2 md:mt-5 md:pt-2.5 px-5 md:px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
+        className={`flex justify-between mx-5 md:container md:mx-auto border border-dark bg-dark text-light dark:text-primary mt-2 md:mt-5 md:pt-2.5 px-5 md:px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
           isMenuOpen
             ? "h-[65vh] md:h-[80vh] dark:bg-dark"
-            : "h-14 md:h-20 dark:bg-muted"
+            : "h-14 md:h-20 dark:bg-muted dark:border-muted"
         }`}
       >
         <div className="w-11 md:w-16">
@@ -173,14 +173,14 @@ export default function Navbar() {
 
             {/* Footer with Copyright Info */}
             {isMenuOpen && (
-              <div className="hidden md:flex justify-between items-center px-10 mb-3 text-xs md:text-sm text-muted dark:text-primary">
+              <div className="hidden md:flex justify-between items-center px-10 mb-3 text-sm text-muted dark:text-accent">
                 <span>© 2025 Amazing Grace Heirs</span>
                 <span>All rights reserved</span>
               </div>
             )}
-
+            {/* Mobile screen */}
             {isMenuOpen && (
-              <div className="md:hidden px-10 mb-3 text-xs text-center md:text-sm text-muted dark:text-primary">
+              <div className="md:hidden px-10 mb-3 text-xs text-center text-muted dark:text-accent">
                 <span>© 2025 Amazing Grace Heirs. All rights reserved.</span>
               </div>
             )}
