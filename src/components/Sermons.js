@@ -29,9 +29,9 @@ export default function Sermons() {
       className="bg-primary text-white py-20 h-[1800px] relative"
     >
       <div className="container mx-auto">
-        <h2 className="text-5xl text-center">Latest Messages</h2>
+        <h2 className="text-4xl md:text-5xl text-center">Latest Messages</h2>
 
-        <div className="my-10  text-center">
+        <div className="my-10 text-center">
           {/* Search Input */}
           <input
             type="search"
@@ -41,11 +41,11 @@ export default function Sermons() {
               setSearchTerm(e.target.value);
               setCurrentPage(0);
             }}
-            className="w-[500px] py-2 px-5 border rounded-md text-primary"
+            className="w-[80%] md:w-[500px] py-2 px-5 border rounded-md text-primary"
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 px-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 px-10 md:px-20">
           {paginatedSermons.length > 0 ? (
             paginatedSermons.map((sermon) => (
               <div
@@ -60,15 +60,17 @@ export default function Sermons() {
                   height={100}
                 />
                 <div className="p-8 bg-light dark:bg-muted">
-                  <h3 className="text-2xl font-bold truncate border-b-2 pb-3 border-muted dark:border-primary">
+                  <h3 className="text-xl font-bold truncate border-b-2 pb-3 border-muted dark:border-primary">
                     {sermon.title}
                   </h3>
 
-                  <p className="text-lg line-clamp-3 my-3">{sermon.message}</p>
+                  <p className="text-base line-clamp-3 my-3">
+                    {sermon.message}
+                  </p>
 
-                  <div className="flex justify-between border-t-2 border-muted dark:border-primary pt-3">
-                    <p className="text-base">{sermon.preacher}</p>
-                    <p className="text-base">Date: {sermon.date}</p>
+                  <div className="flex justify-between border-t-2 border-muted dark:border-primary pt-3 text-sm md:text-base">
+                    <p>{sermon.preacher}</p>
+                    <p>Date: {sermon.date}</p>
                   </div>
                 </div>
 
@@ -83,8 +85,8 @@ export default function Sermons() {
               </div>
             ))
           ) : (
-            <p className="text-center col-span-3 text-gray-500">
-              No results found
+            <p className="text-center col-span-3 text-light dark:text-muted">
+              Oops...We couldn't find that sermon!
             </p>
           )}
         </div>
