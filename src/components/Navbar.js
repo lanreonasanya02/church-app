@@ -36,7 +36,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`flex justify-between mx-5 md:container md:mx-auto border border-dark dark:border-muted bg-dark dark:bg-muted text-light dark:text-primary mt-2 md:mt-5 md:pt-2.5 px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
+        className={`flex justify-between mx-5 md:container md:mx-auto border border-dark dark:border-muted bg-dark dark:bg-muted text-light dark:text-primary mt-2 md:mt-5 md:pt-2.5 px-5 md:px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
           isMenuOpen ? "h-[65vh] md:h-[80vh]" : "h-14 md:h-20"
         }`}
       >

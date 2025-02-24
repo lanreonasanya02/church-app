@@ -33,7 +33,7 @@ export default function Hero() {
 
   return (
     <div id="home">
-      <div className="md:hidden px-8 h-screen grid place-content-center">
+      <div className="md:hidden px-5 h-screen grid place-content-center">
         <p className="text-xl text-center md:text-start text-light md:text-primary dark:text-muted mb-6 font-semibold italic">
           Shalom in Christ,
         </p>
