@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { sermonsData } from "@/data/sermonData";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +7,18 @@ import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 export default function Sermons() {
   const [currentPage, setCurrentPage] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 576); // Example: Mobile = less than 768px
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   const itemsPerPage = 6;
 
@@ -19,14 +31,16 @@ export default function Sermons() {
 
   // Paginate results
   const paginatedSermons = filteredSermons.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
+    currentPage * (isMobile ? 1 : itemsPerPage),
+    (currentPage + 1) * (isMobile ? 1 : itemsPerPage)
   );
 
   return (
     <div
       id="sermons"
-      className="bg-primary text-white py-20 h-[1800px] relative"
+      className={`${
+        isMobile ? "h-100" : "h-[1600px]"
+      } bg-primary text-white py-20 relative`}
     >
       <div className="container mx-auto">
         <h2 className="text-4xl md:text-5xl text-center">Latest Messages</h2>
@@ -41,11 +55,12 @@ export default function Sermons() {
               setSearchTerm(e.target.value);
               setCurrentPage(0);
             }}
-            className="w-[80%] md:w-[500px] py-2 px-5 border rounded-md text-primary"
+            className="w-[90%] md:w-[500px] py-2 px-5 border rounded-md text-primary"
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 px-10 md:px-20">
+        {/* Sermon Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 px-5 md:px-20">
           {paginatedSermons.length > 0 ? (
             paginatedSermons.map((sermon) => (
               <div
@@ -55,7 +70,9 @@ export default function Sermons() {
                 <Image
                   src={sermon.imageUrl}
                   alt={sermon.title}
-                  className="w-full h-50 object-cover"
+                  className={`${
+                    isMobile ? "h-60" : "h-80"
+                  } w-full object-cover`}
                   width={100}
                   height={100}
                 />
@@ -92,7 +109,11 @@ export default function Sermons() {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="absolute bottom-10 left-0 right-0 mt-5 flex justify-center gap-4">
+        <div
+          className={`${
+            isMobile ? "pt-5" : "absolute bottom-10 left-0 right-0 "
+          }  mt-5 flex justify-center px-5 gap-4`}
+        >
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 0))}
             disabled={currentPage === 0}
@@ -103,13 +124,15 @@ export default function Sermons() {
           <button
             onClick={() =>
               setCurrentPage((prev) =>
-                (prev + 1) * itemsPerPage < filteredSermons.length
+                (prev + 1) * (isMobile ? 1 : itemsPerPage) <
+                filteredSermons.length
                   ? prev + 1
                   : prev
               )
             }
             disabled={
-              (currentPage + 1) * itemsPerPage >= filteredSermons.length
+              (currentPage + 1) * (isMobile ? 1 : itemsPerPage) >=
+              filteredSermons.length
             }
             className="p-4 hover:bg-blue-500 bg-accent transition-all duration-300 text-white rounded-full disabled:bg-gray-400"
           >
