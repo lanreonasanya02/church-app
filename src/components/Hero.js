@@ -34,11 +34,11 @@ export default function Hero() {
   return (
     <div id="home">
       <div className="md:hidden px-8 h-screen grid place-content-center">
-        <p className="text-xl text-primary dark:text-muted mb-6 font-semibold italic">
+        <p className="text-xl text-center md:text-start text-light md:text-primary dark:text-muted mb-6 font-semibold italic">
           Shalom in Christ,
         </p>
 
-        <h1 className="text-5xl md:text-6xl font-bold text-light md:text-primary dark:text-muted">
+        <h1 className="text-4xl md:text-6xl text-center md:text-start font-bold text-light md:text-primary dark:text-muted">
           We Are A Community of Devoted Puritans Committed to God&apos;s Word
           through
           <br />
@@ -54,7 +54,7 @@ export default function Hero() {
           <span className="text-secondary dark:text-accent">.</span>
         </h1>
 
-        <div className="md:hidden mt-5">
+        <div className="md:hidden mt-8 text-center md:text-start">
           {isLive ? (
             <div className="space-x-8 text-xs">
               <button

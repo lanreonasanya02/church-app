@@ -24,7 +24,7 @@ module.exports = {
         hero: "url('/christian-dark.jpg')",
         "church-banner-dark": "url('/praying.jpg')",
         "mobile-dark-hero": `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(/man-praying.jpg)`,
-        "mobile-hero": "url(/man-praying.jpg)",
+        "mobile-hero": `linear-gradient(rgba(255, 0, 12, 0.2), rgba(0, 0, 0, 0.5)), url(/man-praying.jpg)`,
         logo: "url('/logo.png')",
         "church-hero": `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/hands3.jpg')`,
         "thank-you": "url('/thank-you.jpg')",

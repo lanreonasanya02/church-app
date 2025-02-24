@@ -36,17 +36,17 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`flex justify-between mx-5 md:container md:mx-auto border border-dark dark:border-muted bg-dark dark:bg-muted text-light dark:text-primary mt-2 md:mt-5 pt-2.5 px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
-          isMenuOpen ? "h-[65vh] md:h-[80vh]" : "h-20 md:h-20"
+        className={`flex justify-between mx-5 md:container md:mx-auto border border-dark dark:border-muted bg-dark dark:bg-muted text-light dark:text-primary mt-2 md:mt-5 md:pt-2.5 px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
+          isMenuOpen ? "h-[65vh] md:h-[80vh]" : "h-14 md:h-20"
         }`}
       >
-        <div className="w-16 md:w-16">
+        <div className="w-11 grid place-content-center md:block md:w-100">
           <Link href={"/"}>
             <Image
               src="/logo.png"
               alt="logo"
-              width={60}
-              height={60}
+              width={100}
+              height={100}
               loading="eager"
               title="Amazing Grace Covenant Prayer Assembly"
               className="cursor-pointer"
@@ -54,7 +54,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="flex justify-center items-center space-x-8 h-16">
+        <div className="flex justify-center items-center space-x-8 h-14 md:h-16">
           {isLive ? (
             <div className=" space-x-8 text-xs">
               <button
@@ -89,10 +89,7 @@ export default function Navbar() {
             </div>
           )}
 
-          <div
-            onMouseOver={() => setIsMenuOpen(true)}
-            onClick={() => setIsMenuOpen(false)}
-          >
+          <div onClick={() => setIsMenuOpen((prev) => !prev)}>
             <button className="text-xs transform  hover:text-secondary p-2 rounded-lg">
               {isMenuOpen ? "Close" : "Menu"}
             </button>
@@ -170,10 +167,8 @@ export default function Navbar() {
 
             {/* Footer with Copyright Info */}
             {isMenuOpen && (
-              <div className="flex justify-between items-center px-10 text-sm text-muted dark:text-primary">
-                <span className="">
-                  © 2025 Amazing Grace Covenant Prayer Assembly
-                </span>
+              <div className="flex justify-between items-center px-10 mb-3 text-xs md:text-sm text-muted dark:text-primary">
+                <span>© 2025 Amazing Grace Heirs</span>
                 <span>All rights reserved</span>
               </div>
             )}

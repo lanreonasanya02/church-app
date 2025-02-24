@@ -41,7 +41,7 @@ const ScrambledText = ({ texts, duration = 3 }) => {
   }, [index, texts, duration]);
 
   return (
-    <span className="text-5xl md:text-6xl mt-3 text-secondary dark:text-accent">
+    <span className="text-4xl md:text-6xl mt-3 text-secondary dark:text-accent">
       {displayText}
     </span>
   );
