@@ -10,19 +10,19 @@ export default function Footer() {
 
   return (
     <footer id="contact" className="bg-church-hero bg-cover relative">
-      <div className="container mx-auto px-10 md:px-0 py-20 text-light dark:text-muted">
+      <div className="container mx-auto px-10 md:px-0 py-24 text-light dark:text-muted">
         <h2 className="text-4xl md:text-5xl text-center">
           Get In Touch With Us
         </h2>
 
-        <div className="w-100 md:w-[70%] md:h-[800px] grid md:grid-cols-2 gap-14 md:gap-20 mx-auto place-items-center">
+        <div className="w-100 md:w-[70%] md:h-[800px] grid md:grid-cols-2 gap-y-14 md:gap-x-20 mx-auto place-items-center">
           <div className="md:p-3">
-            <h3 className="text-lg md:text-2xl mb-5 text-center md:text-start">
+            <h3 className="text-lg md:text-2xl my-5 text-center md:text-start">
               Let&apos;s Walk This Journey Together – <br />
               Reach Out to Us Today!
             </h3>
 
-            <div className="flex items-center gap-3 md:gap-8 text-lg">
+            <div className="flex items-center gap-3 md:gap-x-8 text-lg">
               <IoMdPin size={150} className="text-secondary dark:text-accent" />
               <div>
                 <p>
@@ -53,7 +53,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="py-14 px-8 border border-light bg-none dark:bg-accent rounded-xl text-primary">
+          <div className="py-12 px-8 border border-light bg-none dark:bg-accent rounded-xl text-primary">
             <span className="text-light">
               Fields marked with an asterisk (*) are mandatory.
             </span>
@@ -116,8 +116,9 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 text-sm text-gray-500 p-4 flex justify-between container mx-auto">
-        <span>© 2025 Amazing Grace Covenant Prayer Assembly</span>
+      <div className="md:absolute bottom-5 left-0 right-0 text-sm text-gray-500 p-4 flex flex-col gap-y-3 md:flex-row md:justify-between text-center container mx-auto">
+        <span>© 2025 Amazing Grace Heirs</span>
+        <span className="md:hidden">All rights reserved.</span>
         <span>
           Made with{" "}
           <span className="inline-block">
@@ -131,7 +132,7 @@ export default function Footer() {
             Lanre Adeolu
           </Link>
         </span>
-        <span>All rights reserved</span>
+        <span className="hidden md:inline-block">All rights reserved.</span>
       </div>
     </footer>
   );
