@@ -36,20 +36,22 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`flex justify-between mx-5 md:container md:mx-auto border border-dark dark:border-muted bg-dark dark:bg-muted text-light dark:text-primary mt-2 md:mt-5 md:pt-2.5 px-5 md:px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
-          isMenuOpen ? "h-[65vh] md:h-[80vh]" : "h-14 md:h-20"
+        className={`flex justify-between mx-5 md:container md:mx-auto border border-dark dark:border-muted bg-dark text-light dark:text-primary mt-2 md:mt-5 md:pt-2.5 px-5 md:px-10 rounded-xl fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
+          isMenuOpen
+            ? "h-[65vh] md:h-[80vh] dark:bg-dark"
+            : "h-14 md:h-20 dark:bg-muted"
         }`}
       >
-        <div className="w-11 grid place-content-center md:block md:w-100">
+        <div className="w-11 md:w-16">
           <Link href={"/"}>
             <Image
               src="/logo.png"
               alt="logo"
-              width={100}
-              height={100}
+              width={60}
+              height={60}
               loading="eager"
               title="Amazing Grace Covenant Prayer Assembly"
-              className="cursor-pointer"
+              className="cursor-pointer pt-1.5 md:pt-0"
             />
           </Link>
         </div>
@@ -90,26 +92,30 @@ export default function Navbar() {
           )}
 
           <div onClick={() => setIsMenuOpen((prev) => !prev)}>
-            <button className="text-xs transform  hover:text-secondary p-2 rounded-lg">
+            <button
+              className={`${
+                isMenuOpen ? "text-secondary" : ""
+              } text-xs transform hover:text-secondary p-2 rounded-lg`}
+            >
               {isMenuOpen ? "Close" : "Menu"}
             </button>
           </div>
 
           {/* Collapsible Menu */}
           <div
-            className={`absolute top-20 right-0 bg-dark dark:bg-muted text-light rounded-lg shadow-lg transition-all duration-500 ease-in-out w-full flex flex-col justify-center ${
+            className={`absolute top-20 right-0 bg-dark dark:bg-dark text-light rounded-lg shadow-lg transition-all duration-500 ease-in-out w-full flex flex-col justify-center ${
               isMenuOpen ? "h-[65vh] md:h-[80vh] overflow-y-auto" : "h-0"
             }`}
           >
             {isMenuOpen && (
-              <div className="flex flex-col space-y-8 md:space-y-14 items-center text-5xl md:text-6xl justify-center flex-grow">
+              <div className="flex flex-col space-y-8 md:space-y-14 items-center text-3xl md:text-5xl justify-center flex-grow">
                 <ScrollLink
                   to="home"
                   smooth={true}
                   duration={500}
                   spy={true}
                   activeClass="text-secondary dark:text-primary"
-                  className="hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
+                  className="text-light md:hover:text-light md:text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
@@ -121,7 +127,7 @@ export default function Navbar() {
                   duration={500}
                   spy={true}
                   activeClass="text-secondary dark:text-primary"
-                  className="hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
+                  className="text-light md:hover:text-light md:text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   About
@@ -133,7 +139,7 @@ export default function Navbar() {
                   duration={500}
                   spy={true}
                   activeClass="text-secondary dark:text-primary"
-                  className="hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
+                  className="text-light md:hover:text-light md:text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Sermons
@@ -145,7 +151,7 @@ export default function Navbar() {
                   duration={500}
                   spy={true}
                   activeClass="text-secondary dark:text-primary"
-                  className="hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
+                  className="text-light md:hover:text-light md:text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Connect
@@ -157,7 +163,7 @@ export default function Navbar() {
                   duration={500}
                   spy={true}
                   activeClass="text-secondary dark:text-primary"
-                  className="hover:text-light text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
+                  className="text-light md:hover:text-light md:text-primary dark:text-accent dark:hover:text-light cursor-pointer transition duration-500 ease-in-out"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact
@@ -167,9 +173,15 @@ export default function Navbar() {
 
             {/* Footer with Copyright Info */}
             {isMenuOpen && (
-              <div className="flex justify-between items-center px-10 mb-3 text-xs md:text-sm text-muted dark:text-primary">
+              <div className="hidden md:flex justify-between items-center px-10 mb-3 text-xs md:text-sm text-muted dark:text-primary">
                 <span>© 2025 Amazing Grace Heirs</span>
                 <span>All rights reserved</span>
+              </div>
+            )}
+
+            {isMenuOpen && (
+              <div className="md:hidden px-10 mb-3 text-xs text-center md:text-sm text-muted dark:text-primary">
+                <span>© 2025 Amazing Grace Heirs. All rights reserved.</span>
               </div>
             )}
           </div>
