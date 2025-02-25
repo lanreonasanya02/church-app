@@ -92,7 +92,7 @@ export default function Sermons() {
 
                   <div className="flex justify-between border-t-2 border-muted dark:border-primary pt-3 text-sm md:text-base">
                     <p>{sermon.preacher}</p>
-                    <p>Date: {sermon.date}</p>
+                    <p>{sermon.date}</p>
                   </div>
                 </div>
 
