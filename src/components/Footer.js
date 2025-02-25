@@ -23,7 +23,10 @@ export default function Footer() {
             </h3>
 
             <div className="flex items-center gap-3 md:gap-x-8 text-lg">
-              <IoMdPin size={150} className="text-secondary dark:text-accent" />
+              <IoMdPin
+                size={150}
+                className="text-subSecondary dark:text-accent"
+              />
               <div>
                 <p>
                   10, Shobowale Street, Off Muhammed Lawal street, Cele Village,
@@ -35,7 +38,7 @@ export default function Footer() {
             <div className="flex items-center gap-5 md:gap-8 border-y border-muted py-8 mb-5 text-lg">
               <GiRotaryPhone
                 size={50}
-                className="text-secondary dark:text-accent"
+                className="text-subSecondary dark:text-accent"
               />
               <div>
                 <p>amazinggraceheirs@gmail.com</p>
@@ -44,7 +47,10 @@ export default function Footer() {
             </div>
 
             <div className="flex items-center gap-5 md:gap-8 text-lg">
-              <HiClock size={50} className="text-secondary dark:text-accent" />
+              <HiClock
+                size={50}
+                className="text-subSecondary dark:text-accent"
+              />
 
               <div>
                 <p>Mondays through Sundays</p>
@@ -99,7 +105,7 @@ export default function Footer() {
 
                 <button
                   type="submit"
-                  className="w-full bg-secondary dark:bg-primary hover:bg-primary p-3 my-2 rounded-full text-base dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
+                  className="w-full bg-subSecondary dark:bg-primary hover:bg-secondary p-3 my-2 rounded-full text-base dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
                   onClick={() => setIsSubmitted(true)}
                 >
                   {isSubmitted ? "Submitting..." : "Submit"}
@@ -124,7 +130,7 @@ export default function Footer() {
           <span className="inline-block">
             <HiHeart className="text-secondary" />
           </span>
-          {" from "}
+          {" by "}
           <Link
             href="https://lanre-portfolio.netlify.app/"
             className="hover:underline"

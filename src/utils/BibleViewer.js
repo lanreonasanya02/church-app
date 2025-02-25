@@ -99,7 +99,7 @@ export default function BibleViewer() {
       setVerseText(data.text || "Verse not found");
     } catch (error) {
       console.error("Error fetching verse:", error);
-      setVerseText("Error fetching verse");
+      setVerseText("Error fetching verse. Check internet connection.");
     }
   }
 
@@ -129,7 +129,9 @@ export default function BibleViewer() {
             Exit
           </span>
         </Link>
-        <span className="text-xl text-light underline">Bible Dock</span>
+        <span className="text-base font-bold text-light uppercase">
+          Bible Dock
+        </span>
       </div>
 
       {/* Dropdowns for Version & Book */}

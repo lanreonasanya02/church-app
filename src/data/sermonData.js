@@ -1,5 +1,20 @@
 export const sermonsData = [
   {
+    id: 2711364,
+    title: "Divine Encounter",
+    preacher: "Pastor Isaiah Bello",
+    program: "Hour of Transformation",
+    imageUrl:
+      "https://imagecdn.mixlr.com/cdn-cgi/image/fit=cover,format=auto,width=1024,height=1024,quality=80,dpr=1,background=%23e5e0bc/5616842484f6a30c96d17dfca8ecb413.png",
+    date: "25 Feb 2025",
+    message:
+      "Many are in search of a divine encounter with God but what is a Divine encounter? An encounter means meeting with something, most likely in an unexpected way through an event or incident. A divine encounter with God is man meeting with God which is a supernatural encounter because God is Spirit and divine. There was a time before the (first) coming of Jesus where it was scarce for anyone to just encounter God because the earth was filled with ungodly men who had rejected God in their hearts. In the old days, God did not freely reveal Himself to all men (as He has now done) because the heart of man did not search for God but if there is a man who is willing, whose heart truly searches for God, God reveals Himself to that man which is called “divine encounter”. God reveals Himself to the end that man may know Him, believe Him, and be saved - Genesis 6:3, Exodus 3:2-4, Acts 9:3-6. God has now freely made Himself available again and all men have access to God through “divine encounters” (even daily). Your dreams, visions, prophesies, and hearing from God, are all divine encounters with God but the lack of faith makes some turn a blind eye to the revelation of God which they have seen and do not consider God after all these things but continue to search for something other than what they’ve seen - Matthew 13:16-17. An encounter could be physical or spiritual, depending on How the LORD determines to reveal Himself to man but in either case, God reveals Himself in a way that man will know Him, hear His voice, and be able to identify His will, however, the whole matter depends on the faith of the individual who encounters God, and how he receives the revelation of God in himself - Luke 1:11-20, 26-45.The Pharisees thought that the messiah should come from a great house and would not accept the Jesus that God did reveal to them so they set their hearts against God’s Holy Son, and sought a different messiah than the one God sent. Many today are in search of the superficial though God has already revealed Himself in many encounters yet they have continued to reject God because they would not believe what their eyes have seen, and what their ears have heard - Matthew 11:11-19.",
+    studyText: "Matthew 1:18-25",
+    prayers:
+      "LORD, help me to identify every revelation of you that comes to me; ⁠LORD, help me to believe and accept your message when you reveal yourself to me; Let me receive impartations from your Spirit when you reveal yourself to me",
+  },
+
+  {
     id: 2707361,
     title: "Don't Be A Liar",
     preacher: "Pastor Isaiah Bello",

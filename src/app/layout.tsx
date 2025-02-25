@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Libre_Baskerville } from "next/font/google";
+import { Ubuntu } from "next/font/google";
 import "./globals.css";
 
-const libreBaskerville = Libre_Baskerville({
+const ubuntu = Ubuntu({
   weight: ["400", "700"],
   subsets: ["latin"],
   display: "swap",
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={libreBaskerville.className}>{children}</body>
+      <body className={ubuntu.className}>{children}</body>
     </html>
   );
 }

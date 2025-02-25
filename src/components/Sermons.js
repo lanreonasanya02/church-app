@@ -8,10 +8,15 @@ export default function Sermons() {
   const [currentPage, setCurrentPage] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 576); // Example: Mobile = less than 768px
+      if (window.innerWidth < 576) {
+        setIsMobile(true);
+      } else if (window.innerWidth > 577 && window.innerWidth < 992) {
+        setIsTablet(true);
+      }
     };
 
     checkScreenSize();
@@ -31,8 +36,8 @@ export default function Sermons() {
 
   // Paginate results
   const paginatedSermons = filteredSermons.slice(
-    currentPage * (isMobile ? 1 : itemsPerPage),
-    (currentPage + 1) * (isMobile ? 1 : itemsPerPage)
+    currentPage * (isMobile ? 1 : isTablet ? 4 : itemsPerPage),
+    (currentPage + 1) * (isMobile ? 1 : isTablet ? 4 : itemsPerPage)
   );
 
   return (
@@ -60,7 +65,7 @@ export default function Sermons() {
         </div>
 
         {/* Sermon Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 px-5 md:px-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 px-5 lg:px-0 xl:px-32">
           {paginatedSermons.length > 0 ? (
             paginatedSermons.map((sermon) => (
               <div
@@ -94,7 +99,7 @@ export default function Sermons() {
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out text-white cursor-pointer">
                   <Link
                     href={`/sermons/${sermon.id}`}
-                    className="py-3 px-14 mt-10 rounded-full text-base font-normal bg-secondary dark:bg-accent hover:bg-accent dark:hover:bg-secondary transition duration-500 ease-in-out text-white cursor-pointer"
+                    className="py-3 px-14 mt-10 rounded-full text-base font-normal bg-secondary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
                   >
                     View Sermon
                   </Link>
@@ -117,24 +122,25 @@ export default function Sermons() {
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 0))}
             disabled={currentPage === 0}
-            className="p-4 hover:bg-blue-500 bg-accent transition-all duration-300 text-white rounded-full disabled:bg-gray-400"
+            className="p-4 bg-subSecondary hover:bg-secondary dark:hover:bg-blue-500 dark:bg-accent transition-all duration-300 text-white rounded-full disabled:bg-gray-400"
           >
             <GrFormPrevious size={20} />
           </button>
           <button
             onClick={() =>
               setCurrentPage((prev) =>
-                (prev + 1) * (isMobile ? 1 : itemsPerPage) <
+                (prev + 1) * (isMobile ? 1 : isTablet ? 4 : itemsPerPage) <
                 filteredSermons.length
                   ? prev + 1
                   : prev
               )
             }
             disabled={
-              (currentPage + 1) * (isMobile ? 1 : itemsPerPage) >=
+              (currentPage + 1) *
+                (isMobile ? 1 : isTablet ? 4 : itemsPerPage) >=
               filteredSermons.length
             }
-            className="p-4 hover:bg-blue-500 bg-accent transition-all duration-300 text-white rounded-full disabled:bg-gray-400"
+            className="p-4 bg-subSecondary hover:bg-secondary dark:hover:bg-blue-500 dark:bg-accent transition-all duration-300 text-white rounded-full disabled:bg-gray-400"
           >
             <GrFormNext size={20} />
           </button>

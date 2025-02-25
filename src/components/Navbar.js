@@ -97,7 +97,7 @@ export default function Navbar() {
             <div className="relative group text-xs">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="hidden md:block py-3 px-14 rounded-full text bg-secondary dark:bg-accent hover:bg-accent dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
+                className="hidden md:block py-3 px-14 rounded-full text bg-secondary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
               >
                 See Upcoming Program
               </button>
@@ -108,7 +108,7 @@ export default function Navbar() {
             <button
               className={`${
                 isMenuOpen ? "text-secondary" : ""
-              } text-xs transform hover:text-secondary p-2 rounded-lg`}
+              } text-xs transform hover:text-subSecondary p-2 rounded-lg`}
             >
               {isMenuOpen ? "Close" : "Menu"}
             </button>

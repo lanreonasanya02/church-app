@@ -271,12 +271,15 @@ export default function LiveServiceModal({
                         The program should be live now, but we are waiting for
                         the broadcast to start. <br /> If the stream does not
                         begin shortly, please refresh the page or check back
-                        later.
+                        later. <br /> <br />
+                        The broadcast may also have ended, in which case, the
+                        next program will be displayed. Please stay tuned or
+                        check back later.
                       </p>
 
                       <button
                         onClick={() => window.location.reload()}
-                        className="py-3 px-14 mt-10 rounded-full text-base font-normal bg-secondary dark:bg-accent hover:bg-accent dark:hover:bg-secondary transition duration-500 ease-in-out text-white cursor-pointer"
+                        className="py-3 px-14 mt-10 rounded-full text-base font-normal bg-secondary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
                       >
                         Refresh
                       </button>

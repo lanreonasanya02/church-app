@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         primary: "#1E3A5F", // Deep Navy Blue (Main Backgrounds, Headers)
         secondary: "#ff000c", // Crimson Red (Buttons, Call-to-Action)
+        subSecondary: "#fe5656", // Crimson Red (Buttons, Call-to-Action)
         accent: "#4A90E2", // Light Blue (Hover Effects, Highlights)
         dark: "#202020", // Rich Black (Text, Footers, Navbar)
         light: "#F8F9FA", // Soft White (Backgrounds, Cards)
