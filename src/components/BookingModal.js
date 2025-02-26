@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 import CalendlyEmbed from "@/utils/CalendlyEmbed";
 
 export default function BookingModal({ isOpen, onClose }) {
+  // Prevents scrolling when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup function
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   return (
     <AnimatePresence>
       {isOpen && (

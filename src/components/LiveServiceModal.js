@@ -13,6 +13,20 @@ export default function LiveServiceModal({
   const [nextService, setNextService] = useState(null);
   const [timeOfDay, setTimeOfDay] = useState("");
 
+  // Prevents scrolling when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup function
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   const serviceSchedule = {
     0: {
       title: "Sunday sermon",

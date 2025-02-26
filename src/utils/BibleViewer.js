@@ -118,27 +118,12 @@ export default function BibleViewer() {
   }
 
   return (
-    <div className="p-2 text-center w-[100%] h-[100%] flex flex-col justify-between">
-      <div className="flex items-center gap-6 mb-5">
-        <Link
-          href="/"
-          className="relative group p-4 hover:bg-blue-500 bg-accent transition-all duration-300 text-white rounded-full"
-        >
-          <GrReturn size={20} />
-          <span className="absolute left-1/2 -translate-y-3/4 top-full mt-2 px-4 py-2 bg-red-500 text-white text-xs rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-            Exit
-          </span>
-        </Link>
-        <span className="text-base font-bold text-light uppercase">
-          Bible Dock
-        </span>
-      </div>
-
+    <div className="px-2 py-5 text-center w-[100%] h-[100%] flex flex-col justify-between bg-light dark:bg-darkBackground">
       {/* Dropdowns for Version & Book */}
       <div>
         <div className="mb-4 flex items-center gap-3 justify-center">
           <select
-            className="p-1 text-sm text-primary border rounded"
+            className="p-1 text-sm text-primary border border-primary dark:border-muted rounded"
             value={version}
             onChange={(e) => setVersion(e.target.value)}
           >
@@ -150,7 +135,7 @@ export default function BibleViewer() {
           </select>
 
           <select
-            className="p-1 text-sm text-primary border rounded"
+            className="p-1 text-sm text-primary border border-primary dark:border-muted rounded"
             value={book}
             onChange={(e) => {
               setBook(e.target.value);
@@ -171,7 +156,7 @@ export default function BibleViewer() {
         <div className="flex justify-center gap-3 mb-4">
           <input
             type="number"
-            className="p-1 text-sm text-primary border rounded w-20 text-center"
+            className="p-1 text-sm text-primary border border-primary dark:border-muted rounded w-20 text-center"
             value={chapter}
             min={1}
             max={books[book]}
@@ -185,9 +170,10 @@ export default function BibleViewer() {
             }}
             placeholder="chapter"
           />
+
           <input
             type="number"
-            className="p-1 text-sm text-primary border rounded w-20 text-center"
+            className="p-1 text-sm text-primary border border-primary dark:border-muted rounded w-20 text-center"
             value={verse}
             min={1}
             max={maxVerses}
@@ -202,7 +188,7 @@ export default function BibleViewer() {
         </div>
 
         {/* Verse Display */}
-        <p className="text-base bg-white text-primary px-1 py-5 rounded flex flex-grow items-center justify-center">
+        <p className="text-base bg-white text-primary p-2 rounded flex flex-grow items-center justify-center overflow-y-auto border border-primary dark:border-muted">
           {verseText}
         </p>
       </div>
@@ -210,14 +196,14 @@ export default function BibleViewer() {
       {/* Navigation Buttons */}
       <div className="flex justify-center gap-4 mt-4">
         <button
-          className="p-4 hover:bg-blue-500 bg-accent transition-all duration-300 text-white rounded-full disabled:bg-gray-400"
+          className="p-4 bg-accent hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer rounded-full disabled:bg-gray-400"
           onClick={() => setVerse((prev) => prev - 1)}
           disabled={!verse || verse <= 1}
         >
           <GrFormPrevious size={20} />
         </button>
         <button
-          className="p-4 hover:bg-blue-500 bg-accent transition-all duration-300 text-white rounded-full disabled:bg-gray-400"
+          className="p-4 bg-accent hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer rounded-full disabled:bg-gray-400"
           onClick={() => setVerse((prev) => prev + 1)}
           disabled={!verse || verse >= maxVerses}
         >

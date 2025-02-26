@@ -8,7 +8,7 @@ import { HiOutlineStatusOnline } from "react-icons/hi";
 import axios from "axios";
 import Link from "next/link";
 
-const MIXLR_USERNAME = "amazing-grace-heirs";
+const MIXLR_USERNAME = process.env.NEXT_PUBLIC_MIXLR_USERNAME;
 
 export default function Navbar() {
   const [isLive, setIsLive] = useState(false);
@@ -33,6 +33,7 @@ export default function Navbar() {
     return () => clearInterval(interval);
   }, []);
 
+  // Prevents scrolling when menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";

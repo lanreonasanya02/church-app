@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { sermonsData } from "@/data/sermonData";
+// import { sermonsData } from "@/data/sermonData";
+import { fetchSermons } from "@/db/firebase";
 import Image from "next/image";
 import Link from "next/link";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
@@ -9,6 +10,7 @@ export default function Sermons() {
   const [searchTerm, setSearchTerm] = useState("");
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
+  const [sermonsData, setSermonsData] = useState([]);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -24,6 +26,17 @@ export default function Sermons() {
 
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
+
+  useEffect(() => {
+    const getSermons = async () => {
+      const data = await fetchSermons();
+      setSermonsData(data);
+    };
+
+    getSermons();
+  }, []);
+
+  console.log(sermonsData);
 
   const itemsPerPage = 6;
 
@@ -67,7 +80,7 @@ export default function Sermons() {
         {/* Sermon Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 px-5 lg:px-0 xl:px-32">
           {paginatedSermons.length > 0 ? (
-            paginatedSermons.map((sermon) => (
+            paginatedSermons.map((sermon, i) => (
               <div
                 key={sermon.id}
                 className="relative group text-primary rounded-lg overflow-hidden"
@@ -80,6 +93,7 @@ export default function Sermons() {
                   } w-full object-cover`}
                   width={100}
                   height={100}
+                  priority={i === 0}
                 />
                 <div className="p-8 bg-light dark:bg-muted">
                   <h3 className="text-xl font-bold truncate border-b-2 pb-3 border-muted dark:border-primary">
