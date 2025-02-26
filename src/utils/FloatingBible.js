@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { GrClose } from "react-icons/gr";
 import BibleViewer from "@/utils/BibleViewer";
 import { BiSolidBible } from "react-icons/bi";

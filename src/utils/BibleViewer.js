@@ -1,7 +1,6 @@
 "use client";
-import Link from "next/link";
 import { useState, useEffect } from "react";
-import { GrFormNext, GrFormPrevious, GrReturn } from "react-icons/gr";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 export default function BibleViewer() {
   const versions = ["KJV", "BBE", "ASV"];
