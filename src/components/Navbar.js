@@ -51,7 +51,7 @@ export default function Navbar() {
     <>
       <nav className="pt-2 md:pt-5 h-16 md:h-24 fixed top-0 left-0 right-0 backdrop-blur-md z-50">
         <div
-          className={`flex justify-between mx-2 md:container md:mx-auto border border-dark bg-dark text-light dark:text-primary md:pt-2.5 px-5 md:px-10 rounded-xl transition-all duration-500 z-50 ${
+          className={`relative flex justify-between mx-2 md:container md:mx-auto border border-dark bg-dark text-light dark:text-primary md:pt-2.5 px-5 md:px-10 rounded-xl transition-all duration-500 z-50 ${
             isMenuOpen
               ? "h-[65vh] md:h-[80vh] dark:bg-dark"
               : "h-14 md:h-20 dark:bg-muted dark:border-muted"
@@ -118,7 +118,7 @@ export default function Navbar() {
 
             {/* Collapsible Menu */}
             <div
-              className={`absolute top-20 right-0 bg-dark dark:bg-dark text-light rounded-lg shadow-lg transition-all duration-500 ease-in-out w-full flex flex-col justify-center ${
+              className={`absolute top-20 right-0 bg-dark dark:bg-dark  text-light rounded-lg shadow-lg transition-all duration-500 ease-in-out w-full flex flex-col justify-center ${
                 isMenuOpen ? "h-[65vh] md:h-[80vh] overflow-y-auto" : "h-0"
               }`}
             >

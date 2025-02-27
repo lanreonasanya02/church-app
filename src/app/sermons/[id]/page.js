@@ -7,7 +7,7 @@ import Link from "next/link";
 import { BiMessageRoundedError } from "react-icons/bi";
 import FloatingBibleDock from "@/utils/FloatingBible";
 import { SecondaryLoading } from "@/utils/Loading";
-import { TfiAngleLeft } from "react-icons/tfi";
+import { GrClose } from "react-icons/gr";
 
 export default function SermonPage({ params }) {
   const unwrappedParams = use(params);
@@ -37,22 +37,23 @@ export default function SermonPage({ params }) {
           <Navbar />
 
           <div className="container mx-auto mt-32">
+            <div className="fixed right-20 rounded-full p-5 hover:bg-secondary bg-subSecondary text-light dark:bg-accent  hover:text-light dark:hover:bg-subSecondary cursor-pointer transition duration-500 ease-in-out">
+              <Link href={"/"} className="flex gap-2 items-center text-sm">
+                <GrClose size={24} />
+              </Link>
+            </div>
+
             <div className="px-32">
               {sermon ? (
                 <div className=" text-primary dark:text-light p-10">
-                  <div className=" text-primary dark:text-light hover:text-subSecondary dark:hover:text-subSecondary mb-16 italic">
-                    <Link href={"/"} className="flex gap-4 items-center">
-                      <TfiAngleLeft /> Return Home
-                    </Link>
-                  </div>
-
-                  <h2 className="text-4xl font-semibold mb-8 text-center">
-                    {sermon.program} - {sermon.title}
+                  <h2 className="text-5xl font-semibold mb-12 text-center">
+                    {sermon.title}
                   </h2>
 
-                  <div className="flex justify-between items-center text-lg italic">
+                  <div className="grid grid-cols-3 items-center text-lg italic">
                     <p>Minister - {sermon.preacher}</p>
-                    <p>{sermon.date}</p>
+                    <p className="md:text-center">{sermon.program}</p>
+                    <p className="md:text-end">{sermon.date}</p>
                   </div>
 
                   <div className="my-8">

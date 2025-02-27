@@ -56,7 +56,7 @@ export default function BookingModal({ isOpen, onClose }) {
                 duration: 0.2,
               },
             }}
-            className="relative w-[70%] max-w-xl h-[70vh] max-h-[700px] px-12 py-6 mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl grid place-items-center"
+            className="relative w-[100%] max-w-2xl h-[80vh] max-h-[700px] px-12 py-6 mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl grid place-items-center"
           >
             <div className="w-full flex justify-between items-center py-6">
               <h2 className="text-xl font-bold text-primary dark:text-muted">

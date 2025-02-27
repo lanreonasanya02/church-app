@@ -65,14 +65,12 @@ export default function LiveServiceModal({
   useEffect(() => {
     const hour = new Date().getHours();
 
-    if (hour >= 4 && hour < 12) {
+    if (hour >= 0 && hour < 12) {
       setTimeOfDay("Good morning,");
     } else if (hour >= 12 && hour < 16) {
       setTimeOfDay("Good afternoon,");
-    } else if (hour >= 16 && hour < 22) {
-      setTimeOfDay("Good evening,");
     } else {
-      setTimeOfDay("Shalom,");
+      setTimeOfDay("Good evening,");
     }
   }, []);
 

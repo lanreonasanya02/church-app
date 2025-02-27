@@ -12,7 +12,7 @@ export default function CalendlyEmbed() {
     <div
       className="calendly-inline-widget"
       data-url="https://calendly.com/amazinggraceheirs/30min?hide_event_type_details=1"
-      style={{ minWidth: "320px", height: "500px" }}
+      style={{ minWidth: "500px", height: "500px" }}
     ></div>
   );
 }
