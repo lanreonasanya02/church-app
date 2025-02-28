@@ -24,7 +24,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-3 md:gap-x-8 text-lg">
               <IoMdPin
-                size={150}
+                size={120}
                 className="text-subSecondary dark:text-accent"
               />
               <div>
