@@ -32,7 +32,7 @@ export default function LiveServiceModal({
       title: "Sunday sermon",
       description:
         "Tune in and join us as we receive God's word for His church. Shalom!",
-      time: "10 AM",
+      time: "11 AM",
       day: "Sunday",
       weekDay: 0,
     },
@@ -81,7 +81,7 @@ export default function LiveServiceModal({
       const currentTime = now.getTime();
 
       const serviceTimes = [
-        { day: 0, hour: 11, minute: 0, endHour: 12, endMinute: 15 }, // Tuesday 11 AM - 12:15 PM
+        { day: 0, hour: 11, minute: 0, endHour: 12, endMinute: 30 }, // Tuesday 11 AM - 12:15 PM
         { day: 2, hour: 9, minute: 0, endHour: 10, endMinute: 15 }, // Tuesday 9 AM - 10:15 AM
         { day: 3, hour: 18, minute: 0, endHour: 19, endMinute: 15 }, // Wednesday 6 PM - 7:15 PM
         { day: 5, hour: 18, minute: 0, endHour: 19, endMinute: 15 }, // Friday 6 PM - 7:15 PM
@@ -99,7 +99,7 @@ export default function LiveServiceModal({
         targetDate.setHours(service.hour, service.minute, 0, 0);
         let serviceStartTime = targetDate.getTime();
 
-        // End time (including the 70-minute grace period)
+        // End time (including the grace period)
         let serviceEndTime = new Date(targetDate);
         serviceEndTime.setHours(service.endHour, service.endMinute, 0, 0);
         let serviceGraceEndTime = serviceEndTime.getTime();
