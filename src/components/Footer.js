@@ -94,13 +94,13 @@ export default function Footer() {
                 <input
                   type="tel"
                   placeholder="Phone *"
-                  className="w-full p-3 my-2 bg-light dark:bg-primary border-2 border-muted dark:border-primary  focus:outline-none focus:ring-0 focus:border-primary rounded-lg dark:text-light"
+                  className="w-full p-3 mb-5 bg-light dark:bg-primary border-2 border-muted dark:border-primary  focus:outline-none focus:ring-0 focus:border-primary rounded-lg dark:text-light"
                   required
                 />
 
                 <textarea
                   placeholder="Message"
-                  className="w-full p-3 my-2 bg-light dark:bg-primary border-2 border-muted dark:border-primary focus:outline-none focus:ring-0 focus:border-primary rounded-lg dark:text-light"
+                  className="w-full p-3 mb-5 bg-light dark:bg-primary border-2 border-muted dark:border-primary focus:outline-none focus:ring-0 focus:border-primary rounded-lg dark:text-light"
                 ></textarea>
 
                 <button
