@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Amazing Grace Covenant Prayer Assembly",
   description:
     "Devoted puritans committed to studying God's word, walking in total submission to Jesus Christ, and raising disciples whose sole desire is to glorify God.",
+  icons: {
+    apple: "/icons/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
