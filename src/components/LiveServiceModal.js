@@ -228,7 +228,7 @@ export default function LiveServiceModal({
                         This program is not yet live.
                       </h1>
                       <p className="text-primary dark:text-muted text-lg">
-                        The next service, {nextService?.title}, will be live{" "}
+                        The next program, {nextService?.title}, will be live{" "}
                         {nextService?.weekDay === new Date().getDay()
                           ? `this ${
                               nextService?.weekDay > 2 ? "evening" : "morning"
