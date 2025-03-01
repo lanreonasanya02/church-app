@@ -29,7 +29,8 @@
     ".next/types/**/*.ts",
     "src/components/Navbar.js",
     "next.config.js",
-    "src/components/ScrambledText.js"
+    "src/components/ScrambledText.js",
+    "src/components/OneSignalSetup.js"
   ],
   "exclude": ["node_modules"]
 }
