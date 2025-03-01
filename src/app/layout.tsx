@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
+import OneSignalSetup from "@/components/OneSignalSetup";
 
 const ubuntu = Ubuntu({
   weight: ["400", "700"],
@@ -25,7 +26,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={ubuntu.className}>{children}</body>
+      <head>
+        <script
+          src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+          defer
+        ></script>
+      </head>
+
+      <body className={ubuntu.className}>
+        <OneSignalSetup />
+        {children}
+      </body>
     </html>
   );
 }
