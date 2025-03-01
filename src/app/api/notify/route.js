@@ -32,6 +32,7 @@ export async function POST(req) {
     });
 
     const data = await response.json();
+    console.log("OneSignal Response:", data);
     return Response.json(data, { status: 200 });
   } catch (error) {
     console.error("Error sending notification:", error);
