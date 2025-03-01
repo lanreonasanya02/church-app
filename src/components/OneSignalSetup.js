@@ -1,12 +1,6 @@
 "use client";
 import { useEffect } from "react";
 
-declare global {
-  interface Window {
-    OneSignalDeferred?: ((OneSignal: any) => Promise<void>)[];
-  }
-}
-
 export default function OneSignalSetup() {
   useEffect(() => {
     if (typeof window !== "undefined") {
