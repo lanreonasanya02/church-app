@@ -34,7 +34,7 @@ export async function POST(req) {
     const data = await response.json();
     return Response.json(data, { status: 200 });
   } catch (error) {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    console.error("Error sending notification:", error);
     return Response.json(
       { error: "Failed to send notification" },
       { status: 500 }
