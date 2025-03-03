@@ -67,7 +67,7 @@ export default function Sermons() {
           {/* Search Input */}
           <input
             type="search"
-            placeholder="Looking for a sermon?"
+            placeholder="Looking for a particular sermon? Type it in here..."
             value={searchTerm}
             onChange={(e) => {
               setSearchTerm(e.target.value);

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { doc, getDoc, getFirestore, onSnapshot } from "firebase/firestore";
 import { collection, query, orderBy, getDocs } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -13,7 +13,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+export const db = getFirestore(app);
 
 // Fetching all sermons
 export async function fetchSermons() {
@@ -46,3 +46,16 @@ export async function fetchSermonById(id) {
     return null;
   }
 }
+
+// Automatically send data to Whatsapp by listening to new info uploaded on firebase
+const listenForUpdates = () => {
+  const colRef = collection(db, "sermons");
+  onSnapshot(colRef, (snapshot) => {
+    snapshot.docChanges().forEach((change) => {
+      if (change.type === "added") {
+        const newData = change.doc.data();
+        sendMessageToWhatsApp(newData);
+      }
+    });
+  });
+};
