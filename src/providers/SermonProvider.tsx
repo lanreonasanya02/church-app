@@ -59,9 +59,6 @@ Shalom.`;
     const groupInviteLink = `https://chat.whatsapp.com/G0agiTfkklzJmNZ6eAbSvb`;
 
     window.open(`${groupInviteLink}?text=${encodedMessage}`, "_blank");
-    navigator.clipboard.writeText(message).then(() => {
-      alert("Message copied! Paste it in the WhatsApp group.");
-    });
   };
 
   return null;
