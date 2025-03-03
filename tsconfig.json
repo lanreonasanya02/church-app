@@ -30,6 +30,7 @@
     "src/components/Navbar.js",
     "next.config.js",
     "src/components/ScrambledText.js",
+    "src/providers/SermonProvider.tsx",
     "src/components/OneSignalSetup.js"
   ],
   "exclude": ["node_modules"]

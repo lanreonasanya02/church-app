@@ -46,16 +46,3 @@ export async function fetchSermonById(id) {
     return null;
   }
 }
-
-// Automatically send data to Whatsapp by listening to new info uploaded on firebase
-const listenForUpdates = () => {
-  const colRef = collection(db, "sermons");
-  onSnapshot(colRef, (snapshot) => {
-    snapshot.docChanges().forEach((change) => {
-      if (change.type === "added") {
-        const newData = change.doc.data();
-        sendMessageToWhatsApp(newData);
-      }
-    });
-  });
-};

@@ -4,13 +4,24 @@ import { db } from "@/db/firebase";
 import { onSnapshot, collection } from "firebase/firestore";
 
 export default function SermonProvider() {
+  interface SermonData {
+    id: string;
+    date: string;
+    program: string;
+    preacher: string;
+    title: string;
+    studyText: string;
+    message: string;
+    prayers: string; // Assuming prayers are stored as a semicolon-separated string
+  }
+
   useEffect(() => {
     const sermonRef = collection(db, "sermons");
 
     const unsubscribe = onSnapshot(sermonRef, (snapshot) => {
       snapshot.docChanges().forEach((change) => {
         if (change.type === "added") {
-          const data = change.doc.data();
+          const data = change.doc.data() as SermonData;
           sendMessageToWhatsApp(data);
         }
       });
@@ -19,7 +30,7 @@ export default function SermonProvider() {
     return () => unsubscribe(); //
   }, []);
 
-  const sendMessageToWhatsApp = (data: any) => {
+  const sendMessageToWhatsApp = (data: SermonData) => {
     const message = `https://amazing-grace-heirs.mixlr.com/recordings/${data.id}
 
 Weekly service - ${data.date}
