@@ -1,19 +1,51 @@
 const PUSHER_INSTANCE_ID = process.env.NEXT_PUBLIC_PUSHER_BEAMS_INSTANCE_ID;
 const PUSHER_SECRET_KEY = process.env.NEXT_PUBLIC_PUSHER_BEAMS_SECRET_KEY;
+const MIXLR_USERNAME = process.env.NEXT_PUBLIC_MIXLR_USERNAME;
+const MIXLR_API_URL = `https://api.mixlr.com/users/${MIXLR_USERNAME}`;
 
-export async function POST(req) {
+// Define service schedule
+const SERVICES = {
+  Tuesday: { name: "Hour of Transformation", time: "8:30" },
+  Wednesday: { name: "Hour of Mercy", time: "17:30" },
+  Friday: { name: "Hour of Warfare", time: "17:30" },
+  Sunday: { name: "Sunday Sermon", time: "7:45" },
+};
+
+export async function POST() {
   try {
-    const { title, message } = await req.json();
+    const now = new Date();
+    const today = now.toLocaleString("en-US", { weekday: "long" }); // Get today's day name
+    const currentTime = now.toTimeString().slice(0, 5); // Get current time in HH:MM format
 
-    if (!title || !message) {
+    if (!SERVICES[today]) {
       return Response.json(
-        { error: "Title and message are required." },
-        { status: 400 }
+        { message: "No service scheduled today" },
+        { status: 200 }
+      );
+    }
+
+    const { name, time } = SERVICES[today];
+    const mixlrResponse = await fetch(MIXLR_API_URL);
+    const mixlrData = await mixlrResponse.json();
+    const isLive = mixlrData?.isLive || false;
+
+    let title, message;
+
+    if (isLive) {
+      title = `${name} now live!`;
+      message = `Click or tap to listen!`;
+    } else if (currentTime === time) {
+      title = `${name} goes live in 30 minutes!`;
+      message = `Get ready! Program starts soon.`;
+    } else {
+      return Response.json(
+        { message: "Not time for a scheduled notification" },
+        { status: 200 }
       );
     }
 
     const response = await fetch(
-      `https://${PUSHER_INSTANCE_ID}.pushnotifications.pusher.com/publish_api/v1/instances/${PUSHER_INSTANCE_ID}/publishes`,
+      `https://${PUSHER_INSTANCE_ID}.pusher.com/notifications/publish`,
       {
         method: "POST",
         headers: {
@@ -22,17 +54,7 @@ export async function POST(req) {
         },
         body: JSON.stringify({
           interests: ["all-users"],
-          webhook_url: "https://your-deployed-site.vercel.app/api/webhook",
-          webhook_auth_key: PUSHER_SECRET_KEY,
-          apns: {
-            aps: {
-              alert: {
-                title,
-                body: message,
-              },
-            },
-          },
-          fcm: {
+          web: {
             notification: {
               title,
               body: message,
@@ -43,11 +65,8 @@ export async function POST(req) {
     );
 
     const data = await response.json();
-    console.log("Pusher Beams Response:", data);
-
-    return Response.json(data, { status: response.status });
+    return Response.json(data, { status: response.ok ? 200 : 400 });
   } catch (error) {
-    console.error("Error sending notification:", error);
     return Response.json(
       { error: "Failed to send notification", details: error.message },
       { status: 500 }
