@@ -5,10 +5,10 @@ const MIXLR_API_URL = `https://api.mixlr.com/users/${MIXLR_USERNAME}`;
 
 // Define service schedule
 const SERVICES = {
-  Tuesday: { name: "Hour of Transformation", time: "8:30" },
-  Wednesday: { name: "Hour of Mercy", time: "17:30" },
+  Tuesday: { name: "Hour of Transformation", time: "08:30" },
+  Wednesday: { name: "Hour of Mercy", time: "00:50" },
   Friday: { name: "Hour of Warfare", time: "17:30" },
-  Sunday: { name: "Sunday Sermon", time: "7:45" },
+  Sunday: { name: "Sunday Sermon", time: "07:45" },
 };
 
 export async function POST() {
