@@ -27,9 +27,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <head>
-        <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
-      </head> */}
       <body className={ubuntu.className}>
         {/* <SermonProvider /> */}
         <PusherSetup />
