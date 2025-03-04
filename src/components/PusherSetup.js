@@ -1,10 +1,22 @@
 "use client";
 import { useEffect } from "react";
-import { registerDevice } from "@/utils/Pusher";
+import * as PusherPushNotifications from "@pusher/push-notifications-web";
 
-export default function PushNotificationSetup() {
+const INSTANCE_ID = process.env.NEXT_PUBLIC_PUSHER_INSTANCE_ID;
+
+export default function PusherSetup() {
   useEffect(() => {
-    registerDevice();
+    if (typeof window !== "undefined" && INSTANCE_ID) {
+      const beamsClient = new PusherPushNotifications.Client({
+        instanceId: INSTANCE_ID,
+      });
+
+      beamsClient
+        .start()
+        .then(() => beamsClient.addDeviceInterest("all-users"))
+        .then(() => console.log("Successfully registered and subscribed!"))
+        .catch(console.error);
+    }
   }, []);
 
   return null;
