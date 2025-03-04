@@ -12,19 +12,24 @@ export default function OneSignalSetup() {
         notifyButton: { enable: true },
       });
 
-      // Check if user already has an external ID
-      let externalUserId = localStorage.getItem("externalUserId");
+      // Wait for OneSignal to be ready
+      OneSignal.on("subscriptionChange", async function (isSubscribed) {
+        if (isSubscribed) {
+          let externalUserId = localStorage.getItem("externalUserId");
 
-      if (!externalUserId) {
-        // Generate a new random external ID
-        externalUserId = `user_${Math.random().toString(36).substr(2, 9)}`;
+          if (!externalUserId) {
+            externalUserId = `user_${Math.random().toString(36).substr(2, 9)}`;
+            localStorage.setItem("externalUserId", externalUserId);
+          }
 
-        // Store in localStorage
-        localStorage.setItem("externalUserId", externalUserId);
-      }
-
-      // Set the external ID in OneSignal
-      await OneSignal.setExternalUserId(externalUserId);
+          // Ensure OneSignal is fully initialized before setting external ID
+          const isInitialized = await OneSignal.isPushNotificationsEnabled();
+          if (isInitialized) {
+            await OneSignal.setExternalUserId(externalUserId);
+            console.log("User External ID set:", externalUserId);
+          }
+        }
+      });
     };
 
     setupOneSignal();
