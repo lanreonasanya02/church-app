@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
-import OneSignalSetup from "@/components/OneSignalSetup";
 // import SermonProvider from "@/providers/SermonProvider";
 
 const ubuntu = Ubuntu({
@@ -27,16 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <script
-          src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
-          defer
-        ></script>
-      </head>
-
+      {/* <head>
+        <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
+      </head> */}
       <body className={ubuntu.className}>
         {/* <SermonProvider /> */}
-        <OneSignalSetup />
         {children}
       </body>
     </html>
