@@ -14,6 +14,16 @@ export default function PusherSetup() {
             registration.unregister();
           });
         });
+
+        // ✅ Register the service worker for Pusher Beams
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then((reg) =>
+            console.log("Service Worker Registered for Pusher Beams:", reg)
+          )
+          .catch((err) =>
+            console.error("Service Worker Registration Failed", err)
+          );
       }
 
       // Initialize Pusher Beams
