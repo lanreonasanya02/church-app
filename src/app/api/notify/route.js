@@ -6,7 +6,7 @@ const MIXLR_API_URL = `https://api.mixlr.com/users/${MIXLR_USERNAME}`;
 // Define service schedule
 const SERVICES = {
   Tuesday: { name: "Hour of Transformation", time: "08:30" },
-  Wednesday: { name: "Hour of Mercy", time: "00:50" },
+  Wednesday: { name: "Hour of Mercy", time: "17:30" },
   Friday: { name: "Hour of Warfare", time: "17:30" },
   Sunday: { name: "Sunday Sermon", time: "07:45" },
 };
@@ -56,8 +56,9 @@ export async function POST() {
           interests: ["all-users"],
           web: {
             notification: {
-              title,
+              title: title,
               body: message,
+              deep_link: "https://church-app-blond.vercel.app",
             },
           },
         }),

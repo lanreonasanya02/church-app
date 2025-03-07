@@ -33,8 +33,16 @@ export default function PusherSetup() {
 
       beamsClient
         .start()
+        .then((beamsClient) => beamsClient.getDeviceId())
+        .then((deviceId) =>
+          console.log(
+            "Successfully registered with Beams. Device ID:",
+            deviceId
+          )
+        )
         .then(() => beamsClient.addDeviceInterest("all-users"))
-        .then(() => console.log("Successfully registered and subscribed!"))
+        .then(() => beamsClient.getDeviceInterests())
+        .then((interests) => console.log("Current interests:", interests))
         .catch(console.error);
     }
   }, []);
