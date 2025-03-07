@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
-import PusherSetup from "@/components/PusherSetup";
+import OneSignalSetup from "@/components/OneSignalSetup";
 // import SermonProvider from "@/providers/SermonProvider";
 
 const ubuntu = Ubuntu({
@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={ubuntu.className}>
         {/* <SermonProvider /> */}
-        <PusherSetup />
+        <OneSignalSetup />
         {children}
       </body>
     </html>
