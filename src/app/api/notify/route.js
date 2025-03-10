@@ -15,7 +15,7 @@ export async function POST(req) {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Authorization: `Basic ${ONESIGNAL_API_KEY}`,
+        Authorization: `Key ${ONESIGNAL_API_KEY}`,
       },
       body: JSON.stringify({
         app_id: ONESIGNAL_APP_ID,
