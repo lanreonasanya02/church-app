@@ -31,17 +31,15 @@ export function PrimaryLoading() {
       />
 
       <motion.div
-        initial={{ x: "-100vw", opacity: 0, scale: 0.5 }} // Start off-screen with small scale
-        animate={{ x: 0, opacity: 1, scale: 1 }} // Moves to center
+        initial={{ opacity: 0, scale: 0.5 }} // Starts invisible and small
+        animate={{ opacity: 1, scale: 1 }} // Fades in and scales up
         transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 10,
           duration: 1.2,
+          ease: "easeOut",
         }}
       >
         <motion.div
-          animate={{ y: [0, -20, 0] }} // Bounce effect
+          animate={{ y: [0, -10, 0] }} // Gentle floating effect
           transition={{
             repeat: Infinity,
             repeatType: "loop",
@@ -56,7 +54,8 @@ export function PrimaryLoading() {
             height={100}
             loading="eager"
             title="Amazing Grace Covenant Prayer Assembly"
-            className="cursor-pointer pt-1.5 md:pt-0 w-[300px]"
+            className="cursor-pointer pt-1.5 md:pt-0 w-[250px]"
+            priority
           />
         </motion.div>
       </motion.div>
@@ -75,6 +74,7 @@ export function SecondaryLoading() {
         loading="eager"
         title="Amazing Grace Covenant Prayer Assembly"
         className="cursor-pointer pt-1.5 md:pt-0 w-[200px]"
+        priority
       />
     </div>
   );
