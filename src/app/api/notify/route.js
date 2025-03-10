@@ -24,6 +24,7 @@ export async function POST(req) {
     console.log("Notifications: ", data);
     return new Response(JSON.stringify(data), { status: response.status });
   } catch (error) {
+    console.log("Error: ", error);
     return new Response(
       JSON.stringify({ error: "Failed to send notification" }),
       { status: 500 }
