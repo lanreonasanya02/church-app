@@ -9,7 +9,7 @@ export default function OneSignalSetup() {
       window.OneSignal = window.OneSignal || [];
       OneSignal.push(function () {
         OneSignal.init({
-          appId: process.env.NEXT_PUBLIC_ONESIGNAL_APP_ID,
+          appId: ONESIGNAL_APP_ID,
           allowLocalhostAsSecureOrigin: true,
           notifyButton: {
             enable: true,
