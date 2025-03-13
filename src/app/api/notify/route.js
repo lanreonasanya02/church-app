@@ -21,7 +21,7 @@ export async function POST(req) {
         },
         body: JSON.stringify({
           app_id: ONESIGNAL_APP_ID,
-          included_segments: ["Subscribed Users"],
+          included_segments: ["All"],
           headings: { en: title || "Default Title" },
           contents: { en: message || "Default Message" },
         }),
