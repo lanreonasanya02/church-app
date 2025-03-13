@@ -38,9 +38,15 @@ export default function FloatingBibleDock({ drawer = false }) {
           isOpen
             ? "bg-primary hover:bg-accent"
             : "bg-secondary hover:bg-subSecondary"
-        } p-3 md:p-4 mt-3 rounded-full shadow-lg flex items-center justify-center  dark:bg-accent  dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer`}
+        } p-3 md:p-4 mt-3 rounded-full shadow-lg flex items-center justify-center  dark:bg-accent  dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer group`}
       >
         {isOpen ? <GrClose size={35} /> : <BiSolidBible size={35} />}
+
+        {!isOpen && (
+          <span className="absolute bottom-full w-[100px] p-3 text-xs font-bold text-white bg-gray-800 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Open Bible
+          </span>
+        )}
       </button>
     </div>
   );
