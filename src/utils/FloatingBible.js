@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GrClose } from "react-icons/gr";
 import BibleViewer from "@/utils/BibleViewer";
 import { BiSolidBible } from "react-icons/bi";
@@ -7,6 +7,20 @@ import { motion } from "framer-motion";
 
 export default function FloatingBibleDock({ drawer = false }) {
   const [isOpen, setIsOpen] = useState(drawer);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 576);
+      setIsTablet(window.innerWidth >= 576 && window.innerWidth < 992);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   return (
     <div className="fixed bottom-4 md:bottom-6 right-4 md:right-20 flex flex-col items-end z-50">
@@ -42,7 +56,7 @@ export default function FloatingBibleDock({ drawer = false }) {
       >
         {isOpen ? <GrClose size={35} /> : <BiSolidBible size={35} />}
 
-        {!isOpen && (
+        {!isOpen && !isMobile && !isTablet && (
           <span className="absolute bottom-full w-[100px] p-3 text-xs font-bold text-white bg-gray-800 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             Open Bible
           </span>

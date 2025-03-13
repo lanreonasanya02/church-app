@@ -155,7 +155,7 @@ export default function BibleViewer() {
         <div className="flex justify-center gap-3 mb-4">
           <input
             type="number"
-            className="p-1 text-sm text-primary border border-primary dark:border-muted rounded w-20 text-center"
+            className="p-1 text-base text-primary border border-primary dark:border-muted rounded w-20 text-center"
             value={chapter}
             min={1}
             max={books[book]}
@@ -172,7 +172,7 @@ export default function BibleViewer() {
 
           <input
             type="number"
-            className="p-1 text-sm text-primary border border-primary dark:border-muted rounded w-20 text-center"
+            className="p-1 text-base text-primary border border-primary dark:border-muted rounded w-20 text-center"
             value={verse}
             min={1}
             max={maxVerses}
