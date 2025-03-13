@@ -110,9 +110,9 @@ export default function Navbar() {
               <button
                 className={`${
                   isMenuOpen ? "text-secondary" : ""
-                } text-xs transform hover:text-subSecondary p-2 rounded-lg`}
+                } text-xs transform hover:text-subSecondary p-2 rounded-lg w-[100px]`}
               >
-                {isMenuOpen ? "Close" : "Menu"}
+                {isMenuOpen ? "Close Menu" : "Menu"}
               </button>
             </div>
 
