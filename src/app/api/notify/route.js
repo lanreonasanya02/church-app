@@ -10,20 +10,23 @@ export async function POST(req) {
       throw new Error("Missing OneSignal credentials");
     }
 
-    const response = await fetch("https://api.onesignal.com/v1/notifications", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Key ${ONESIGNAL_API_KEY}`,
-      },
-      body: JSON.stringify({
-        app_id: ONESIGNAL_APP_ID,
-        contents: { en: message },
-        headings: { en: title },
-        included_segments: ["All"], // Send to all subscribers
-      }),
-    });
+    const response = await fetch(
+      "https://api.onesignal.com/api/v1/notifications",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Key ${ONESIGNAL_API_KEY}`,
+        },
+        body: JSON.stringify({
+          app_id: ONESIGNAL_APP_ID,
+          contents: { en: message },
+          headings: { en: title },
+          included_segments: ["All"], // Send to all subscribers
+        }),
+      }
+    );
 
     const data = await response.json();
     if (!response.ok) {
@@ -35,7 +38,7 @@ export async function POST(req) {
     }
     return new Response(JSON.stringify(data), { status: response.status });
   } catch (error) {
-    console.log("Error: ", error);
+    console.log("Error:", error);
     return new Response(
       JSON.stringify({ error: "Failed to send notification" }),
       { status: 500 }
