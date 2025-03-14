@@ -19,18 +19,3 @@ export default function OneSignalSetup() {
 
   return null;
 }
-
-// useEffect(() => {
-//   if (typeof window !== "undefined") {
-//     window.OneSignal = window.OneSignal || [];
-//     OneSignal.push(function () {
-//       OneSignal.init({
-//         appId: ONESIGNAL_APP_ID,
-//         allowLocalhostAsSecureOrigin: true,
-//         notifyButton: {
-//           enable: true,
-//         },
-//       });
-//     });
-//   }
-// }, []);

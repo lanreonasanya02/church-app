@@ -22,8 +22,10 @@ export async function POST(req) {
         body: JSON.stringify({
           app_id: ONESIGNAL_APP_ID,
           included_segments: ["All"],
-          headings: { en: title || "Default Title" },
-          contents: { en: message || "Default Message" },
+          headings: { en: title || "Shalom!" },
+          contents: {
+            en: message || "Run to the website to join us for today's sermon.",
+          },
         }),
       }
     );
