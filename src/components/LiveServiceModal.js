@@ -318,9 +318,10 @@ export default function LiveServiceModal({
                       <p className="text-primary dark:text-muted text-lg">
                         The live broadcast has now ended, and we sincerely
                         appreciate you joining us. If you missed any part of the
-                        stream, don't worry, you can still access the program
-                        and others in the sermons section. Close this modal and
-                        click Menu in the navigation above and select Sermons.
+                        stream, don&apos;t worry, you can still access the
+                        program and others in the sermons section. Close this
+                        modal and click Menu in the navigation above and select
+                        Sermons.
                         <br />
                         <br />
                         Be sure to check back for our next scheduled broadcast.
