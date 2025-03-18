@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Delay for 1.5 seconds
+    }, 3000); // Delay for 3 seconds
 
     return () => clearTimeout(timer); // Cleanup on unmount
   }, []);

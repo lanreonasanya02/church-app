@@ -24,7 +24,7 @@ export async function POST(req) {
           included_segments: ["All"],
           headings: { en: title || "Shalom!" },
           contents: {
-            en: message || "Run to the website to join us for today's sermon.",
+            en: message || "Go to the website to join us for today's sermon.",
           },
         }),
       }

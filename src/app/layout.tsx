@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import OneSignalSetup from "@/components/OneSignalSetup";
-// import SermonProvider from "@/providers/SermonProvider";
 
 const ubuntu = Ubuntu({
   weight: ["400", "700"],
@@ -28,7 +27,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={ubuntu.className}>
-        {/* <SermonProvider /> */}
         <OneSignalSetup />
         {children}
       </body>
