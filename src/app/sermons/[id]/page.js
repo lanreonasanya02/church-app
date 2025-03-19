@@ -73,19 +73,37 @@ export default function SermonPage({ params }) {
                   </div>
 
                   <div className="text-lg text-light bg-primary border-2 border-primary dark:border-muted rounded-xl p-5">
-                    <p>Prayer points:</p>
-                    <ol className="list-decimal list-outside">
-                      {sermon.prayers.split(/;\s*/).map((prayer, index) =>
-                        prayer.trim() ? (
-                          <li
-                            key={index}
-                            className="ml-10 pl-4 leading-relaxed"
-                          >
-                            {prayer}
-                          </li>
-                        ) : null
-                      )}
-                    </ol>
+                    <p className="font-semibold">
+                      Prayer point
+                      {sermon.prayers.split(/;\s*/).length > 1 ? "s" : ""}:
+                    </p>
+                    {sermon.prayers.split(/;\s*/).length > 1 ? (
+                      <ol className="list-decimal list-outside">
+                        {sermon.prayers.split(/;\s*/).map((prayer, index) =>
+                          prayer.trim() ? (
+                            <li
+                              key={index}
+                              className="ml-10 pl-4 leading-relaxed"
+                            >
+                              {prayer}
+                            </li>
+                          ) : null
+                        )}
+                      </ol>
+                    ) : (
+                      <ul>
+                        {sermon.prayers.split(/;\s*/).map((prayer, index) =>
+                          prayer.trim() ? (
+                            <li
+                              key={index}
+                              className="ml-8 mt-2 leading-relaxed"
+                            >
+                              {prayer}
+                            </li>
+                          ) : null
+                        )}
+                      </ul>
+                    )}
                   </div>
                 </div>
               ) : (
