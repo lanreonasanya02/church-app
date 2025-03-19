@@ -187,7 +187,7 @@ export default function BibleViewer() {
         </div>
 
         {/* Verse Display */}
-        <p className="text-base bg-white text-primary p-2 rounded flex flex-grow items-center justify-center overflow-y-auto border border-primary dark:border-muted">
+        <p className="text-base bg-white text-primary h-[330px] p-2 rounded flex flex-grow items-center justify-center overflow-y-auto border border-primary dark:border-muted">
           {verseText}
         </p>
       </div>
