@@ -167,8 +167,6 @@ export default function LiveServiceModal({
     return now >= timeString;
   };
 
-  console.log(checkBroadcastStatus(nextService?.midWay));
-
   return (
     <AnimatePresence>
       {isOpen && (
@@ -210,11 +208,11 @@ export default function LiveServiceModal({
               <div className=" mb-4">
                 {nextService && (
                   <>
-                    <p className="text-base md:text-lg italic text-gray-500 dark:text-gray-400">
+                    <p className="text-sm md:text-lg italic text-gray-500 dark:text-gray-400">
                       {timeOfDay} Amazing Heir!
                     </p>
 
-                    <h2 className="text-3xl md:text-4xl mt-3 md:mt-5 font-bold text-primary dark:text-muted">
+                    <h2 className="text-xl md:text-4xl mt-3 md:mt-5 font-bold text-primary dark:text-muted">
                       {nextService.title}
                     </h2>
                   </>
@@ -365,7 +363,7 @@ export default function LiveServiceModal({
             </div>
 
             {nextService && (
-              <p className="text-sm italic text-center mt-3 text-gray-500 dark:text-gray-400">
+              <p className="text-xs md:text-sm italic text-center mt-3 text-gray-500 dark:text-gray-400">
                 {nextService.description}
               </p>
             )}

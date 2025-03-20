@@ -4,32 +4,11 @@ import ScheduleModal from "@/components/ScheduleModal";
 import LiveServiceModal from "@/components/LiveServiceModal";
 import { motion } from "framer-motion";
 import { HiOutlineStatusOnline } from "react-icons/hi";
-import axios from "axios";
 
-const MIXLR_USERNAME = "amazing-grace-heirs";
-
-export default function Hero() {
+export default function Hero({ todayProgram, isLive, username }) {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
-  const [isLive, setIsLive] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    const checkLiveStatus = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.mixlr.com/users/${MIXLR_USERNAME}`
-        );
-        setIsLive(response.data.is_live);
-      } catch (error) {
-        console.error("Error fetching Mixlr status:", error);
-      }
-    };
-
-    checkLiveStatus();
-    const interval = setInterval(checkLiveStatus, 15000); // Check every 15 seconds
-
-    return () => clearInterval(interval);
-  }, []);
+  console.log(todayProgram);
 
   return (
     <div id="home">
@@ -59,13 +38,13 @@ export default function Hero() {
             <div className="space-x-8 text-xs">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="py-3 px-14 rounded-full text bg-secondary text-white"
+                className="py-3 px-14 rounded-full text-sm bg-secondary dark:bg-accent text-white"
               >
                 <motion.div
                   animate={{
-                    scale: [1, 1.2, 0.9, 1.1, 1],
+                    x: [0, -5, 5, -5, 0],
                     transition: {
-                      duration: 1.5,
+                      duration: 2,
                       repeat: Infinity,
                       ease: "easeInOut",
                     },
@@ -73,7 +52,7 @@ export default function Hero() {
                 >
                   <span className="flex items-center space-x-2">
                     <HiOutlineStatusOnline />
-                    <span>LIVE NOW</span>
+                    <span>{todayProgram} is live. Tap to listen</span>
                   </span>
                 </motion.div>
               </button>
@@ -82,7 +61,7 @@ export default function Hero() {
             <div className="relative group text-xs">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="py-3 px-14 rounded-full text text- bg-secondary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
+                className="py-3 px-14 rounded-full text-sm bg-secondary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
               >
                 See Upcoming Program
               </button>
@@ -131,7 +110,7 @@ export default function Hero() {
       <LiveServiceModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        username={MIXLR_USERNAME}
+        username={username}
         isLive={isLive}
       />
     </div>

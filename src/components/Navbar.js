@@ -5,33 +5,12 @@ import Image from "next/image";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LiveServiceModal from "@/components/LiveServiceModal";
 import { HiOutlineStatusOnline } from "react-icons/hi";
-import axios from "axios";
 import Link from "next/link";
 
-const MIXLR_USERNAME = process.env.NEXT_PUBLIC_MIXLR_USERNAME;
-
-export default function Navbar() {
-  const [isLive, setIsLive] = useState(false);
+export default function Navbar({ todayProgram, isLive, username }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const checkLiveStatus = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.mixlr.com/users/${MIXLR_USERNAME}`
-        );
-        setIsLive(response.data.is_live);
-      } catch (error) {
-        console.error("Error fetching Mixlr status:", error);
-      }
-    };
-
-    checkLiveStatus();
-    const interval = setInterval(checkLiveStatus, 15000); // Check every 15 seconds
-
-    return () => clearInterval(interval);
-  }, []);
+  console.log(todayProgram);
 
   // Prevents scrolling when menu is open
   useEffect(() => {
@@ -76,13 +55,13 @@ export default function Navbar() {
               <div className=" space-x-8 text-xs">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="hidden md:block py-3 px-14 rounded-full text bg-secondary text-white"
+                  className="hidden md:block py-3 px-14 rounded-full text-sm bg-secondary text-white"
                 >
                   <motion.div
                     animate={{
-                      scale: [1, 1.2, 0.9, 1.1, 1],
+                      x: [0, -5, 5, -5, 0],
                       transition: {
-                        duration: 1.5,
+                        duration: 2,
                         repeat: Infinity,
                         ease: "easeInOut",
                       },
@@ -90,7 +69,7 @@ export default function Navbar() {
                   >
                     <span className="flex items-center space-x-2">
                       <HiOutlineStatusOnline />
-                      <span>LIVE NOW</span>
+                      <span>{todayProgram} is live. Click to listen</span>
                     </span>
                   </motion.div>
                 </button>
@@ -99,7 +78,7 @@ export default function Navbar() {
               <div className="relative group text-xs">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="hidden md:block py-3 px-14 rounded-full text bg-secondary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
+                  className="hidden md:block py-3 px-14 rounded-full text-sm bg-secondary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
                 >
                   See Upcoming Program
                 </button>
@@ -209,7 +188,7 @@ export default function Navbar() {
       <LiveServiceModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        username={MIXLR_USERNAME}
+        username={username}
         isLive={isLive}
       />
     </>
