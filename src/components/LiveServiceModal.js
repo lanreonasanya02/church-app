@@ -238,10 +238,10 @@ export default function LiveServiceModal({
                 <div className="text-light">
                   {countdown !== null ? (
                     <div className="border-spacing-6 border border-primary dark:border-muted rounded-xl p-3 md:p-6 h-[360px] md:h-[450px] grid place-items-center">
-                      <h1 className="text-2xl md:text-3xl font-bold text-primary dark:text-muted">
+                      <h1 className="text-xl md:text-3xl font-bold text-primary dark:text-muted">
                         This program is not yet live.
                       </h1>
-                      <p className="text-primary dark:text-muted text-lg">
+                      <p className="text-primary dark:text-muted md:text-lg">
                         {nextService?.title} will be live{" "}
                         {nextService?.weekDay === new Date().getDay()
                           ? `this ${
@@ -305,15 +305,15 @@ export default function LiveServiceModal({
                       </div>
                     </div>
                   ) : checkBroadcastStatus(nextService?.midWay) ? (
-                    <div className="border-spacing-6 border border-primary dark:border-muted rounded-xl p-6  h-[450px] grid place-items-center">
-                      <h1 className="text-3xl font-bold text-primary dark:text-muted flex space-x-8 items-center">
+                    <div className="border-spacing-6 border border-primary dark:border-muted rounded-xl p-6 h-[360px] md:h-[450px] grid place-items-center">
+                      <h1 className="text-xl md:text-3xl font-bold text-primary dark:text-muted flex space-x-8 items-center">
                         <span>
                           <FaMinusCircle className="size-10" />
                         </span>
                         <span>Broadcast Ended – Thank You for Listening!</span>
                       </h1>
 
-                      <p className="text-primary dark:text-muted text-lg">
+                      <p className="text-primary dark:text-muted md:text-lg">
                         The live broadcast has now ended, and we sincerely
                         appreciate you joining us. If you missed any part of the
                         stream, don&apos;t worry, you can still access the
@@ -329,21 +329,21 @@ export default function LiveServiceModal({
 
                       <button
                         onClick={onClose}
-                        className="py-3 px-14 mt-10 rounded-full text-base font-normal bg-primary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
+                        className="py-2 md:py-3 px-14 mt-10 rounded-full text-base font-normal bg-primary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
                       >
                         Return Home
                       </button>
                     </div>
                   ) : (
-                    <div className="border-spacing-6 border border-primary dark:border-muted rounded-xl p-6  h-[450px] grid place-items-center">
-                      <h1 className="text-3xl font-bold text-primary dark:text-muted flex space-x-16 items-center">
+                    <div className="border-spacing-6 border border-primary dark:border-muted rounded-xl p-6 h-[360px] md:h-[450px] grid place-items-center">
+                      <h1 className="text-xl md:text-3xl font-bold text-primary dark:text-muted flex space-x-16 items-center">
                         <span>
                           <FaCircleNotch className="animate-spin size-10" />
                         </span>
                         <span>Waiting for broadcast...</span>
                       </h1>
 
-                      <p className="text-primary dark:text-muted text-lg">
+                      <p className="text-primary dark:text-muted md:text-lg">
                         The program should be live now, but we are waiting for
                         the broadcast to start. <br /> If the stream does not
                         begin shortly, please refresh the page or check back
@@ -352,7 +352,7 @@ export default function LiveServiceModal({
 
                       <button
                         onClick={() => window.location.reload()}
-                        className="py-3 px-14 mt-10 rounded-full text-base font-normal bg-primary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
+                        className="py-2 md:py-3 px-14 mt-10 rounded-full text-base font-normal bg-primary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
                       >
                         Refresh
                       </button>

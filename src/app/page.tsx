@@ -52,7 +52,7 @@ export default function Home() {
     const fetchPrograms = async () => {
       const schedule = [
         { day: "Sunday", program: "Sunday Sermon" },
-        { day: "Thursday", program: "Hour of Transformation" },
+        { day: "Tuesday", program: "Hour of Transformation" },
         { day: "Wednesday", program: "Hour of Mercy" },
         { day: "Friday", program: "Hour of Warfare" },
       ];
