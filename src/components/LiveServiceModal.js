@@ -204,7 +204,7 @@ export default function LiveServiceModal({
                 duration: 0.2,
               },
             }}
-            className="relative w-[95%] md:w-[70%] md:max-w-5xl h-[70vh] max-h-[700px] px-5 md:px-12 py-6 mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl"
+            className="relative w-[95%] md:w-[70%] md:max-w-5xl md:h-[70vh] max-h-[700px] px-5 md:px-12 py-6 mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl"
           >
             <div className="flex justify-between items-center">
               <div className=" mb-4">
@@ -239,7 +239,7 @@ export default function LiveServiceModal({
               ) : (
                 <div className="text-light">
                   {countdown !== null ? (
-                    <div className="border-spacing-6 border border-primary dark:border-muted rounded-xl p-3 md:p-6 h-[450px] grid place-items-center">
+                    <div className="border-spacing-6 border border-primary dark:border-muted rounded-xl p-3 md:p-6 h-[300px] md:h-[450px] grid place-items-center">
                       <h1 className="text-2xl md:text-3xl font-bold text-primary dark:text-muted">
                         This program is not yet live.
                       </h1>
@@ -256,23 +256,23 @@ export default function LiveServiceModal({
                         scheduled time to join us. Program goes live in...
                       </p>
 
-                      <div className="text-2xl md:text-7xl text-primary dark:text-muted grid grid-cols-4 gap-2 md:grid-cols-4 md:gap-8">
+                      <div className="text-4xl md:text-7xl text-primary dark:text-muted grid grid-cols-4 gap-0 md:grid-cols-4 md:gap-8">
                         {/* Days */}
-                        <p className="border-2 border-primary dark:border-muted w-24 h-12 md:w-36 md:h-32 rounded-lg md:grid place-items-center">
+                        <p className="md:border-2 border-primary dark:border-muted w-24 h-12 md:w-36 md:h-32 md:rounded-lg grid place-items-center">
                           <span className="font-bold">
                             {Math.floor(countdown / 86400)}
                           </span>
-                          <span className="text-sm md:block ms-1 md:ms-0">
+                          <span className="text-sm">
                             Day{Math.floor(countdown / 86400) === 1 ? "" : "s"}
                           </span>
                         </p>
 
                         {/* Hours */}
-                        <p className="border-2 border-primary dark:border-muted w-24 h-12 md:w-36 md:h-32 rounded-lg md:grid place-items-center">
+                        <p className="md:border-2 border-l-2 border-primary dark:border-muted w-24 h-12 md:w-36 md:h-32 md:rounded-lg grid place-items-center">
                           <span className="font-bold">
                             {Math.floor((countdown % 86400) / 3600)}
                           </span>
-                          <span className="text-sm md:block ms-1 md:ms-0">
+                          <span className="text-sm">
                             Hour
                             {Math.floor((countdown % 86400) / 3600) === 1
                               ? ""
@@ -281,13 +281,13 @@ export default function LiveServiceModal({
                         </p>
 
                         {/* Minutes */}
-                        <p className="border-2 border-primary dark:border-muted w-24 h-12 md:w-36 md:h-32 rounded-lg md:grid place-items-center">
+                        <p className="md:border-2 border-l-2 border-primary dark:border-muted w-24 h-12 md:w-36 md:h-32 md:rounded-lg grid place-items-center">
                           <span className="font-bold">
                             {Math.floor((countdown % 3600) / 60)
                               .toString()
                               .padStart(2, "0")}
                           </span>
-                          <span className="text-sm md:block ms-1 md:ms-0">
+                          <span className="text-sm">
                             Minute
                             {Math.floor((countdown % 3600) / 60) === 1
                               ? ""
@@ -296,11 +296,11 @@ export default function LiveServiceModal({
                         </p>
 
                         {/* Seconds */}
-                        <p className="border-2 border-primary dark:border-muted w-24 h-12 md:w-36 md:h-32 rounded-lg md:grid place-items-center">
+                        <p className="md:border-2 border-l-2 border-primary dark:border-muted w-24 h-12 md:w-36 md:h-32 md:rounded-lg grid place-items-center">
                           <span className="font-bold">
                             {(countdown % 60).toString().padStart(2, "0")}
                           </span>
-                          <span className="text-sm md:block ms-1 md:ms-0">
+                          <span className="text-sm">
                             Second{countdown % 60 === 1 ? "" : "s"}
                           </span>
                         </p>
