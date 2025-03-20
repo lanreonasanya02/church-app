@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ScrambleText from "@/components/ScrambledText";
 import ScheduleModal from "@/components/ScheduleModal";
 import LiveServiceModal from "@/components/LiveServiceModal";
