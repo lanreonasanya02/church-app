@@ -3,7 +3,6 @@ import ScrambleText from "@/components/ScrambledText";
 import ScheduleModal from "@/components/ScheduleModal";
 import LiveServiceModal from "@/components/LiveServiceModal";
 import { motion } from "framer-motion";
-import { HiOutlineStatusOnline } from "react-icons/hi";
 
 export default function Hero({ todayProgram, isLive, username }) {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
