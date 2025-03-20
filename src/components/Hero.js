@@ -38,7 +38,7 @@ export default function Hero({ todayProgram, isLive, username }) {
             <div className="space-x-8 text-xs">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="py-3 px-14 rounded-full text-sm bg-secondary dark:bg-accent text-white"
+                className="py-2 px-14 rounded-full text-sm bg-secondary dark:bg-accent text-white"
               >
                 <motion.div
                   animate={{
@@ -50,10 +50,10 @@ export default function Hero({ todayProgram, isLive, username }) {
                     },
                   }}
                 >
-                  <span className="flex items-center space-x-2">
-                    <HiOutlineStatusOnline />
-                    <span>{todayProgram} is live. Tap to listen</span>
+                  <span className="block text-base">
+                    {todayProgram} is live.
                   </span>
+                  <span>Tap to listen!</span>
                 </motion.div>
               </button>
             </div>
