@@ -233,7 +233,7 @@ export default function LiveServiceModal({
               {isLive ? (
                 <iframe
                   src={`https://${username}.mixlr.com/embed`}
-                  height="450px"
+                  className="h-[360px] md:h-[450px]"
                   width="100%"
                 ></iframe>
               ) : (
