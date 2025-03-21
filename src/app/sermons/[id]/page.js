@@ -54,13 +54,13 @@ export default function SermonPage({ params }) {
               <div className="fixed right-20 p-5 group">
                 <Link
                   href={"/"}
-                  className="flex gap-2 items-center text-sm hover:text-secondary  text-primary dark:bg-accent  dark:hover:bg-subSecondary cursor-pointer transition duration-500 ease-in-out"
+                  className="flex gap-2 items-center text-sm hover:text-secondary  text-primary   dark:text-light dark:hover:text-accent cursor-pointer transition duration-500 ease-in-out"
                 >
                   <GrClose size={24} />
                 </Link>
 
                 {!isMobile && (
-                  <span className="absolute top-14 p-1 text-xs font-bold text-white bg-gray-600 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="absolute bottom-0 left-12 p-1 text-xs font-bold text-white bg-gray-600 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     Close
                   </span>
                 )}
@@ -71,7 +71,7 @@ export default function SermonPage({ params }) {
               <div>
                 <Link
                   href={"/"}
-                  className="flex gap-1 items-center text-base cursor-pointer text-subSecondary ps-5"
+                  className="flex gap-1 items-center text-base cursor-pointer text-subSecondary ps-5 italic"
                 >
                   <GrFormPrevious size={20} />
                   <span>Exit</span>
@@ -86,15 +86,15 @@ export default function SermonPage({ params }) {
                     {sermon.title}
                   </h2>
 
-                  <div className="md:grid grid-cols-3 items-center text-base md:text-lg italic">
+                  <div className="md:grid grid-cols-3 items-center text-center md:text-start text-base md:text-lg italic">
                     <p>
-                      <strong>Minister:</strong> {sermon.preacher}
+                      <strong>Minister: </strong> {sermon.preacher}
                     </p>
                     <p className="md:text-center">
-                      <strong>Program:</strong> {sermon.program}
+                      <strong>Program: </strong> {sermon.program}
                     </p>
                     <p className="md:text-end">
-                      <strong>Date:</strong> {sermon.date}
+                      <strong>Date: </strong> {sermon.date}
                     </p>
                   </div>
 
