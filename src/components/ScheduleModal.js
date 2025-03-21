@@ -58,11 +58,11 @@ function ScheduleModal({ isOpen, onClose }) {
                 duration: 0.2,
               },
             }}
-            className="relative w-[70%] max-w-5xl h-[70vh] max-h-[700px] px-12 py-6 mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl grid place-items-center"
+            className="relative w-[95%] md:w-[70%] max-w-5xl h-[70vh] max-h-[700px] px-5 md:px-12 py-6 mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl grid place-items-center"
           >
             <div>
               <div className="flex justify-between items-center py-6">
-                <h2 className="text-3xl font-bold text-primary dark:text-muted">
+                <h2 className="text-xl md:text-3xl font-bold text-primary dark:text-muted">
                   Explore Our Weekly Service Schedule
                 </h2>
 
@@ -74,7 +74,7 @@ function ScheduleModal({ isOpen, onClose }) {
                 </button>
               </div>
 
-              <p className="text-base text-primary dark:text-muted">
+              <p className="text-sm md:text-base text-primary dark:text-muted text-justify md:text-start">
                 We invite you to join us in worship and fellowship. Below is our
                 weekly service schedule, where you can find details about
                 upcoming programs designed to nurture your faith and strengthen
@@ -83,77 +83,87 @@ function ScheduleModal({ isOpen, onClose }) {
               </p>
             </div>
 
-            <table className="min-w-full border-collapse border border-gray-300">
+            <table className="min-w-full border-collapse border border-gray-300 text-xs md:text-base">
               <thead>
                 <tr className="text-light bg-secondary dark:bg-accent">
-                  <th className="border border-gray-300 px-4 py-2">Day</th>
-                  <th className="border border-gray-300 px-4 py-2">Program</th>
-                  <th className="border border-gray-300 px-4 py-2">Mode</th>
-                  <th className="border border-gray-300 px-4 py-2">Time</th>
+                  <th className="border border-gray-300 md:px-4 md:py-2">
+                    Day
+                  </th>
+                  <th className="border border-gray-300  md:px-4 py-2">
+                    Program
+                  </th>
+                  <th className="border border-gray-300  md:px-4 py-2">Mode</th>
+                  <th className="border border-gray-300  md:px-4 py-2">Time</th>
                 </tr>
               </thead>
 
               <tbody>
                 <tr className="text-center">
-                  <td className="border border-gray-300 px-4 py-2">Tuesday</td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="border border-gray-300 md:px-4 py-2">
+                    Tuesday
+                  </td>
+                  <td className="border border-gray-300 md:px-4 py-2">
                     Hour of Transformation
                   </td>
-                  <td className="border border-gray-300 px-4 py-2 ">
+                  <td className="border border-gray-300 md:px-4 py-2 ">
                     <span className="flex justify-center">
                       <HiOutlineStatusOnline />
                     </span>
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="border border-gray-300 md:px-4 py-2">
                     9 AM - 10 AM
                   </td>
                 </tr>
 
                 <tr className="text-center">
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="border border-gray-300 md:px-4 py-2">
                     Wednesday
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="border border-gray-300 md:px-4 py-2">
                     Hour of Mercy
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="border border-gray-300 md:px-4 py-2">
                     <span className="flex justify-center items-center gap-2">
                       <HiOutlineStatusOnline /> <BsFillPeopleFill />{" "}
                       <FaPersonPraying />
                     </span>
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="border border-gray-300 md:px-4 py-2">
                     6 PM - 7 PM
                   </td>
                 </tr>
 
                 <tr className="text-center">
-                  <td className="border border-gray-300 px-4 py-2">Friday</td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="border border-gray-300 md:px-4 py-2">
+                    Friday
+                  </td>
+                  <td className="border border-gray-300 md:px-4 py-2">
                     Hour of Warfare
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="border border-gray-300 md:px-4 py-2">
                     <span className="flex justify-center items-center gap-2">
                       <HiOutlineStatusOnline /> <BsFillPeopleFill />
                     </span>
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="border border-gray-300 md:px-4 py-2">
                     6 PM - 7 PM
                   </td>
                 </tr>
 
                 <tr className="text-center">
-                  <td className="border border-gray-300 px-4 py-2">Sunday</td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="border border-gray-300 md:px-4 py-2">
+                    Sunday
+                  </td>
+                  <td className="border border-gray-300 md:px-4 py-2">
                     <span>Sunday School</span>
                     <span className="block">Sunday Service</span>
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="border border-gray-300 md:px-4 py-2">
                     <span className="flex justify-center items-center gap-2">
                       <HiOutlineStatusOnline /> <BsFillPeopleFill />
                     </span>
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="border border-gray-300 md:px-4 py-2">
                     <span>8:15 AM - 9:50 AM</span>
                     <span className="block">10 AM - 12 PM</span>
                   </td>
@@ -161,8 +171,8 @@ function ScheduleModal({ isOpen, onClose }) {
               </tbody>
             </table>
 
-            <div className="w-[100%]">
-              <h3 className="text-primary dark:text-muted font-bold text-lg">
+            <div className="w-[100%] text-sm md:text-base">
+              <h3 className="text-primary dark:text-muted font-bold text-base md:text-lg">
                 Modes Description
               </h3>
               <div className="flex items-center gap-2">

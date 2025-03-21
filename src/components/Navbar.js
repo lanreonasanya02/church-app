@@ -6,11 +6,12 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LiveServiceModal from "@/components/LiveServiceModal";
 import { HiOutlineStatusOnline } from "react-icons/hi";
 import Link from "next/link";
+import ScheduleModal from "@/components/ScheduleModal";
 
 export default function Navbar({ todayProgram, isLive, username }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  console.log(todayProgram);
 
   // Prevents scrolling when menu is open
   useEffect(() => {
@@ -25,6 +26,11 @@ export default function Navbar({ todayProgram, isLive, username }) {
       document.body.style.overflow = "auto";
     };
   }, [isMenuOpen]);
+
+  const handleScheduleModal = () => {
+    setIsMenuOpen(false);
+    setIsScheduleModalOpen(true);
+  };
 
   return (
     <>
@@ -162,6 +168,13 @@ export default function Navbar({ todayProgram, isLive, username }) {
                   >
                     Contact
                   </ScrollLink>
+
+                  <button
+                    onClick={handleScheduleModal}
+                    className="md:hidden py-3 px-14 mt-10 rounded-full text-base font-normal bg-secondary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
+                  >
+                    Explore Programs
+                  </button>
                 </div>
               )}
 
@@ -184,6 +197,11 @@ export default function Navbar({ todayProgram, isLive, username }) {
           </div>
         </div>
       </nav>
+
+      <ScheduleModal
+        isOpen={isScheduleModalOpen}
+        onClose={() => setIsScheduleModalOpen(false)}
+      />
 
       <LiveServiceModal
         isOpen={isModalOpen}
