@@ -61,7 +61,7 @@ export default function FloatingBibleDock({ drawer = false }) {
         )}
 
         {!isOpen && !isMobile && !isTablet && (
-          <span className="absolute bottom-full w-[100px] p-3 text-xs font-bold text-white bg-gray-800 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <span className="absolute bottom-full w-[80px] p-1 text-xs font-semibold text-white bg-gray-600 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             Open Bible
           </span>
         )}

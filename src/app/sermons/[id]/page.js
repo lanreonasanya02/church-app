@@ -51,10 +51,19 @@ export default function SermonPage({ params }) {
 
           <div className="container mx-auto mt-28 md:mt-32">
             {!isMobile && (
-              <div className="fixed right-20 rounded-full p-5 hover:bg-secondary bg-subSecondary text-light dark:bg-accent  hover:text-light dark:hover:bg-subSecondary cursor-pointer transition duration-500 ease-in-out">
-                <Link href={"/"} className="flex gap-2 items-center text-sm">
+              <div className="fixed right-20 p-5 group">
+                <Link
+                  href={"/"}
+                  className="flex gap-2 items-center text-sm hover:text-secondary  text-primary dark:bg-accent  dark:hover:bg-subSecondary cursor-pointer transition duration-500 ease-in-out"
+                >
                   <GrClose size={24} />
                 </Link>
+
+                {!isMobile && (
+                  <span className="absolute top-14 p-1 text-xs font-bold text-white bg-gray-600 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Close
+                  </span>
+                )}
               </div>
             )}
 
@@ -62,10 +71,10 @@ export default function SermonPage({ params }) {
               <div>
                 <Link
                   href={"/"}
-                  className="flex gap-1 items-center text-base cursor-pointer hover:text-secondary"
+                  className="flex gap-1 items-center text-base cursor-pointer text-subSecondary ps-5"
                 >
-                  <GrFormPrevious size={24} />
-                  <span>Return Home</span>
+                  <GrFormPrevious size={20} />
+                  <span>Exit</span>
                 </Link>
               </div>
             )}
@@ -73,7 +82,7 @@ export default function SermonPage({ params }) {
             <div className="md:px-32">
               {sermon ? (
                 <div className=" text-primary dark:text-light p-5 md:p-10">
-                  <h2 className="text-3xl md:text-5xl font-semibold mb-5 md:mb-12 md:text-center">
+                  <h2 className="text-3xl md:text-5xl font-semibold my-5 md:mb-12 text-center">
                     {sermon.title}
                   </h2>
 
@@ -100,7 +109,7 @@ export default function SermonPage({ params }) {
 
                   <div className="md:mt-16 mb-10">
                     <p className="text-base md:text-lg mb-5 italic">
-                      Study Text: {sermon.studyText}
+                      <strong>Study Text:</strong> {sermon.studyText}
                     </p>
                     <TextFormatter
                       text={sermon.message}
