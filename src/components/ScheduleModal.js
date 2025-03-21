@@ -58,10 +58,10 @@ function ScheduleModal({ isOpen, onClose }) {
                 duration: 0.2,
               },
             }}
-            className="relative w-[95%] md:w-[70%] max-w-5xl h-[75vh] max-h-[700px] px-5 md:px-12 md:py-6 mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl grid place-items-center"
+            className="relative w-[95%] md:w-[70%] max-w-5xl h-[80vh] md:h-[70vh] max-h-[700px] px-5 md:px-12 md:py-6 mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl grid place-items-center"
           >
             <div>
-              <div className="flex justify-between items-center md:py-6 mb-5">
+              <div className="flex justify-between items-center md:py-6 mb-5 md:mb-0">
                 <h2 className="text-xl md:text-3xl font-bold text-primary dark:text-muted">
                   Explore Our Weekly Service Schedule
                 </h2>
@@ -111,7 +111,7 @@ function ScheduleModal({ isOpen, onClose }) {
                     </span>
                   </td>
                   <td className="border border-gray-300 md:px-4 py-2">
-                    9 AM - 10 AM
+                    9AM - 10AM
                   </td>
                 </tr>
 
@@ -129,7 +129,7 @@ function ScheduleModal({ isOpen, onClose }) {
                     </span>
                   </td>
                   <td className="border border-gray-300 md:px-4 py-2">
-                    6 PM - 7 PM
+                    6PM - 7PM
                   </td>
                 </tr>
 
@@ -146,7 +146,7 @@ function ScheduleModal({ isOpen, onClose }) {
                     </span>
                   </td>
                   <td className="border border-gray-300 md:px-4 py-2">
-                    6 PM - 7 PM
+                    6PM - 7PM
                   </td>
                 </tr>
 
@@ -164,8 +164,8 @@ function ScheduleModal({ isOpen, onClose }) {
                     </span>
                   </td>
                   <td className="border border-gray-300 md:px-4 py-2">
-                    <span>8:15 AM - 9:50 AM</span>
-                    <span className="block">10 AM - 12 PM</span>
+                    <span>8:15AM - 9:50AM</span>
+                    <span className="block">10AM - 12PM</span>
                   </td>
                 </tr>
               </tbody>
