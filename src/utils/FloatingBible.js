@@ -23,12 +23,12 @@ export default function FloatingBibleDock({ drawer = false }) {
   }, []);
 
   return (
-    <div className="fixed bottom-4 md:bottom-6 right-4 md:right-20 flex flex-col items-end z-50">
+    <div className="fixed bottom-1.5 md:bottom-6 right-1.5 md:right-20 flex flex-col items-end z-50">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 20 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className={`bg-primary dark:bg-accent shadow-lg rounded-2xl overflow-hidden w-[400px] h-[600px] p-4 flex flex-col ${
+        className={`bg-primary dark:bg-accent shadow-lg rounded-2xl overflow-hidden w-[380px] md:w-[400px] h-[600px] p-4 flex flex-col ${
           isOpen ? "block" : "hidden"
         }`}
       >
@@ -52,9 +52,13 @@ export default function FloatingBibleDock({ drawer = false }) {
           isOpen
             ? "bg-primary hover:bg-accent"
             : "bg-secondary hover:bg-subSecondary"
-        } p-3 md:p-4 mt-3 rounded-full shadow-lg flex items-center justify-center  dark:bg-accent  dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer group`}
+        } p-3 md:p-4 mt-3 rounded-full shadow-lg flex items-center justify-center dark:bg-accent dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer group`}
       >
-        {isOpen ? <GrClose size={35} /> : <BiSolidBible size={35} />}
+        {isOpen ? (
+          <GrClose size={isMobile || isTablet ? 25 : 35} />
+        ) : (
+          <BiSolidBible size={isMobile || isTablet ? 25 : 35} />
+        )}
 
         {!isOpen && !isMobile && !isTablet && (
           <span className="absolute bottom-full w-[100px] p-3 text-xs font-bold text-white bg-gray-800 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
