@@ -7,13 +7,14 @@ import Link from "next/link";
 import { BiMessageRoundedError } from "react-icons/bi";
 import FloatingBibleDock from "@/utils/FloatingBible";
 import { SecondaryLoading } from "@/utils/Loading";
-import { GrClose } from "react-icons/gr";
+import { GrClose, GrFormPrevious } from "react-icons/gr";
 
 export default function SermonPage({ params }) {
   const unwrappedParams = use(params);
   const id = unwrappedParams.id;
   const [sermon, setSermon] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -28,6 +29,18 @@ export default function SermonPage({ params }) {
     }
   }, [id]);
 
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 576);
+      // setIsTablet(window.innerWidth >= 576 && window.innerWidth < 992);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
   return (
     <>
       {isLoading ? (
@@ -36,24 +49,44 @@ export default function SermonPage({ params }) {
         <div className="bg-light dark:bg-primary min-h-screen bg-cover bg-center pt-5 pb-10">
           <Navbar />
 
-          <div className="container mx-auto mt-32">
-            <div className="fixed right-20 rounded-full p-5 hover:bg-secondary bg-subSecondary text-light dark:bg-accent  hover:text-light dark:hover:bg-subSecondary cursor-pointer transition duration-500 ease-in-out">
-              <Link href={"/"} className="flex gap-2 items-center text-sm">
-                <GrClose size={24} />
-              </Link>
-            </div>
+          <div className="container mx-auto mt-28 md:mt-32">
+            {!isMobile && (
+              <div className="fixed right-20 rounded-full p-5 hover:bg-secondary bg-subSecondary text-light dark:bg-accent  hover:text-light dark:hover:bg-subSecondary cursor-pointer transition duration-500 ease-in-out">
+                <Link href={"/"} className="flex gap-2 items-center text-sm">
+                  <GrClose size={24} />
+                </Link>
+              </div>
+            )}
 
-            <div className="px-32">
+            {isMobile && (
+              <div>
+                <Link
+                  href={"/"}
+                  className="flex gap-1 items-center text-base cursor-pointer hover:text-secondary"
+                >
+                  <GrFormPrevious size={24} />
+                  <span>Return Home</span>
+                </Link>
+              </div>
+            )}
+
+            <div className="md:px-32">
               {sermon ? (
-                <div className=" text-primary dark:text-light p-10">
-                  <h2 className="text-5xl font-semibold mb-12 text-center">
+                <div className=" text-primary dark:text-light p-5 md:p-10">
+                  <h2 className="text-3xl md:text-5xl font-semibold mb-5 md:mb-12 md:text-center">
                     {sermon.title}
                   </h2>
 
-                  <div className="grid grid-cols-3 items-center text-lg italic">
-                    <p>Minister - {sermon.preacher}</p>
-                    <p className="md:text-center">{sermon.program}</p>
-                    <p className="md:text-end">{sermon.date}</p>
+                  <div className="md:grid grid-cols-3 items-center text-base md:text-lg italic">
+                    <p>
+                      <strong>Minister:</strong> {sermon.preacher}
+                    </p>
+                    <p className="md:text-center">
+                      <strong>Program:</strong> {sermon.program}
+                    </p>
+                    <p className="md:text-end">
+                      <strong>Date:</strong> {sermon.date}
+                    </p>
                   </div>
 
                   <div className="my-8">
@@ -65,14 +98,17 @@ export default function SermonPage({ params }) {
                     ></iframe>
                   </div>
 
-                  <div className="mt-16 mb-10">
-                    <p className="text-xl mb-5 italic">
+                  <div className="md:mt-16 mb-10">
+                    <p className="text-base md:text-lg mb-5 italic">
                       Study Text: {sermon.studyText}
                     </p>
-                    <TextFormatter text={sermon.message} />
+                    <TextFormatter
+                      text={sermon.message}
+                      maxSentences={isMobile ? 2 : 5}
+                    />
                   </div>
 
-                  <div className="text-lg text-light bg-primary border-2 border-primary dark:border-muted rounded-xl p-5">
+                  <div className="text-base md:text-lg text-light bg-primary border-2 border-primary dark:border-muted rounded-xl p-5">
                     <p className="font-semibold">
                       Prayer point
                       {sermon.prayers.split(/;\s*/).length > 1 ? "s" : ""}:

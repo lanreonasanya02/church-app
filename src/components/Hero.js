@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 export default function Hero({ todayProgram, isLive, username }) {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  console.log(todayProgram);
 
   return (
     <div id="home">

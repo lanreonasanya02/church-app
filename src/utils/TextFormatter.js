@@ -25,7 +25,7 @@ export default function TextFormatter({ text, maxSentences = 5 }) {
   const formattedParagraphs = splitIntoParagraphs(text);
 
   return (
-    <div className="text-lg leading-relaxed text-justify">
+    <div className="text-base md:text-lg leading-relaxed text-justify">
       {formattedParagraphs.map((paragraph, index) => (
         <div key={index} className="mb-8">
           {paragraph}
