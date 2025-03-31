@@ -92,7 +92,7 @@ export default function BibleViewer() {
   async function fetchVerse() {
     try {
       const response = await fetch(
-        `https://bible-api.com/${book}+${chapter}:${verse}?translation=${version.toLowerCase()}`
+        `https://bible-api.com/${book}+${chapter}:${verse}?translation=${version.toLowerCase()}&single_chapter_book_matching=indifferent`
       );
       const data = await response.json();
       setVerseText(data.text || "Verse not found");

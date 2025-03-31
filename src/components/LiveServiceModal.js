@@ -12,6 +12,19 @@ export default function LiveServiceModal({
   const [countdown, setCountdown] = useState(null);
   const [nextService, setNextService] = useState(null);
   const [timeOfDay, setTimeOfDay] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 576);
+      // setIsTablet(window.innerWidth >= 576 && window.innerWidth < 992);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   // Prevents scrolling when menu is open
   useEffect(() => {
@@ -33,7 +46,7 @@ export default function LiveServiceModal({
       description:
         "Tune in and join us as we receive God's word for His church. Shalom!",
       time: "11AM",
-      midWay: "11:30AM",
+      midWay: "11:45AM",
       day: "Sunday",
       weekDay: 0,
     },
@@ -42,7 +55,7 @@ export default function LiveServiceModal({
       description:
         "A transformative sermon every Tuesday through the study of God’s word",
       time: "9AM",
-      midWay: "9:30AM",
+      midWay: "9:45AM",
       day: "Tuesday",
       weekDay: 2,
     },
@@ -51,7 +64,7 @@ export default function LiveServiceModal({
       description:
         "A weekly service on Wednesdays to celebrate God’s mercy with worship, praise and prayers and to teach God’s salvation through Christ for all mankind",
       time: "6PM",
-      midWay: "6:30PM",
+      midWay: "6:50PM",
       day: "Wednesday",
       weekDay: 3,
     },
@@ -60,7 +73,7 @@ export default function LiveServiceModal({
       description:
         "A weekly service every Friday to learn about spiritual warfare through the study of God’s word with warfare prayers",
       time: "6PM",
-      midWay: "6:30PM",
+      midWay: "6:50PM",
       day: "Friday",
       weekDay: 5,
     },
@@ -85,7 +98,7 @@ export default function LiveServiceModal({
       const currentTime = now.getTime();
 
       const serviceTimes = [
-        { day: 0, hour: 11, minute: 0, endHour: 12, endMinute: 30 }, // Sunday 11 AM - 12:45 PM
+        { day: 0, hour: 11, minute: 0, endHour: 12, endMinute: 45 }, // Sunday 11 AM - 12:45 PM
         { day: 2, hour: 9, minute: 0, endHour: 10, endMinute: 15 }, // Tuesday 9 AM - 10:15 AM
         { day: 3, hour: 18, minute: 0, endHour: 19, endMinute: 15 }, // Wednesday 6 PM - 7:15 PM
         { day: 5, hour: 18, minute: 0, endHour: 19, endMinute: 15 }, // Friday 6 PM - 7:15 PM
@@ -115,7 +128,6 @@ export default function LiveServiceModal({
           currentTime >= serviceStartTime &&
           currentTime <= serviceGraceEndTime
         ) {
-          console.log("Within grace period:", service);
           setCountdown(null); // This triggers the "Waiting for broadcast" UI
           setNextService(serviceSchedule[service.day]); // Keep the current service
           return;
@@ -158,13 +170,28 @@ export default function LiveServiceModal({
   }, []);
 
   const checkBroadcastStatus = (timeString) => {
-    const now = new Date().toLocaleTimeString("en-NG", {
-      timeZone: "Africa/Lagos",
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true,
-    });
-    return now >= timeString;
+    const now = new Date();
+
+    // Create a Date object for today's date + the provided time
+    const [time, modifier] = timeString.split(/(AM|PM)/i);
+    const [hoursStr, minutesStr] = time.trim().split(":");
+    let hours = parseInt(hoursStr, 10);
+    const minutes = parseInt(minutesStr, 10);
+
+    if (modifier.toUpperCase() === "PM" && hours !== 12) {
+      hours += 12;
+    }
+    if (modifier.toUpperCase() === "AM" && hours === 12) {
+      hours = 0;
+    }
+
+    const broadcastEndTime = new Date();
+    broadcastEndTime.setHours(hours);
+    broadcastEndTime.setMinutes(minutes);
+    broadcastEndTime.setSeconds(0);
+    broadcastEndTime.setMilliseconds(0);
+
+    return now >= broadcastEndTime;
   };
 
   return (
@@ -306,39 +333,40 @@ export default function LiveServiceModal({
                     </div>
                   ) : checkBroadcastStatus(nextService?.midWay) ? (
                     <div className="border-spacing-6 border border-primary dark:border-muted rounded-xl p-6 h-[360px] md:h-[450px] grid place-items-center">
-                      <h1 className="text-xl md:text-3xl font-bold text-primary dark:text-muted flex space-x-8 items-center">
+                      <h1 className="text-xl md:text-3xl font-bold text-primary dark:text-muted flex space-x-6 md:space-x-12 items-center">
                         <span>
                           <FaMinusCircle className="size-10" />
                         </span>
-                        <span>Broadcast Ended – Thank You for Listening!</span>
+                        <span>Live Broadcast Ended</span>
                       </h1>
 
                       <p className="text-primary dark:text-muted md:text-lg">
                         The live broadcast has now ended, and we sincerely
-                        appreciate you joining us. If you missed any part of the
-                        stream, don&apos;t worry, you can still access the
-                        program and others in the sermons section. Close this
-                        modal and click Menu in the navigation above and select
-                        Sermons.
-                        <br />
-                        <br />
-                        Be sure to check back for our next scheduled broadcast.
-                        Thank you for being part of our audience, and we look
-                        forward to having you with us again soon!
+                        appreciate you joining us. <br /> <br />
+                        If you missed any part of the stream, do not worry, we
+                        got you covered! You can access the program in the{" "}
+                        <strong>Sermons</strong> section. Close this modal and
+                        click Menu in the navigation panel above and
+                        {isMobile ? " tap on" : " click"} Sermons. You could
+                        also explore our array of sermons for the year 2025.
                       </p>
 
-                      <button
-                        onClick={onClose}
-                        className="py-2 md:py-3 px-14 mt-10 rounded-full text-base font-normal bg-primary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
-                      >
-                        Return Home
-                      </button>
+                      {!isMobile && (
+                        <button
+                          onClick={onClose}
+                          className="py-2 md:py-3 px-14 mt-10 rounded-full text-base font-normal bg-primary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
+                        >
+                          Return Home
+                        </button>
+                      )}
                     </div>
                   ) : (
                     <div className="border-spacing-6 border border-primary dark:border-muted rounded-xl p-6 h-[360px] md:h-[450px] grid place-items-center">
-                      <h1 className="text-xl md:text-3xl font-bold text-primary dark:text-muted flex space-x-16 items-center">
+                      <h1 className="text-xl md:text-3xl font-bold text-primary dark:text-muted flex space-x-6 md:space-x-12 items-center">
                         <span>
-                          <FaCircleNotch className="animate-spin size-10" />
+                          <FaCircleNotch
+                            className={`animate-spin size-${isMobile ? 6 : 10}`}
+                          />
                         </span>
                         <span>Waiting for broadcast...</span>
                       </h1>
