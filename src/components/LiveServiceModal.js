@@ -346,11 +346,11 @@ export default function LiveServiceModal({
                         If you missed any part of the stream, do not worry! You
                         can still access the recording in the{" "}
                         <strong>Sermons</strong> section. Close this modal and
-                        {isMobile ? " tap on" : " click"} 'Menu' in the
-                        navigation panel above and
-                        {isMobile ? " tap on" : " click"} 'Sermons'. There is an
-                        array of sermons for the year you could also explore.
-                        Shalom.
+                        {isMobile ? " tap on" : " click"} &apos;Menu&apos; in
+                        the navigation panel above and
+                        {isMobile ? " tap on" : " click"} &apos;Sermons&apos;.
+                        There is an array of sermons for the year you could also
+                        explore. Shalom.
                       </p>
 
                       {!isMobile && (

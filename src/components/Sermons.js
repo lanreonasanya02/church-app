@@ -3,7 +3,6 @@ import { useSermons } from "@/hooks/useSermons";
 import Image from "next/image";
 import Link from "next/link";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-import { FaCircleNotch } from "react-icons/fa";
 
 export default function Sermons() {
   const { sermons: sermonsData, loading } = useSermons();
