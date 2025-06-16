@@ -42,7 +42,7 @@ export default function Footer() {
               />
               <div>
                 <p>amazinggraceheirs@gmail.com</p>
-                <p>+234 (0) 803-367-5080</p>
+                <p>+234 (0) 813-938-2143</p>
               </div>
             </div>
 

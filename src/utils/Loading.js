@@ -50,9 +50,8 @@ export function PrimaryLoading() {
           <Image
             src="/logo.png"
             alt="logo"
-            width={100}
-            height={100}
-            loading="eager"
+            width={1080}
+            height={1080}
             title="Amazing Grace Covenant Prayer Assembly"
             className="cursor-pointer pt-1.5 md:pt-0 w-[250px]"
             priority
@@ -69,8 +68,8 @@ export function SecondaryLoading() {
       <Image
         src="/logo.png"
         alt="logo"
-        width={100}
-        height={100}
+        width={1080}
+        height={1080}
         loading="eager"
         title="Amazing Grace Covenant Prayer Assembly"
         className="cursor-pointer pt-1.5 md:pt-0 w-[200px]"

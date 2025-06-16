@@ -119,8 +119,12 @@ export default function About() {
                       src={img}
                       alt={`Gallery Image ${i + 1}`}
                       className="w-full h-full object-cover object-top rounded-xl"
-                      width={100}
-                      height={100}
+                      width={1080}
+                      height={1080}
+                      quality={80}
+                      placeholder="blur"
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAF0lEQVR42mP8z8DAwMDAgAEYBxVSF+FAAAABJRU5ErkJggg=="
+                      loading="lazy"
                     />
                   </motion.div>
                 ))}

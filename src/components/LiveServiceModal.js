@@ -343,12 +343,14 @@ export default function LiveServiceModal({
                       <p className="text-primary dark:text-muted md:text-lg">
                         The live broadcast has now ended, and we sincerely
                         appreciate you joining us. <br /> <br />
-                        If you missed any part of the stream, do not worry, we
-                        got you covered! You can access the program in the{" "}
+                        If you missed any part of the stream, do not worry! You
+                        can still access the recording in the{" "}
                         <strong>Sermons</strong> section. Close this modal and
-                        click Menu in the navigation panel above and
-                        {isMobile ? " tap on" : " click"} Sermons. You could
-                        also explore our array of sermons for the year 2025.
+                        {isMobile ? " tap on" : " click"} 'Menu' in the
+                        navigation panel above and
+                        {isMobile ? " tap on" : " click"} 'Sermons'. There is an
+                        array of sermons for the year you could also explore.
+                        Shalom.
                       </p>
 
                       {!isMobile && (
@@ -373,9 +375,8 @@ export default function LiveServiceModal({
 
                       <p className="text-primary dark:text-muted md:text-lg">
                         The program should be live now, but we are waiting for
-                        the broadcast to start. <br /> If the stream does not
-                        begin shortly, please refresh the page or check back
-                        later.
+                        the broadcast to start. <br /> If the stream is taking
+                        too long to start, please refresh the page.
                       </p>
 
                       <button
