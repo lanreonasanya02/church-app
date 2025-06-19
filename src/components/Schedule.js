@@ -7,7 +7,7 @@ export default function Schedule() {
   return (
     <>
       <div
-        id="outreach"
+        id="support"
         className="container mx-auto w-100 md:w-[70%] text-center py-10 px-5 md:p-20"
       >
         <h4 className="text-sm tracking-widest uppercase text-subSecondary">

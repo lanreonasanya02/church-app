@@ -5,6 +5,8 @@ import Image from "next/image";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LiveServiceModal from "@/components/LiveServiceModal";
 import { HiOutlineStatusOnline } from "react-icons/hi";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import ScheduleModal from "@/components/ScheduleModal";
 
@@ -56,12 +58,12 @@ export default function Navbar({ todayProgram, isLive, username }) {
             </Link>
           </div>
 
-          <div className="flex justify-center items-center space-x-8 h-14 md:h-16">
+          <div className="flex justify-center items-center space-x-8 md:space-x-8 h-14 md:h-16">
             {isLive ? (
-              <div className=" space-x-8 text-xs">
+              <div className="hidden md:block space-x-8 text-xs">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="hidden md:block py-3 px-14 rounded-full text-sm bg-secondary text-white"
+                  className="py-3 px-14 rounded-full text-sm bg-secondary text-white"
                 >
                   <motion.div
                     animate={{
@@ -81,10 +83,10 @@ export default function Navbar({ todayProgram, isLive, username }) {
                 </button>
               </div>
             ) : (
-              <div className="relative group text-xs">
+              <div className="relative group text-xs hidden md:block">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="hidden md:block py-3 px-14 rounded-full text-sm bg-secondary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
+                  className="py-3 px-14 rounded-full text-sm bg-secondary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
                 >
                   See Upcoming Program
                 </button>
@@ -92,12 +94,26 @@ export default function Navbar({ todayProgram, isLive, username }) {
             )}
 
             <div onClick={() => setIsMenuOpen((prev) => !prev)}>
+              {/* Desktop Menu Button */}
               <button
                 className={`${
                   isMenuOpen ? "text-secondary" : ""
-                } text-xs transform hover:text-subSecondary p-2 rounded-lg w-[100px]`}
+                } hidden md:block text-xs transform hover:text-subSecondary p-2 rounded-lg w-[100px]`}
               >
                 {isMenuOpen ? "Close Menu" : "Menu"}
+              </button>
+
+              {/* Mobile Menu Button */}
+              <button
+                className={`${
+                  isMenuOpen ? "text-secondary" : ""
+                } md:hidden text-xs transform hover:text-subSecondary p-2 rounded-lg`}
+              >
+                {isMenuOpen ? (
+                  <FaTimes size={20} />
+                ) : (
+                  <RxHamburgerMenu size={20} />
+                )}
               </button>
             </div>
 
@@ -146,7 +162,7 @@ export default function Navbar({ todayProgram, isLive, username }) {
                   </ScrollLink>
 
                   <ScrollLink
-                    to="outreach"
+                    to="support"
                     smooth={true}
                     duration={500}
                     spy={true}
@@ -154,7 +170,7 @@ export default function Navbar({ todayProgram, isLive, username }) {
                     className="text-light md:hover:text-light md:text-muted dark:text-accent dark:hover:text-primary cursor-pointer transition duration-500 ease-in-out"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Outreach
+                    Support
                   </ScrollLink>
 
                   <ScrollLink

@@ -29,7 +29,7 @@ export default function ThemeSwitcher() {
   return (
     <>
       <div
-        className="relative inline-flex items-center w-16 h-8 bg-gray-300 dark:bg-gray-700 rounded-full cursor-pointer"
+        className="hidden relative md:inline-flex items-center w-16 h-8 bg-gray-300 dark:bg-gray-700 rounded-full cursor-pointer"
         onClick={toggleTheme}
       >
         {/* Background Icons */}
@@ -45,6 +45,15 @@ export default function ThemeSwitcher() {
           ${theme === "dark" ? "translate-x-8" : "translate-x-1"}
         `}
         />
+      </div>
+
+      {/* Mobile Theme Switcher */}
+      <div className="md:hidden cursor-pointer" onClick={toggleTheme}>
+        {theme === "dark" ? (
+          <FaSun size={25} className={"text-yellow-600"} />
+        ) : (
+          <FaMoon size={20} className={"text-gray-300"} />
+        )}
       </div>
     </>
   );

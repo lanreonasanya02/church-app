@@ -10,29 +10,26 @@ export default function Hero({ todayProgram, isLive, username }) {
 
   return (
     <div id="home">
+      {/* Mobile Hero */}
       <div className="md:hidden px-5 h-screen grid place-content-center">
-        <p className="text-xl text-center md:text-start text-light md:text-primary dark:text-muted mb-6 font-semibold italic">
+        <p className="text-xl text-center text-light dark:text-muted mb-6 font-normal">
           Shalom in Christ,
         </p>
 
-        <h1 className="text-4xl md:text-6xl text-center md:text-start font-bold text-light md:text-primary dark:text-muted">
-          We Are A Community of Devoted Puritans Committed to God&apos;s Word
-          through
-          <br />
-          <ScrambleText
-            texts={[
-              "Discipleship",
-              "Faith",
-              "Devotion",
-              "Worship",
-              "Fellowship",
-            ]}
-          />
-          <span className="text-secondary dark:text-accent">.</span>
+        <h1 className="text-5xl text-center font-bold text-light dark:text-muted">
+          Discipleship.{" "}
+          <span className="text-secondary dark:text-accent">Faith.</span>{" "}
+          Fellowship.
         </h1>
 
-        <div className="md:hidden mt-8 text-center md:text-start">
-          {isLive ? (
+        <p className="text-xl my-10 text-center font-normal text-light md:text-primary dark:text-muted">
+          Join our vibrant community dedicated to faith, fellowship, and
+          spiritual growth in Christ. Experience the transformative power of
+          God's love in your daily life.
+        </p>
+
+        <div className="md:hidden text-center md:text-start">
+          {/* {isLive ? (
             <div className="space-x-8 text-xs">
               <button
                 onClick={() => setIsModalOpen(true)}
@@ -55,19 +52,27 @@ export default function Hero({ todayProgram, isLive, username }) {
                 </motion.div>
               </button>
             </div>
-          ) : (
-            <div className="relative group text-xs">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="py-3 px-14 rounded-full text-sm bg-secondary dark:bg-accent hover:bg-subSecondary dark:hover:bg-blue-500 transition duration-500 ease-in-out text-white cursor-pointer"
-              >
-                See Upcoming Program
-              </button>
-            </div>
-          )}
+          ) : ( */}
+          <div className="relative group text-sm flex flex-col space-y-5 items-center">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="py-3 px-14 rounded-full text-sm border-2 dark:border-accent border-secondary bg-secondary dark:bg-accent hover:bg-subSecondary hover:border-subSecondary dark:hover:bg-blue-500 dark:hover:border-muted transition duration-500 ease-in-out text-white cursor-pointer w-[60%]"
+            >
+              Explore Programs
+            </button>
+
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="py-3 px-14 rounded-full text-sm border-2 border-muted bg-muted hover:border-subSecondary hover:bg-none dark:hover:border-muted dark:hover:bg-blue-500 transition duration-500 ease-in-out text-secondary dark:text-white cursor-pointer w-[60%]"
+            >
+              Visit Us This Sunday
+            </button>
+          </div>
+          {/* )} */}
         </div>
       </div>
 
+      {/* Desktop Hero */}
       <div className="container hidden md:grid grid-cols-2 mx-auto place-content-center md:h-screen">
         <div className="px-16">
           <p className="text-xl text-primary dark:text-muted mb-6 font-semibold italic">
