@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import ScrambleText from "@/components/ScrambledText";
 import ScheduleModal from "@/components/ScheduleModal";
 import LiveServiceModal from "@/components/LiveServiceModal";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
-export default function Hero({ todayProgram, isLive, username }) {
+export default function Hero({ isLive, username }) {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -23,9 +23,9 @@ export default function Hero({ todayProgram, isLive, username }) {
         </h1>
 
         <p className="text-xl my-10 text-center font-normal text-light md:text-primary dark:text-muted">
-          Join our vibrant community dedicated to faith, fellowship, and
-          spiritual growth in Christ. Experience the transformative power of
-          God's love in your daily life.
+          Join our vibrant community dedicated to discipleship, faith,
+          fellowship and spiritual growth in Christ Jesus our Lord. Experience
+          the transformative power of God&apos;s love in your daily life.
         </p>
 
         <div className="md:hidden text-center md:text-start">

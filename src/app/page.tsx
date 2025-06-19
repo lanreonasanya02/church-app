@@ -83,7 +83,7 @@ export default function Home() {
               username={MIXLR_USERNAME}
             />
             <Hero
-              todayProgram={todayProgram}
+              // todayProgram={todayProgram}
               isLive={isLive}
               username={MIXLR_USERNAME}
             />
