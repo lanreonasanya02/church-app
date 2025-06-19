@@ -12,20 +12,19 @@ export default function Hero({ isLive, username }) {
     <div id="home">
       {/* Mobile Hero */}
       <div className="md:hidden px-5 h-screen grid place-content-center">
-        <p className="text-xl text-center text-light dark:text-muted mb-6 font-normal">
+        {/* <p className="text-lg text-center text-light dark:text-muted mb-5 font-normal">
           Shalom in Christ,
-        </p>
+        </p> */}
 
         <h1 className="text-5xl text-center font-bold text-light dark:text-muted">
           Discipleship.{" "}
-          <span className="text-secondary dark:text-accent">Faith.</span>{" "}
-          Fellowship.
+          <span className="text-secondary dark:text-accent">Growth.</span>
         </h1>
 
-        <p className="text-xl my-10 text-center font-normal text-light md:text-primary dark:text-muted">
-          Join our vibrant community dedicated to discipleship, faith,
-          fellowship and spiritual growth in Christ Jesus our Lord. Experience
-          the transformative power of God&apos;s love in your daily life.
+        <p className="text-lg my-6 text-center font-normal text-light md:text-primary dark:text-muted">
+          Join our vibrant community dedicated in spiritual growth in Christ
+          Jesus our Lord. Experience the transformative power of God&apos;s love
+          in your daily life.
         </p>
 
         <div className="md:hidden text-center md:text-start">
@@ -56,14 +55,14 @@ export default function Hero({ isLive, username }) {
           <div className="relative group text-sm flex flex-col space-y-5 items-center">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="py-3 px-14 rounded-full text-sm border-2 dark:border-accent border-secondary bg-secondary dark:bg-accent hover:bg-subSecondary hover:border-subSecondary dark:hover:bg-blue-500 dark:hover:border-muted transition duration-500 ease-in-out text-white cursor-pointer w-[60%]"
+              className="py-3 px-14 rounded-full text-sm border-2 dark:border-accent border-secondary bg-secondary dark:bg-accent hover:bg-subSecondary hover:border-subSecondary dark:hover:bg-blue-500 dark:hover:border-muted transition duration-500 ease-in-out text-white cursor-pointer w-[70%]"
             >
               Explore Programs
             </button>
 
             <button
               onClick={() => setIsModalOpen(true)}
-              className="py-3 px-14 rounded-full text-sm border-2 border-muted bg-muted hover:border-subSecondary hover:bg-none dark:hover:border-muted dark:hover:bg-blue-500 transition duration-500 ease-in-out text-secondary dark:text-white cursor-pointer w-[60%]"
+              className="py-3 px-14 rounded-full text-sm border-2 border-muted bg-muted hover:border-subSecondary hover:bg-none dark:hover:border-muted dark:hover:bg-blue-500 transition duration-500 ease-in-out text-secondary dark:text-white cursor-pointer w-[70%]"
             >
               Visit Us This Sunday
             </button>
